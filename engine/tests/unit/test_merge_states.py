@@ -103,3 +103,12 @@ def test_merge_states_merges_miss_counts_across_shards() -> None:
     merged = merge_states([a, b])
     assert merged.metadata["miss_counts"] == {"a": 2, "b": 3, "shared": 4}
     assert merged.metadata["other"] == "x"
+
+
+def test_merge_states_copy_first_false_mutates_accumulator() -> None:
+    t0 = datetime(2026, 1, 1, tzinfo=UTC)
+    base = LiveState(jobs={"j1": _job("j1", t0)}, generated_at=t0)
+    incoming = LiveState(jobs={"j2": _job("j2", t0)}, generated_at=t0)
+    merged = merge_states([base, incoming], copy_first=False)
+    assert merged is base
+    assert "j2" in merged.jobs

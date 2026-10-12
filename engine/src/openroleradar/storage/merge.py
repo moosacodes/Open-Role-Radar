@@ -138,19 +138,23 @@ def _event_key(event: JobEvent) -> tuple[str, str, str]:
     return (event.event_type, event.job_id, event.timestamp.isoformat())
 
 
-def merge_states(states: Iterable[LiveState]) -> LiveState:
+def merge_states(states: Iterable[LiveState], *, copy_first: bool = True) -> LiveState:
     """Merge sharded LiveState snapshots into one coherent state.
 
     Later snapshots win on equal timestamps. Each shard is assumed to have
     started from the same base and only advanced its own source subset.
+
+    When ``copy_first`` is False the first snapshot is mutated in place —
+    used by the CLI incremental fold to avoid a full deep-copy of a large
+    accumulator on every shard.
     """
     ordered = list(states)
     if not ordered:
         raise ValueError("No states to merge")
     if len(ordered) == 1:
-        return ordered[0].model_copy(deep=True)
+        return ordered[0].model_copy(deep=True) if copy_first else ordered[0]
 
-    merged = ordered[0].model_copy(deep=True)
+    merged = ordered[0].model_copy(deep=True) if copy_first else ordered[0]
     for state in ordered[1:]:
         for source_id, source in state.sources.items():
             merged.sources[source_id] = _merge_source(merged.sources.get(source_id), source)

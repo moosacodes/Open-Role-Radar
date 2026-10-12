@@ -79,7 +79,7 @@ jobs:
     needs: poll
     if: ${{ !cancelled() }}
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
     steps:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
@@ -103,6 +103,9 @@ jobs:
 
       - name: Merge shard states
         working-directory: engine
+        env:
+          # Keep pydantic validation but avoid extra debug allocations.
+          PYTHONOPTIMIZE: "1"
         run: |
           set -euo pipefail
           shopt -s nullglob
@@ -112,6 +115,7 @@ jobs:
             exit 1
           fi
           echo "Merging ${#SHARDS[@]} shard(s): ${SHARDS[*]}"
+          du -sh "${SHARDS[@]}" || true
           uv run openroleradar merge-states "${SHARDS[@]}" --out ../.local/state
 
       - name: Fetch previous job-ids for delta

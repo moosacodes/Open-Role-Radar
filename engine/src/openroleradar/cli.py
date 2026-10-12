@@ -105,6 +105,23 @@ def sync(
         raise typer.Exit(1)
 
 
+def _load_shard_state(path: Path) -> LiveState | None:
+    """Load one shard state directory/file, or None when missing/unrecognized."""
+    if path.is_dir():
+        store = LocalStateStore(path)
+        if not store.exists():
+            console.print(f"[yellow]Skipping empty shard dir:[/yellow] {path}")
+            return None
+        return store.load()
+    if path.name.endswith(".zst") or path.name.endswith(".json"):
+        if path.name == "state.json.zst" or (path.parent / "state.json.zst").exists():
+            return LocalStateStore(path.parent).load()
+        console.print(f"[yellow]Skipping unrecognized state file:[/yellow] {path}")
+        return None
+    console.print(f"[yellow]Skipping:[/yellow] {path}")
+    return None
+
+
 @app.command("merge-states")
 def merge_states_cmd(
     inputs: Annotated[
@@ -117,35 +134,39 @@ def merge_states_cmd(
     ] = Path(".local/state"),
 ) -> None:
     """Merge sharded live-state snapshots into one directory for publish."""
+    import gc
+
     from openroleradar.storage.merge import merge_states
 
-    loaded: list[LiveState] = []
+    # Fold shards one-by-one so peak memory stays ~2 states (each compressed
+    # artifact is ~75MB; holding four fully inflated models OOMs free runners).
+    merged: LiveState | None = None
+    shard_count = 0
     for raw in inputs:
-        path = raw
-        if path.is_dir():
-            store = LocalStateStore(path)
-            if not store.exists():
-                console.print(f"[yellow]Skipping empty shard dir:[/yellow] {path}")
-                continue
-            loaded.append(store.load())
-        elif path.name.endswith(".zst") or path.name.endswith(".json"):
-            # Allow passing the file directly even if sibling checksum exists.
-            if path.name == "state.json.zst" or (path.parent / "state.json.zst").exists():
-                loaded.append(LocalStateStore(path.parent).load())
-            else:
-                console.print(f"[yellow]Skipping unrecognized state file:[/yellow] {path}")
+        state = _load_shard_state(raw)
+        if state is None:
+            continue
+        shard_count += 1
+        console.print(
+            f"Loaded shard {shard_count}: {len(state.jobs):,} jobs / "
+            f"{len(state.sources):,} sources from {raw}"
+        )
+        if merged is None:
+            merged = state
         else:
-            console.print(f"[yellow]Skipping:[/yellow] {path}")
+            console.print(f"Merging into accumulator ({len(merged.jobs):,} jobs)...")
+            merged = merge_states([merged, state], copy_first=False)
+            del state
+            gc.collect()
 
-    if not loaded:
+    if merged is None or shard_count == 0:
         console.print("[red]No shard states found to merge[/red]")
         raise typer.Exit(1)
 
-    merged = merge_states(loaded)
     out_store = LocalStateStore(out)
     artifact = out_store.save(merged)
     console.print(
-        f"[green]Merged {len(loaded)} shards[/green] → {artifact.path} "
+        f"[green]Merged {shard_count} shards[/green] → {artifact.path} "
         f"({len(merged.jobs):,} jobs, {len(merged.sources):,} sources)"
     )
 

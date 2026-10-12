@@ -180,17 +180,35 @@ def publish_state() -> None:
 
 
 @app.command("build-data")
-def build_data() -> None:
+def build_data(
+    slim: Annotated[
+        bool,
+        typer.Option(
+            "--slim/--full",
+            help="Skip heavy Static API export (fast path). Env: OPENROLERADAR_SLIM_EXPORT=1",
+        ),
+    ] = False,
+) -> None:
     """Export static API, site data shards, and feeds."""
     root = _repo_root()
-    result = SyncOrchestrator(root=root).build_exports()
+    env_slim = os.environ.get("OPENROLERADAR_SLIM_EXPORT", "").strip().lower() in {
+        "1",
+        "true",
+        "yes",
+    }
+    result = SyncOrchestrator(root=root).build_exports(slim=slim or env_slim)
     console.print_json(json.dumps(result, indent=2))
 
 
 @app.command("build-site-data")
-def build_site_data() -> None:
+def build_site_data(
+    slim: Annotated[
+        bool,
+        typer.Option("--slim/--full", help="Skip heavy Static API export."),
+    ] = False,
+) -> None:
     """Alias for site data export portion of build-data."""
-    build_data()
+    build_data(slim=slim)
 
 
 @app.command()

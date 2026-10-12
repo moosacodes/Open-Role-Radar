@@ -86,4 +86,18 @@ describe('applyDelta', () => {
     };
     expect(applyDelta(existing, delta)).toBeNull();
   });
+
+  it('refuses truncated opening sets', () => {
+    const existing = [makeJob('a')];
+    const delta: FeedDelta = {
+      generated_at: '2026-01-02T00:00:00Z',
+      opened_count: 900,
+      closed_count: 0,
+      opened: ['b'],
+      closed: [],
+      opened_jobs: [makeJob('b')],
+      opened_truncated: true,
+    };
+    expect(applyDelta(existing, delta)).toBeNull();
+  });
 });

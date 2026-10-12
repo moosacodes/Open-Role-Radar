@@ -61,4 +61,5 @@ def test_strict_and_wide_exports(tmp_path) -> None:
     assert strict.total_jobs == 1
     assert wide.total_jobs == 2
     assert (tmp_path / "strict" / "delta.json").exists()
+    assert (tmp_path / "strict" / "hot.json").exists()
     assert (tmp_path / "wide" / "manifest.json").exists()

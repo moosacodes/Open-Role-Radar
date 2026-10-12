@@ -5,6 +5,7 @@
 # SWE List emails alert on these same feeds. We ingest listings.json and keep roles
 # whose apply link is an employer ATS / careers page (never LinkedIn/Indeed).
 - { company: SimplifyJobs Internships, domain: summer2026-internships.github.io, adapter: simplify, tenant: summer2026-internships }
+- { company: SimplifyJobs Internships 2027, domain: summer2027-internships.github.io, adapter: simplify, tenant: summer2027-internships }
 - { company: SimplifyJobs New Grad, domain: new-grad-positions.github.io, adapter: simplify, tenant: new-grad-positions }
 
 # --- Workable / SmartRecruiters (verified public APIs) ---

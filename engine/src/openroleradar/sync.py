@@ -76,6 +76,7 @@ class SyncOrchestrator:
             if company.company_id not in state.companies:
                 state.companies[company.company_id] = company
             if source.source_id not in state.sources:
+                # New seeds start hot once; yield scoring demotes quiet boards.
                 source.poll_tier = "hot"
                 state.sources[source.source_id] = source
                 added += 1
@@ -90,12 +91,15 @@ class SyncOrchestrator:
                 existing.careers_url = source.careers_url
                 existing.adapter = source.adapter
                 existing.adapter_tenant = source.adapter_tenant
-                existing.poll_tier = "hot"
+                # Never reset poll_tier here — that wiped demotions every sync
+                # and forced all ~2300 seeds back onto the hot path.
                 if tenant_changed:
                     # Seed tenant/adapter fix — give the board a clean slate.
                     existing.enabled = True
                     existing.health_status = "healthy"
                     existing.consecutive_failures = 0
+                    existing.poll_tier = "hot"
+                    existing.zero_yield_streak = 0
                 elif existing.health_status != "disabled":
                     existing.enabled = True
 
@@ -177,15 +181,23 @@ class SyncOrchestrator:
                 continue
             cold.append(source)
 
+        def _public_seen_key(source: Source) -> float:
+            stamp = source.last_public_seen_at
+            return stamp.timestamp() if stamp is not None else 0.0
+
+        # Highest yield first so the soft runtime budget hits boards that post.
         hot.sort(
             key=lambda s: (
                 0 if s.adapter == "simplify" else 1,
+                -int(s.public_open_count or 0),
+                -_public_seen_key(s),
                 s.next_due_at or datetime.min.replace(tzinfo=UTC),
             )
         )
         # Fair cold rotation: oldest due first, then stable source_id.
         cold.sort(
             key=lambda s: (
+                0 if (s.poll_tier or "") == "warm" else 1,
                 s.next_due_at or datetime.min.replace(tzinfo=UTC),
                 s.source_id,
             )
@@ -193,6 +205,44 @@ class SyncOrchestrator:
 
         selected = [*hot[:max_hot], *cold[:max_cold]]
         return selected[:max_sources]
+
+    def _update_source_yield(self, state: LiveState, source: Source, *, now: datetime) -> None:
+        """Score board yield from public early-career roles and demote quiet ones."""
+        from openroleradar.export.public_filter import is_public_job
+
+        public_count = sum(
+            1
+            for job in state.jobs.values()
+            if job.provenance.source_id == source.source_id and is_public_job(job, mode="strict")
+        )
+        source.public_open_count = public_count
+        source.successful_polls = int(source.successful_polls or 0) + 1
+        polling = self.config.polling or {}
+        warm_after = int(polling.get("zero_yield_warm_after", 2))
+        cold_after = int(polling.get("zero_yield_cold_after", 4))
+        dormant_after = int(polling.get("zero_yield_dormant_after", 8))
+
+        if source.adapter == "simplify":
+            source.poll_tier = "hot"
+            if public_count > 0:
+                source.last_public_seen_at = now
+                source.zero_yield_streak = 0
+            return
+
+        if public_count > 0:
+            source.last_public_seen_at = now
+            source.zero_yield_streak = 0
+            source.poll_tier = "hot"
+            return
+
+        source.zero_yield_streak = int(source.zero_yield_streak or 0) + 1
+        streak = source.zero_yield_streak
+        if streak >= dormant_after:
+            source.poll_tier = "dormant"
+        elif streak >= cold_after:
+            source.poll_tier = "cold"
+        elif streak >= warm_after:
+            source.poll_tier = "warm"
 
     def _company_for_raw(
         self,
@@ -553,16 +603,11 @@ class SyncOrchestrator:
 
                     summary["fetched"] += 1
                     raw_jobs: list[RawJob] = list(result.get("jobs") or [])
-                    new_before = int(summary["new_jobs"])
                     seen_by_source[source.source_id] = self._ingest_raw_jobs(
                         state, source, raw_jobs, now=now, summary=summary
                     )
-                    # Boards that just produced brand-new roles stay on the hot tier;
-                    # quiet boards demote so cold rotation can reclaim budget.
-                    if int(summary["new_jobs"]) > new_before:
-                        source.poll_tier = "hot"
-                    elif source.poll_tier == "hot" and source.adapter != "simplify":
-                        source.poll_tier = "warm"
+                    # Yield on public early-career roles, not raw ATS volume.
+                    self._update_source_yield(state, source, now=now)
 
                     if source.adapter == "simplify":
                         promoted = self._promote_boards_from_raw_jobs(
@@ -607,8 +652,8 @@ class SyncOrchestrator:
         summary["polled_sources"] = len(polled_ids)
         return summary
 
-    def build_exports(self) -> dict[str, Any]:
-        """Generate static API, site data, and feeds."""
+    def build_exports(self, *, slim: bool = False) -> dict[str, Any]:
+        """Generate site data and feeds (and the full static API unless slim)."""
         from openroleradar.classify.refresh import reclassify_state
 
         state = self.store.load()
@@ -624,7 +669,8 @@ class SyncOrchestrator:
         self.store.save(state)
 
         site_root = self.root / "site"
-        StaticApiExporter(self.config).export(state, site_root)
+        if not slim:
+            StaticApiExporter(self.config).export(state, site_root)
 
         builder = SiteDataBuilder(self.config)
         data_dir = site_root / "public" / "data"
@@ -645,6 +691,7 @@ class SyncOrchestrator:
             "sources": len(state.sources),
             "reclassified": reclassified,
             "classification_skipped": state.metadata.get("classification_skipped", 0),
+            "slim": slim,
         }
 
     def publish_live_state_release(self) -> dict[str, Any]:

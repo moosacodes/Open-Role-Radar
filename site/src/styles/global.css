@@ -1649,6 +1649,65 @@ main {
   color: var(--text-muted);
 }
 
+.empty-state__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+}
+
+.hot-strip {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0 0 0.85rem;
+  padding: 0.35rem 0;
+  overflow: hidden;
+}
+
+.hot-strip__label {
+  flex: 0 0 auto;
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.hot-strip__row {
+  display: flex;
+  gap: 0.4rem;
+  overflow-x: auto;
+  padding-bottom: 0.15rem;
+  scrollbar-width: thin;
+}
+
+.hot-strip__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex: 0 0 auto;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.28rem 0.65rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hot-strip__chip:hover,
+.hot-strip__chip:focus-visible {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+}
+
+.hot-strip__count {
+  font-size: 0.72rem;
+  font-weight: 750;
+  color: var(--accent);
+}
+
 .alert--error {
   border-color: color-mix(in srgb, var(--danger) 40%, var(--border));
   color: var(--danger);

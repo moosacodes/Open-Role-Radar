@@ -5,11 +5,13 @@ import {
   hydrateFromCache,
   loadAllJobs,
   loadDelta,
+  loadHotCompanies,
   loadManifest,
   peekNewestManifest,
   resetDataLoader,
   setFeedMode,
   writeCachedFeed,
+  type HotCompany,
 } from '../lib/data-loader';
 import {
   countActiveFilters,
@@ -129,13 +131,8 @@ export default function JobSearch({
   const [filters, setFilters] = useState<FilterState>(() => {
     if (typeof window === 'undefined') return DEFAULT_FILTERS;
     const parsed = parseFiltersFromUrl(window.location.search);
-    const params = new URLSearchParams(window.location.search);
-    const baseline =
-      typeof window !== 'undefined' ? beginVisitSession() : null;
-    // Default to "new since visit" when we have a prior visit and URL didn't pick one.
-    if (!params.has('freshness') && baseline) {
-      return { ...parsed, freshness: 'new_since_visit', view: 'table' };
-    }
+    // Keep DEFAULT_FILTERS.freshness (24h) — "new since visit" is opt-in so
+    // returning users never land on an empty table.
     return { ...parsed, view: 'table' };
   });
   const [jobs, setJobs] = useState<Job[]>([]);
@@ -143,6 +140,7 @@ export default function JobSearch({
   const [error, setError] = useState<string | null>(null);
   const [prefs, setPrefs] = useState(() => loadPreferences());
   const [stats, setStats] = useState<SiteStats>(initialStats ?? EMPTY_STATS);
+  const [hotCompanies, setHotCompanies] = useState<HotCompany[]>([]);
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [filtersOpen, setFiltersOpen] = useState(false);
@@ -298,6 +296,9 @@ export default function JobSearch({
         }
         knownIdsRef.current = nextIds;
         lastStampRef.current = manifest.generated_at;
+        void loadHotCompanies().then((companies) => {
+          if (!cancelled) setHotCompanies(companies);
+        });
 
         const stored = loadPreferences();
         const baseline = getSessionBaseline() ?? sessionBaseline;
@@ -358,11 +359,20 @@ export default function JobSearch({
     window.addEventListener('focus', onFocus);
     document.addEventListener('visibilitychange', onVisible);
     window.addEventListener('pageshow', onPageShow);
-    const timer = window.setInterval(peek, 3_000);
+
+    let timer = window.setInterval(peek, 15_000);
+    const onVisibilityForPoll = () => {
+      window.clearInterval(timer);
+      const ms = document.visibilityState === 'visible' ? 15_000 : 60_000;
+      timer = window.setInterval(peek, ms);
+    };
+    document.addEventListener('visibilitychange', onVisibilityForPoll);
+
     return () => {
       window.clearTimeout(armTimer);
       window.removeEventListener('focus', onFocus);
       document.removeEventListener('visibilitychange', onVisible);
+      document.removeEventListener('visibilitychange', onVisibilityForPoll);
       window.removeEventListener('pageshow', onPageShow);
       window.clearInterval(timer);
     };
@@ -554,6 +564,34 @@ export default function JobSearch({
             />
           ) : null}
 
+          {!loading && hotCompanies.length > 0 ? (
+            <div className="hot-strip" aria-label="Companies hiring in the last 2 hours">
+              <span className="hot-strip__label">Hot now</span>
+              <div className="hot-strip__row">
+                {hotCompanies.slice(0, 12).map((company) => (
+                  <button
+                    key={company.company_id}
+                    type="button"
+                    className="hot-strip__chip"
+                    onClick={() =>
+                      setFilters((current) => ({
+                        ...current,
+                        q: company.company_name,
+                        freshness: '2h',
+                        page: 1,
+                        view: 'table',
+                      }))
+                    }
+                    title={`${company.new_roles} new in last 2h`}
+                  >
+                    {company.company_name}
+                    <span className="hot-strip__count">{company.new_roles}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          ) : null}
+
           <section id="roles" className="job-search__results" aria-label="Job results">
             <div className="job-search__toolbar">
               <div className="job-search__toolbar-left">
@@ -683,8 +721,50 @@ export default function JobSearch({
 
             {!loading && filteredJobs.length === 0 ? (
               <div className="empty-state">
-                <h3>No roles match</h3>
-                <p>Loosen filters or check back after the next sync.</p>
+                <h3>
+                  {filters.freshness === 'new_since_visit'
+                    ? 'No new roles since your last visit'
+                    : 'No roles match'}
+                </h3>
+                <p>
+                  {filters.freshness === 'new_since_visit'
+                    ? 'Widen the window — recent openings are still live.'
+                    : 'Loosen filters or check back after the next sync.'}
+                </p>
+                <div className="empty-state__actions">
+                  {filters.freshness !== '24h' ? (
+                    <button
+                      type="button"
+                      className="btn btn--primary btn--sm"
+                      onClick={() =>
+                        setFilters((current) => ({
+                          ...current,
+                          freshness: '24h',
+                          page: 1,
+                          view: 'table',
+                        }))
+                      }
+                    >
+                      Show last 24 hours
+                    </button>
+                  ) : null}
+                  {filters.freshness !== 'all' ? (
+                    <button
+                      type="button"
+                      className="btn btn--secondary btn--sm"
+                      onClick={() =>
+                        setFilters((current) => ({
+                          ...current,
+                          freshness: 'all',
+                          page: 1,
+                          view: 'table',
+                        }))
+                      }
+                    >
+                      Show all open roles
+                    </button>
+                  ) : null}
+                </div>
               </div>
             ) : null}
 

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 from dataclasses import dataclass
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import Any
 
@@ -13,6 +14,9 @@ from openroleradar.config import ProjectConfig, load_project_config
 from openroleradar.export.public_filter import is_public_job
 from openroleradar.models.job import Job
 from openroleradar.models.state import LiveState
+
+# Keep opened ID list and full records aligned so clients can always patch.
+_DELTA_OPENED_CAP = 500
 
 
 @dataclass(frozen=True)
@@ -166,7 +170,9 @@ class SiteDataBuilder:
             (job for job in all_jobs if job.job_id in opened_set),
             key=lambda job: job.first_seen_at,
             reverse=True,
-        )[:100]
+        )[:_DELTA_OPENED_CAP]
+        # Truncate opened IDs to the same set we ship full records for.
+        opened_export_ids = [job.job_id for job in opened_jobs]
 
         (output_dir / "delta.json").write_bytes(
             orjson.dumps(
@@ -175,14 +181,61 @@ class SiteDataBuilder:
                     "feed_mode": mode,
                     "opened_count": len(opened_ids),
                     "closed_count": len(closed_ids),
-                    "opened": opened_ids[:5000],
+                    "opened": opened_export_ids,
                     "closed": closed_ids[:5000],
-                    # Full records for the newest openings so clients can patch
+                    "opened_truncated": len(opened_ids) > len(opened_export_ids),
+                    # Full records aligned with `opened` so clients can patch
                     # without re-downloading every shard.
                     "opened_jobs": [job.to_public_dict() for job in opened_jobs],
                 },
                 option=orjson.OPT_INDENT_2,
             )
         )
+        self._write_hot_strip(all_jobs, output_dir, generated_at=state.generated_at)
         ids_path.write_bytes(orjson.dumps(current_ids))
         return manifest
+
+    def _write_hot_strip(
+        self,
+        jobs: list[Job],
+        output_dir: Path,
+        *,
+        generated_at: datetime,
+    ) -> None:
+        """Companies with openings in the last 2 hours — cheap UX signal."""
+        cutoff = generated_at - timedelta(hours=2)
+        if cutoff.tzinfo is None:
+            cutoff = cutoff.replace(tzinfo=UTC)
+        by_company: dict[str, dict[str, Any]] = {}
+        for job in jobs:
+            seen = job.first_seen_at
+            if seen.tzinfo is None:
+                seen = seen.replace(tzinfo=UTC)
+            if seen < cutoff:
+                continue
+            entry = by_company.get(job.company_id)
+            if entry is None:
+                by_company[job.company_id] = {
+                    "company_id": job.company_id,
+                    "company_name": job.company_name,
+                    "new_roles": 1,
+                    "latest_first_seen_at": seen.isoformat(),
+                }
+            else:
+                entry["new_roles"] = int(entry["new_roles"]) + 1
+                if seen.isoformat() > str(entry["latest_first_seen_at"]):
+                    entry["latest_first_seen_at"] = seen.isoformat()
+        hot = sorted(
+            by_company.values(),
+            key=lambda item: (-int(item["new_roles"]), str(item["latest_first_seen_at"])),
+        )[:40]
+        (output_dir / "hot.json").write_bytes(
+            orjson.dumps(
+                {
+                    "generated_at": generated_at.isoformat(),
+                    "window_hours": 2,
+                    "companies": hot,
+                },
+                option=orjson.OPT_INDENT_2,
+            )
+        )

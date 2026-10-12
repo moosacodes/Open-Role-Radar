@@ -19,6 +19,7 @@ from openroleradar.discovery.ats_detect import detect_ats_from_url  # noqa: E402
 
 LISTINGS = [
     "https://raw.githubusercontent.com/SimplifyJobs/Summer2026-Internships/dev/.github/scripts/listings.json",
+    "https://raw.githubusercontent.com/SimplifyJobs/Summer2027-Internships/dev/.github/scripts/listings.json",
     "https://raw.githubusercontent.com/SimplifyJobs/New-Grad-Positions/dev/.github/scripts/listings.json",
 ]
 

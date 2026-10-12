@@ -29,16 +29,20 @@ live_state:
 polling:
   tiers:
     hot_minutes: 2
-    warm_minutes: 5
-    cold_minutes: 8
-    dormant_minutes: 20
-  max_sources_per_sync: 2000
-  # Hot boards (recent new roles) are always eligible; cold boards only when due.
-  max_hot_sources_per_sync: 600
-  max_cold_sources_per_sync: 400
+    warm_minutes: 8
+    cold_minutes: 25
+    dormant_minutes: 120
+  # Yield-based caps: prefer ~100 high-signal boards over spraying 2000.
+  max_sources_per_sync: 400
+  max_hot_sources_per_sync: 120
+  max_cold_sources_per_sync: 200
   # Soft budget so sync can save + export before the Actions job timeout.
   # Fast path overrides via OPENROLERADAR_MAX_SYNC_RUNTIME_MINUTES.
   max_sync_runtime_minutes: 45
+  # Successful polls with zero public early-career roles before demotion.
+  zero_yield_warm_after: 2
+  zero_yield_cold_after: 4
+  zero_yield_dormant_after: 8
 
 http:
   timeout_seconds: 20

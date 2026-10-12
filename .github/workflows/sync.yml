@@ -1,9 +1,11 @@
 name: Sync and Deploy
 
+# Slow path: Workday + durable state only. Fast path owns live-feed publishes
+# so a 30-minute full sync can never clobber a fresher 5-minute publish.
+
 on:
   schedule:
-    # Slower full pass (includes Workday). Fast path owns the 5-minute cadence.
-    - cron: "*/30 * * * *"
+    - cron: "15 */6 * * *"
   workflow_dispatch:
     inputs:
       sample:
@@ -15,12 +17,12 @@ permissions:
   contents: write
 
 concurrency:
-  group: openroleradar-sync
+  group: openroleradar-sync-slow
   cancel-in-progress: true
 
 jobs:
   sync:
-    name: Sync and publish live feed
+    name: Workday + durable state
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
@@ -41,54 +43,22 @@ jobs:
         uses: actions/cache@d4323d4df104b026a6aa633fdb11d772146be0bf # v4.2.2
         with:
           path: .local/state
-          key: live-state-${{ github.run_id }}
+          key: live-state-main-${{ github.run_id }}-slow
           restore-keys: |
+            live-state-main-
             live-state-
 
-      - name: Run sync
+      - name: Run Workday sync
         working-directory: engine
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENROLERADAR_ADAPTERS: workday
         run: |
           if [ "${{ github.event.inputs.sample }}" = "true" ]; then
-            uv run openroleradar sync --sample
+            uv run openroleradar sync --sample --adapters workday
           else
-            uv run openroleradar sync
+            uv run openroleradar sync --adapters workday
           fi
-
-      - name: Build data exports
-        working-directory: engine
-        run: uv run openroleradar build-data
-
-      - name: Publish live-feed branch (what the site actually reads)
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          set -euo pipefail
-          if [ ! -d site/public/data ]; then
-            echo "site/public/data missing — build-data did not export a feed" >&2
-            exit 1
-          fi
-          WORK="$(mktemp -d)"
-          cp -R site/public/data/. "$WORK/"
-          if [ -d site/public/data-wide ]; then
-            mkdir -p "$WORK/wide"
-            cp -R site/public/data-wide/. "$WORK/wide/"
-          fi
-          if [ -d site/public/feeds ]; then
-            mkdir -p "$WORK/feeds"
-            cp -R site/public/feeds/. "$WORK/feeds/"
-          fi
-          cd "$WORK"
-          git init
-          git checkout -b live-feed
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          printf '%s\n' '# Live job feed — force-pushed every sync' > README.md
-          git add -A
-          git commit -m "live-feed $(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git push -f origin live-feed
 
       - name: Publish durable live-state release
         continue-on-error: true
@@ -101,4 +71,4 @@ jobs:
         uses: actions/cache/save@d4323d4df104b026a6aa633fdb11d772146be0bf # v4.2.2
         with:
           path: .local/state
-          key: live-state-${{ github.run_id }}
+          key: live-state-main-${{ github.run_id }}-slow

@@ -8,16 +8,19 @@ export interface FeedDelta {
   opened: string[];
   closed: string[];
   opened_jobs?: Job[];
+  opened_truncated?: boolean;
 }
 
 /** Apply a small delta onto an existing job list when possible. */
 export function applyDelta(jobs: Job[], delta: FeedDelta): Job[] | null {
-  const changeCount = (delta.opened_count || 0) + (delta.closed_count || 0);
+  // Truncated openings mean the client would miss roles — force full reload.
+  if (delta.opened_truncated) return null;
+
+  const changeCount = (delta.opened?.length || 0) + (delta.closed?.length || 0);
   if (changeCount > 800) return null;
 
   const openedIds = delta.opened || [];
   const openedJobs = delta.opened_jobs || [];
-  // Exporter caps opened_jobs at 100 while opened can list thousands.
   // Only patch when every listed opening has a full record.
   if (openedIds.length > openedJobs.length) {
     return null;

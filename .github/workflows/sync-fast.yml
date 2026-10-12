@@ -45,6 +45,7 @@ jobs:
         uses: actions/cache@d4323d4df104b026a6aa633fdb11d772146be0bf # v4.2.2
         with:
           path: .local/state
+          # Prefer the last merged publish state so shards share one baseline.
           key: live-state-main-${{ github.run_id }}-shard-${{ matrix.shard }}
           restore-keys: |
             live-state-main-
@@ -55,8 +56,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENROLERADAR_ADAPTERS: greenhouse,lever,ashby,workable,smartrecruiters,simplify
-          # Soft budget leaves headroom before the job timeout.
-          OPENROLERADAR_MAX_SYNC_RUNTIME_MINUTES: "9"
+          # Tighter budget: yield-ranked hotlist should finish well under this.
+          OPENROLERADAR_MAX_SYNC_RUNTIME_MINUTES: "7"
           OPENROLERADAR_SHARD: ${{ matrix.shard }}
           OPENROLERADAR_SHARDS: "4"
         run: >
@@ -132,7 +133,10 @@ jobs:
 
       - name: Build data exports
         working-directory: engine
-        run: uv run openroleradar build-data
+        env:
+          # Fast path only needs site shards + feeds — skip heavy Static API.
+          OPENROLERADAR_SLIM_EXPORT: "1"
+        run: uv run openroleradar build-data --slim
 
       - name: Publish live-feed branch
         env:

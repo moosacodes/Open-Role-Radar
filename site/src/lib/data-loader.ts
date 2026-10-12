@@ -123,8 +123,37 @@ export async function peekNewestManifest(
   mode: FeedMode = activeMode,
 ): Promise<DataManifest> {
   const bust = Date.now();
+  // Sticky base: avoid racing 3 CDNs every poll once we have a winner.
+  if (activeDataBase) {
+    const sticky = await fetchManifestFrom(activeDataBase, bust);
+    if (sticky) return sticky;
+  }
   const winner = await pickNewestBase(feedBases(mode), bust);
+  activeDataBase = winner.base;
   return winner.manifest;
+}
+
+export interface HotCompany {
+  company_id: string;
+  company_name: string;
+  new_roles: number;
+  latest_first_seen_at: string;
+}
+
+export async function loadHotCompanies(
+  base: string = activeDataBase,
+): Promise<HotCompany[]> {
+  try {
+    const response = await fetch(`${base}hot.json?t=${Date.now()}`, {
+      cache: 'no-store',
+      headers: { Accept: 'application/json' },
+    });
+    if (!response.ok) return [];
+    const payload = (await response.json()) as { companies?: HotCompany[] };
+    return Array.isArray(payload.companies) ? payload.companies : [];
+  } catch {
+    return [];
+  }
 }
 
 export async function loadDelta(base: string = activeDataBase): Promise<FeedDelta | null> {

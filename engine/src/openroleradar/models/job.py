@@ -178,6 +178,11 @@ class Source(BaseModel):
     last_modified: str | None = None
     enabled: bool = True
     last_response_hash: str | None = None
+    # Yield scoring — boards that never emit public early-career roles demote.
+    public_open_count: int = 0
+    last_public_seen_at: datetime | None = None
+    zero_yield_streak: int = 0
+    successful_polls: int = 0
 
 
 class JobEvent(BaseModel):

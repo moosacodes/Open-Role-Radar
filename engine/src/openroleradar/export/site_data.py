@@ -136,4 +136,33 @@ class SiteDataBuilder:
         (output_dir / "manifest.json").write_bytes(
             orjson.dumps(manifest.to_dict(), option=orjson.OPT_INDENT_2)
         )
+
+        current_ids = sorted(
+            job.job_id for bucket_jobs in buckets.values() for job in bucket_jobs
+        )
+        previous_ids: set[str] = set()
+        ids_path = output_dir / "job-ids.json"
+        if ids_path.exists():
+            try:
+                previous_ids = {
+                    str(item) for item in orjson.loads(ids_path.read_bytes()) if item
+                }
+            except orjson.JSONDecodeError:
+                previous_ids = set()
+        current_set = set(current_ids)
+        opened = sorted(current_set - previous_ids)
+        closed = sorted(previous_ids - current_set)
+        (output_dir / "delta.json").write_bytes(
+            orjson.dumps(
+                {
+                    "generated_at": state.generated_at.isoformat(),
+                    "opened_count": len(opened),
+                    "closed_count": len(closed),
+                    "opened": opened[:5000],
+                    "closed": closed[:5000],
+                },
+                option=orjson.OPT_INDENT_2,
+            )
+        )
+        ids_path.write_bytes(orjson.dumps(current_ids))
         return manifest

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import asyncio
+import hashlib
 import logging
 import os
 from datetime import UTC, datetime, timedelta
@@ -115,17 +116,34 @@ class SyncOrchestrator:
         self.store.save(state)
         return state
 
+    @staticmethod
+    def source_shard(source_id: str, shards: int) -> int:
+        """Stable shard assignment for parallel sync workers."""
+        if shards <= 1:
+            return 0
+        digest = hashlib.blake2b(source_id.encode("utf-8"), digest_size=8).digest()
+        return int.from_bytes(digest, "big") % shards
+
     def _sources_due(
         self,
         state: LiveState,
         now: datetime,
         *,
         adapters: set[str] | None = None,
+        shard: int = 0,
+        shards: int = 1,
     ) -> list[Source]:
         """Return every enabled source each sync so refresh gets fresh publishes.
 
         Ordering still prefers the oldest / never-polled sources when capped.
+        When shards > 1, only this worker's partition is returned. Simplify /
+        multi-company feeds always run on shard 0 so discovery stays centralized.
         """
+        if shards < 1:
+            raise ValueError("shards must be >= 1")
+        if shard < 0 or shard >= shards:
+            raise ValueError(f"shard must be in [0, {shards})")
+
         max_sources = int(self.config.polling.get("max_sources_per_sync", 500))
         due: list[Source] = []
         for source in state.sources.values():
@@ -135,11 +153,19 @@ class SyncOrchestrator:
                 continue
             if adapters is not None and source.adapter not in adapters:
                 continue
+            if shards > 1:
+                if source.adapter == "simplify":
+                    if shard != 0:
+                        continue
+                elif self.source_shard(source.source_id, shards) != shard:
+                    continue
             due.append(source)
         # Multi-company feeds (Simplify / SWE List) first — cheap and high-signal.
+        # Within a shard, prefer hot boards and the longest-overdue sources.
         due.sort(
             key=lambda s: (
                 0 if s.adapter == "simplify" else 1,
+                0 if s.poll_tier == "hot" else 1,
                 s.next_due_at or datetime.min.replace(tzinfo=UTC),
             )
         )
@@ -402,11 +428,15 @@ class SyncOrchestrator:
         *,
         sample: bool = False,
         adapters: set[str] | None = None,
+        shard: int = 0,
+        shards: int = 1,
     ) -> dict[str, Any]:
         """Execute a full synchronization cycle."""
         now = datetime.now(UTC)
         state = self.load_or_bootstrap()
-        due = self._sources_due(state, now, adapters=adapters)
+        due = self._sources_due(
+            state, now, adapters=adapters, shard=shard, shards=shards
+        )
         if sample:
             due = due[:3]
 
@@ -417,6 +447,8 @@ class SyncOrchestrator:
 
         summary: dict[str, Any] = {
             "sources_due": len(due),
+            "shard": shard,
+            "shards": shards,
             "fetched": 0,
             "not_modified": 0,
             "new_jobs": 0,
@@ -494,9 +526,13 @@ class SyncOrchestrator:
 
                     summary["fetched"] += 1
                     raw_jobs: list[RawJob] = list(result.get("jobs") or [])
+                    new_before = int(summary["new_jobs"])
                     seen_by_source[source.source_id] = self._ingest_raw_jobs(
                         state, source, raw_jobs, now=now, summary=summary
                     )
+                    # Boards that just produced brand-new roles stay on the hot tier.
+                    if int(summary["new_jobs"]) > new_before:
+                        source.poll_tier = "hot"
 
                     if source.adapter == "simplify":
                         promoted = self._promote_boards_from_raw_jobs(

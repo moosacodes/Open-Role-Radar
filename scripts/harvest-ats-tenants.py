@@ -24,6 +24,14 @@ PATTERNS = {
     "ashby": [
         r"(?:jobs|api)\.ashbyhq\.com/(?:posting-api/job-board/)?([a-z0-9][a-z0-9_-]{1,64})",
     ],
+    "workable": [
+        r"apply\.workable\.com/api/v1/widget/accounts/([a-z0-9][a-z0-9_-]{1,64})",
+        r"apply\.workable\.com/([a-z0-9][a-z0-9_-]{1,64})(?:/|/j/)?",
+    ],
+    "smartrecruiters": [
+        r"api\.smartrecruiters\.com/v1/companies/([A-Za-z0-9][A-Za-z0-9_-]{1,64})",
+        r"careers\.smartrecruiters\.com/([A-Za-z0-9][A-Za-z0-9_-]{1,64})",
+    ],
 }
 
 QUERIES = [
@@ -32,12 +40,16 @@ QUERIES = [
     "jobs.lever.co",
     "jobs.ashbyhq.com",
     "api.ashbyhq.com/posting-api/job-board",
+    "apply.workable.com/api/v1/widget/accounts",
+    "api.smartrecruiters.com/v1/companies",
 ]
 
 API = {
     "greenhouse": "https://boards-api.greenhouse.io/v1/boards/{tenant}/jobs",
     "lever": "https://api.lever.co/v0/postings/{tenant}?mode=json",
     "ashby": "https://api.ashbyhq.com/posting-api/job-board/{tenant}",
+    "workable": "https://apply.workable.com/api/v1/widget/accounts/{tenant}",
+    "smartrecruiters": "https://api.smartrecruiters.com/v1/companies/{tenant}/postings?limit=1",
 }
 
 

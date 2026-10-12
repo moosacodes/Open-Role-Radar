@@ -62,6 +62,14 @@ def sync(
             help="Comma-separated adapter allowlist (e.g. simplify). Defaults to all.",
         ),
     ] = None,
+    shard: Annotated[
+        int,
+        typer.Option("--shard", help="Zero-based shard index for parallel sync workers."),
+    ] = 0,
+    shards: Annotated[
+        int,
+        typer.Option("--shards", help="Total shard count. Use 1 for an unsharded sync."),
+    ] = 1,
 ) -> None:
     """Poll due sources, normalize jobs, update lifecycle state."""
     root = _repo_root()
@@ -74,8 +82,18 @@ def sync(
     if raw_adapters:
         allow = {part.strip().lower() for part in raw_adapters.split(",") if part.strip()}
         console.print(f"[cyan]Adapter filter:[/cyan] {', '.join(sorted(allow))}")
+    env_shards = os.environ.get("OPENROLERADAR_SHARDS")
+    env_shard = os.environ.get("OPENROLERADAR_SHARD")
+    if env_shards and shards == 1:
+        shards = int(env_shards)
+    if env_shard and shard == 0 and env_shards:
+        shard = int(env_shard)
+    if shards > 1:
+        console.print(f"[cyan]Shard:[/cyan] {shard}/{shards}")
     console.print("[bold]Starting synchronization...[/bold]")
-    summary = asyncio.run(orchestrator.run_sync(sample=sample, adapters=allow))
+    summary = asyncio.run(
+        orchestrator.run_sync(sample=sample, adapters=allow, shard=shard, shards=shards)
+    )
     table = Table(title="Sync Summary")
     table.add_column("Metric", style="cyan")
     table.add_column("Value", style="green")
@@ -84,6 +102,51 @@ def sync(
     console.print(table)
     if summary.get("failures", 0) > 0 and summary.get("fetched", 0) == 0:
         raise typer.Exit(1)
+
+
+@app.command("merge-states")
+def merge_states_cmd(
+    inputs: Annotated[
+        list[Path],
+        typer.Argument(help="State directories or state.json.zst files from sync shards"),
+    ],
+    out: Annotated[
+        Path,
+        typer.Option("--out", help="Output state directory"),
+    ] = Path(".local/state"),
+) -> None:
+    """Merge sharded live-state snapshots into one directory for publish."""
+    from openroleradar.storage.merge import merge_states
+
+    loaded: list = []
+    for raw in inputs:
+        path = raw
+        if path.is_dir():
+            store = LocalStateStore(path)
+            if not store.exists():
+                console.print(f"[yellow]Skipping empty shard dir:[/yellow] {path}")
+                continue
+            loaded.append(store.load())
+        elif path.name.endswith(".zst") or path.name.endswith(".json"):
+            # Allow passing the file directly even if sibling checksum exists.
+            if path.name == "state.json.zst" or (path.parent / "state.json.zst").exists():
+                loaded.append(LocalStateStore(path.parent).load())
+            else:
+                console.print(f"[yellow]Skipping unrecognized state file:[/yellow] {path}")
+        else:
+            console.print(f"[yellow]Skipping:[/yellow] {path}")
+
+    if not loaded:
+        console.print("[red]No shard states found to merge[/red]")
+        raise typer.Exit(1)
+
+    merged = merge_states(loaded)
+    out_store = LocalStateStore(out)
+    artifact = out_store.save(merged)
+    console.print(
+        f"[green]Merged {len(loaded)} shards[/green] → {artifact.path} "
+        f"({len(merged.jobs):,} jobs, {len(merged.sources):,} sources)"
+    )
 
 
 @app.command("publish-state")

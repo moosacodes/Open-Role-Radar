@@ -1,8 +1,7 @@
 name: Sync Fast Path
 
-# Same method Simplify uses under the hood: poll public Greenhouse / Lever / Ashby
-# board JSON APIs frequently, plus their GitHub dump as a discovery signal.
-# Publishes live-feed without waiting on slow Workday boards.
+# Sharded parallel poll of public Greenhouse / Lever / Ashby boards + Simplify
+# discovery, then a single merge/publish job that always updates live-feed.
 
 on:
   schedule:
@@ -14,15 +13,20 @@ permissions:
   contents: write
 
 concurrency:
+  # Do not cancel an in-flight publish — a cancelled run never updates live-feed
+  # and paints the README badge red.
   group: openroleradar-sync-fast
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
-  sync-fast:
-    name: Fast ATS + Simplify discovery
+  poll:
+    name: Poll shard ${{ matrix.shard }}
     runs-on: ubuntu-latest
-    # Leave headroom after the soft sync budget for build-data + live-feed publish.
-    timeout-minutes: 20
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3]
     steps:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
@@ -37,24 +41,87 @@ jobs:
         working-directory: engine
         run: uv sync --all-extras --dev
 
-      - name: Restore live state
+      - name: Restore live state cache
         uses: actions/cache@d4323d4df104b026a6aa633fdb11d772146be0bf # v4.2.2
         with:
           path: .local/state
-          key: live-state-${{ github.run_id }}
+          key: live-state-main-${{ github.run_id }}-shard-${{ matrix.shard }}
           restore-keys: |
+            live-state-main-
             live-state-
 
-      - name: Sync fast adapters in parallel
+      - name: Sync shard
         working-directory: engine
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # Public ATS APIs (Simplify's real method) + their listings dump for discovery.
-          OPENROLERADAR_ADAPTERS: greenhouse,lever,ashby,simplify
-          # Stop polling before the job timeout so exports/publish still run.
-          # Unpolled boards stay due and are preferred on the next fast sync.
-          OPENROLERADAR_MAX_SYNC_RUNTIME_MINUTES: "12"
-        run: uv run openroleradar sync --adapters greenhouse,lever,ashby,simplify
+          OPENROLERADAR_ADAPTERS: greenhouse,lever,ashby,workable,smartrecruiters,simplify
+          # Soft budget leaves headroom before the job timeout.
+          OPENROLERADAR_MAX_SYNC_RUNTIME_MINUTES: "9"
+          OPENROLERADAR_SHARD: ${{ matrix.shard }}
+          OPENROLERADAR_SHARDS: "4"
+        run: >
+          uv run openroleradar sync
+          --adapters greenhouse,lever,ashby,workable,smartrecruiters,simplify
+          --shard ${{ matrix.shard }}
+          --shards 4
+
+      - name: Upload shard state
+        if: success()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: state-shard-${{ matrix.shard }}
+          path: .local/state/
+          if-no-files-found: error
+          retention-days: 1
+
+  publish:
+    name: Merge + publish live-feed
+    needs: poll
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@bd01e18f51369d5a26f1651c3cb451d3417e3bba # v6.3.1
+        with:
+          enable-cache: true
+          cache-dependency-glob: engine/uv.lock
+
+      - name: Sync Python dependencies
+        working-directory: engine
+        run: uv sync --all-extras --dev
+
+      - name: Download shard states
+        uses: actions/download-artifact@95815c38cf2ff2164869cbab79ef9d62c653af96 # v4.2.1
+        with:
+          pattern: state-shard-*
+          path: .local/shards
+          merge-multiple: false
+
+      - name: Merge shard states
+        working-directory: engine
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          SHARDS=(../.local/shards/state-shard-*)
+          if [ ${#SHARDS[@]} -eq 0 ]; then
+            echo "No shard artifacts downloaded" >&2
+            exit 1
+          fi
+          echo "Merging ${#SHARDS[@]} shard(s): ${SHARDS[*]}"
+          uv run openroleradar merge-states "${SHARDS[@]}" --out ../.local/state
+
+      - name: Fetch previous job-ids for delta
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          mkdir -p site/public/data
+          curl -fsSL \
+            "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/live-feed/job-ids.json" \
+            -o site/public/data/job-ids.json || rm -f site/public/data/job-ids.json
 
       - name: Build data exports
         working-directory: engine
@@ -89,8 +156,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: uv run openroleradar publish-state
 
-      - name: Save live state
+      - name: Save live state cache
         uses: actions/cache/save@d4323d4df104b026a6aa633fdb11d772146be0bf # v4.2.2
         with:
           path: .local/state
-          key: live-state-${{ github.run_id }}
+          key: live-state-main-${{ github.run_id }}

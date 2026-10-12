@@ -161,7 +161,8 @@ export default function FilterPanel({
   const internshipsActive = filters.careerLevels.includes('internship');
   const newGradActive = filters.careerLevels.includes('new_grad');
   const remoteActive = filters.workplaceTypes.includes('remote');
-  const weekActive = filters.freshness === '7d';
+  const dayActive = filters.freshness === '24h';
+  const sinceVisitActive = filters.freshness === 'new_since_visit';
 
   return (
     <aside className="filter-panel" aria-label="Job filters">
@@ -173,6 +174,18 @@ export default function FilterPanel({
       </div>
 
       <div className="filter-quick" role="group" aria-label="Quick filters">
+        <QuickChip
+          label="Last 24h"
+          active={dayActive}
+          onClick={() => update({ freshness: dayActive ? 'all' : '24h' })}
+        />
+        <QuickChip
+          label="Since last visit"
+          active={sinceVisitActive}
+          onClick={() =>
+            update({ freshness: sinceVisitActive ? 'all' : 'new_since_visit' })
+          }
+        />
         <QuickChip
           label="Internships"
           active={internshipsActive}
@@ -193,11 +206,6 @@ export default function FilterPanel({
           onClick={() =>
             update({ workplaceTypes: toggleArrayValue(filters.workplaceTypes, 'remote') })
           }
-        />
-        <QuickChip
-          label="Posted this week"
-          active={weekActive}
-          onClick={() => update({ freshness: weekActive ? 'all' : '7d' })}
         />
         <QuickChip
           label="Startups"

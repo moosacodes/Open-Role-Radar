@@ -7,6 +7,15 @@
 - { company: SimplifyJobs Internships, domain: summer2026-internships.github.io, adapter: simplify, tenant: summer2026-internships }
 - { company: SimplifyJobs New Grad, domain: new-grad-positions.github.io, adapter: simplify, tenant: new-grad-positions }
 
+# --- Workable / SmartRecruiters (verified public APIs) ---
+- { company: Revolut, domain: revolut.com, adapter: workable, tenant: revolut }
+- { company: Typeform, domain: typeform.com, adapter: workable, tenant: typeform }
+- { company: Calm, domain: calm.com, adapter: workable, tenant: calm }
+- { company: Doist, domain: doist.com, adapter: workable, tenant: doist }
+- { company: Wise, domain: wise.com, adapter: workable, tenant: transferwise }
+- { company: Bolt, domain: bolt.eu, adapter: workable, tenant: bolt }
+- { company: Uber, domain: uber.com, adapter: smartrecruiters, tenant: Uber }
+
 # --- Core tech ---
 - { company: Stripe, domain: stripe.com, adapter: greenhouse, tenant: stripe }
 - { company: Figma, domain: figma.com, adapter: greenhouse, tenant: figma }

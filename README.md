@@ -10,9 +10,9 @@ First-party early-career roles (internships, co-ops, new grad) scraped from publ
 ## What it does
 
 - Polls **public** Greenhouse, Lever, Ashby, Workday, Workable, and SmartRecruiters boards on a GitHub Actions schedule
-- **Fast path every 5 minutes**: parallel Greenhouse / Lever / Ashby polls (the same public ATS JSON APIs Simplify scrapes), plus their GitHub listings dump as a discovery signal that auto-promotes new boards into our direct poll list
+- **Fast path every 5 minutes**: 4 parallel shards poll Greenhouse / Lever / Ashby / Workable / SmartRecruiters (same public ATS JSON APIs Simplify scrapes), plus their GitHub listings dump that auto-promotes new boards into our direct poll list — then always merges and publishes `live-feed`
 - Classifies early-career titles (intern / co-op / new-grad / junior / engineer I / campus, plus ATS metadata tags)
-- Exports static JSON + Atom feeds; browser refresh reads a live-feed branch so Pages CDN lag doesn’t hide new syncs
+- Exports static JSON + Atom feeds (`jobs` strict CS + `jobs-wide`); browser refresh reads a live-feed branch so Pages CDN lag doesn’t hide new syncs; `delta.json` lists roles opened/closed since the last sync
 
 ## What it does not do
 

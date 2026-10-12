@@ -117,12 +117,8 @@ def is_cs_relevant(job: Job) -> bool:
     return bool(_CS_TITLE_RE.search(title))
 
 
-def is_public_job(job: Job, *, min_confidence: float | None = None) -> bool:
-    """Return True when a job should appear on the public site/API/feeds.
-
-    Only open/reopened CS-relevant early-career roles with working apply links
-    are published. Confidence threshold comes from config/project.yml.
-    """
+def is_early_career_job(job: Job, *, min_confidence: float | None = None) -> bool:
+    """Open early-career role with a usable apply link (discipline-agnostic)."""
     threshold = _configured_min_confidence() if min_confidence is None else min_confidence
     if job.lifecycle not in {JobLifecycle.OPEN, JobLifecycle.REOPENED}:
         return False
@@ -132,4 +128,23 @@ def is_public_job(job: Job, *, min_confidence: float | None = None) -> bool:
         return False
     if job.career_level_confidence < threshold:
         return False
+    return True
+
+
+def is_public_job(
+    job: Job,
+    *,
+    min_confidence: float | None = None,
+    mode: str = "strict",
+) -> bool:
+    """Return True when a job should appear on the public site/API/feeds.
+
+    Modes:
+    - strict (default): CS-relevant early-career only (main site)
+    - wide: any early-career discipline (secondary feed)
+    """
+    if not is_early_career_job(job, min_confidence=min_confidence):
+        return False
+    if mode == "wide":
+        return not bool(_NOISE_TITLE_RE.search(job.title or ""))
     return is_cs_relevant(job)

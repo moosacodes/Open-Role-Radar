@@ -2,7 +2,7 @@ name: OpenRoleRadar Personal Watch
 
 on:
   schedule:
-    - cron: "30 */6 * * *"
+    - cron: "*/15 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -15,11 +15,16 @@ jobs:
     steps:
       - name: Fetch public feed
         run: |
-          curl -fsSL "${{ vars.ORR_FEED_URL || 'https://moosacodes.github.io/Open-Role-Radar/feeds/early-career.atom' }}" -o feed.atom
+          set -euo pipefail
+          FEED="${{ vars.ORR_FEED_URL }}"
+          if [ -z "$FEED" ]; then
+            FEED="https://moosacodes.github.io/Open-Role-Radar/feeds/jobs.atom"
+          fi
+          curl -fsSL "$FEED" -o feed.atom
 
       - name: Filter matches
         env:
-          KEYWORDS: ${{ vars.ORR_KEYWORDS || 'intern,new grad,graduate' }}
+          KEYWORDS: ${{ vars.ORR_KEYWORDS || 'intern,new grad,graduate,co-op,coop' }}
           LOCATIONS: ${{ vars.ORR_LOCATIONS || '' }}
         run: |
           python3 - <<'PY'
@@ -43,7 +48,10 @@ jobs:
               if locations and not any(l in blob for l in locations):
                   continue
               matches.append((entry.findtext("a:title", default="", namespaces=ns), href))
-          Path("matches.txt").write_text("\n".join(f"{t} | {u}" for t, u in matches), encoding="utf-8")
+          Path("matches.txt").write_text(
+              "\n".join(f"{t} | {u}" for t, u in matches[:50]),
+              encoding="utf-8",
+          )
           print(f"Matched {len(matches)} roles")
           PY
 
@@ -58,7 +66,33 @@ jobs:
             await github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              title: `OpenRoleRadar watch: ${body.split('\n').length} match(es)`,
+              title: `OpenRoleRadar watch: ${body.split('\n').filter(Boolean).length} match(es)`,
               body: ['Matches from your OpenRoleRadar watch workflow:', '', '```', body, '```'].join('\n'),
               labels: ['openroleradar-watch']
             });
+
+      - name: Discord webhook notify
+        if: hashFiles('matches.txt') != ''
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          if [ -z "${DISCORD_WEBHOOK:-}" ]; then
+            echo "DISCORD_WEBHOOK not set — skipping"
+            exit 0
+          fi
+          python3 - <<'PY'
+          import json, os, urllib.request
+          from pathlib import Path
+          text = Path("matches.txt").read_text(encoding="utf-8").strip()
+          if not text:
+              raise SystemExit(0)
+          content = "**OpenRoleRadar watch**\n" + "\n".join(text.splitlines()[:15])
+          req = urllib.request.Request(
+              os.environ["DISCORD_WEBHOOK"],
+              data=json.dumps({"content": content[:1900]}).encode(),
+              headers={"Content-Type": "application/json"},
+              method="POST",
+          )
+          urllib.request.urlopen(req, timeout=20)
+          print("Discord notified")
+          PY

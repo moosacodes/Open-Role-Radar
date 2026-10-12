@@ -5,7 +5,14 @@ from __future__ import annotations
 import asyncio
 import ipaddress
 import socket
+import time
 from functools import lru_cache
+
+# Hostname → (monotonic_expiry, ips). Avoids getaddrinfo on every Greenhouse board.
+_DNS_CACHE: dict[str, tuple[float, tuple[str, ...]]] = {}
+_DNS_CACHE_TTL_SECONDS = 300.0
+_DNS_NEGATIVE_TTL_SECONDS = 30.0
+_DNS_NEGATIVE: dict[str, float] = {}
 
 BLOCKED_NETWORKS: tuple[ipaddress.IPv4Network | ipaddress.IPv6Network, ...] = (
     ipaddress.ip_network("0.0.0.0/8"),
@@ -125,8 +132,36 @@ def _resolve_host_ips_sync(hostname: str) -> list[str]:
 
 
 async def resolve_host_ips(hostname: str) -> list[str]:
-    """Resolve a hostname and return only public IP addresses."""
-    return await asyncio.to_thread(_resolve_host_ips_sync, hostname)
+    """Resolve a hostname and return only public IP addresses.
+
+    Successful lookups are cached briefly so sharded syncs against shared ATS
+    hosts (boards-api.greenhouse.io, etc.) do not pay DNS on every board.
+    """
+    key = hostname.strip().lower().rstrip(".")
+    now = time.monotonic()
+    cached = _DNS_CACHE.get(key)
+    if cached is not None and cached[0] > now:
+        return list(cached[1])
+    negative_until = _DNS_NEGATIVE.get(key)
+    if negative_until is not None and negative_until > now:
+        raise SSRFError(f"DNS resolution recently failed for {hostname} (cached)")
+
+    try:
+        ips = await asyncio.to_thread(_resolve_host_ips_sync, hostname)
+    except SSRFError:
+        _DNS_NEGATIVE[key] = now + _DNS_NEGATIVE_TTL_SECONDS
+        _DNS_CACHE.pop(key, None)
+        raise
+
+    _DNS_CACHE[key] = (now + _DNS_CACHE_TTL_SECONDS, tuple(ips))
+    _DNS_NEGATIVE.pop(key, None)
+    return list(ips)
+
+
+def clear_dns_cache() -> None:
+    """Clear hostname resolution caches (tests / long-running workers)."""
+    _DNS_CACHE.clear()
+    _DNS_NEGATIVE.clear()
 
 
 async def assert_public_host(hostname: str) -> list[str]:

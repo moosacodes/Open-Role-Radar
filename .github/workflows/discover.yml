@@ -2,7 +2,8 @@ name: Source Discovery
 
 on:
   schedule:
-    - cron: "15 4 * * *"
+    # Discovery every 6 hours so new ATS boards land in live-state quickly.
+    - cron: "15 */6 * * *"
   workflow_dispatch:
     inputs:
       github:

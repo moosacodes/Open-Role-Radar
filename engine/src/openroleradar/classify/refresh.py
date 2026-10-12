@@ -11,13 +11,24 @@ from openroleradar.models.state import LiveState
 from openroleradar.normalize.text import html_to_plaintext, truncate_summary
 
 
-def reclassify_state(state: LiveState, *, root: Path | None = None) -> int:
+def reclassify_state(
+    state: LiveState,
+    *,
+    root: Path | None = None,
+    open_only: bool = True,
+) -> int:
     """Refresh career level, academic term, and sanitize summaries before export.
 
     Returns the number of jobs whose career_level or confidence changed.
+    By default only open/reopened roles are reclassified — closed history is
+    immutable for export speed on large live-state blobs.
     """
+    from openroleradar.models.enums import JobLifecycle
+
     changed = 0
     for job in state.jobs.values():
+        if open_only and job.lifecycle not in {JobLifecycle.OPEN, JobLifecycle.REOPENED}:
+            continue
         level, confidence = classify_career_level(
             job.title,
             job.summary,

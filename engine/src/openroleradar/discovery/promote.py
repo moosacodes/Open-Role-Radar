@@ -14,7 +14,9 @@ from openroleradar.models.state import LiveState
 from openroleradar.normalize.text import canonicalize_text
 
 # Same public JSON APIs Simplify scrapes for their curated lists.
-FAST_ATS_ADAPTERS = frozenset({"greenhouse", "lever", "ashby"})
+FAST_ATS_ADAPTERS = frozenset(
+    {"greenhouse", "lever", "ashby", "workable", "smartrecruiters"}
+)
 
 
 def _company_name_from_domain(domain: str) -> str:

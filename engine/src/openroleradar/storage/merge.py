@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from collections.abc import Iterable
 from datetime import datetime
+from typing import Any
 
 from openroleradar.models.enums import JobLifecycle
 from openroleradar.models.job import Company, Job, JobEvent, Source
@@ -72,9 +73,9 @@ def _merge_job(current: Job | None, incoming: Job) -> Job:
     return current
 
 
-def _merge_metadata(current: dict, incoming: dict) -> dict:
+def _merge_metadata(current: dict[str, Any], incoming: dict[str, Any]) -> dict[str, Any]:
     """Shallow-merge metadata, deep-merging per-job miss counters."""
-    merged = {**current, **incoming}
+    merged: dict[str, Any] = {**current, **incoming}
     miss_a = current.get("miss_counts")
     miss_b = incoming.get("miss_counts")
     if isinstance(miss_a, dict) or isinstance(miss_b, dict):

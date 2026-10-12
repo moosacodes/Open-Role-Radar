@@ -27,6 +27,7 @@ from openroleradar.discovery.validate import validate_candidate
 from openroleradar.export.archive import ArchiveExporter
 from openroleradar.export.readme import ReadmeGenerator
 from openroleradar.health.monitor import HealthMonitor
+from openroleradar.models.state import LiveState
 from openroleradar.storage.local import LocalStateStore
 from openroleradar.sync import SyncOrchestrator
 
@@ -118,7 +119,7 @@ def merge_states_cmd(
     """Merge sharded live-state snapshots into one directory for publish."""
     from openroleradar.storage.merge import merge_states
 
-    loaded: list = []
+    loaded: list[LiveState] = []
     for raw in inputs:
         path = raw
         if path.is_dir():

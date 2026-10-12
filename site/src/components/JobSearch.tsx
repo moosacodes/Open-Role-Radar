@@ -17,8 +17,10 @@ import {
   totalPages,
 } from '../lib/search';
 import {
+  beginVisitSession,
+  endVisitSession,
+  getSessionBaseline,
   loadPreferences,
-  recordVisit,
   setOriginCountry,
   toggleSavedJob,
 } from '../lib/storage';
@@ -44,7 +46,15 @@ const EMPTY_STATS: SiteStats = {
   generatedAt: new Date().toISOString(),
 };
 
-function HeroBanner() {
+function HeroBanner({
+  newSinceVisit,
+  onShowNew,
+  onShowLast2h,
+}: {
+  newSinceVisit: number;
+  onShowNew: () => void;
+  onShowLast2h: () => void;
+}) {
   return (
     <section className="hero hero--compact">
       <div className="hero__copy">
@@ -52,13 +62,18 @@ function HeroBanner() {
           OpenRole<span>Radar</span>
         </h1>
         <p className="hero__lead">
-          Real software internships and new-grad roles from company career pages and public ATS
-          boards.
+          Be first. Live CS internships and new-grad roles from first-party ATS boards — refreshed
+          continuously.
         </p>
         <div className="hero__actions">
-          <a className="btn btn--primary" href="#roles">
-            Browse roles
-          </a>
+          <button type="button" className="btn btn--primary" onClick={onShowNew}>
+            {newSinceVisit > 0
+              ? `Show ${newSinceVisit.toLocaleString()} new since last visit`
+              : 'Show new since last visit'}
+          </button>
+          <button type="button" className="btn btn--ghost" onClick={onShowLast2h}>
+            Last 2 hours
+          </button>
           <a
             className="btn btn--ghost"
             href="https://github.com/moosacodes/Open-Role-Radar"
@@ -75,11 +90,11 @@ function HeroBanner() {
         <ul>
           <li>
             <span className="hero__check" aria-hidden="true" />
-            Direct from company career pages
+            Direct apply links from employer ATS boards
           </li>
           <li>
             <span className="hero__check" aria-hidden="true" />
-            Season, startup, and region filters
+            Hot companies polled every few minutes
           </li>
           <li>
             <span className="hero__check" aria-hidden="true" />
@@ -97,9 +112,20 @@ export default function JobSearch({
   showStats = true,
   showHero = false,
 }: JobSearchProps) {
+  const [sessionBaseline] = useState<string | null>(() => {
+    if (typeof window === 'undefined') return null;
+    return beginVisitSession();
+  });
   const [filters, setFilters] = useState<FilterState>(() => {
     if (typeof window === 'undefined') return DEFAULT_FILTERS;
     const parsed = parseFiltersFromUrl(window.location.search);
+    const params = new URLSearchParams(window.location.search);
+    const baseline =
+      typeof window !== 'undefined' ? beginVisitSession() : null;
+    // Default to "new since visit" when we have a prior visit and URL didn't pick one.
+    if (!params.has('freshness') && baseline) {
+      return { ...parsed, freshness: 'new_since_visit', view: 'table' };
+    }
     return { ...parsed, view: 'table' };
   });
   const [jobs, setJobs] = useState<Job[]>([]);
@@ -184,10 +210,11 @@ export default function JobSearch({
         lastStampRef.current = manifest.generated_at;
 
         const stored = loadPreferences();
+        const baseline = getSessionBaseline() ?? sessionBaseline;
         startTransition(() => {
           setJobs(scopedJobs);
           setPrefs(stored);
-          setStats(computeStats(scopedJobs, stored.lastVisit, manifest.generated_at));
+          setStats(computeStats(scopedJobs, baseline, manifest.generated_at));
         });
 
         if (stored.originCountry && !filters.originCountry) {
@@ -266,26 +293,47 @@ export default function JobSearch({
   }, [filters.originCountry, prefs.originCountry]);
 
   useEffect(() => {
-    const handleLeave = () => recordVisit();
+    const handleLeave = () => endVisitSession();
     window.addEventListener('pagehide', handleLeave);
     return () => {
       window.removeEventListener('pagehide', handleLeave);
-      handleLeave();
+      // Do not end the session on React remount — only on real page leave.
     };
   }, []);
 
   const index = useMemo(() => buildSearchIndex(jobs), [jobs]);
   const facets = useMemo(() => collectFacetValues(jobs), [jobs]);
+  const visitBaseline = sessionBaseline ?? getSessionBaseline();
 
   const filteredJobs = useMemo(
     () =>
       filterJobs(jobs, index, { ...filters, view: 'table' }, {
         savedJobIds: new Set(prefs.savedJobIds),
         dismissedJobIds: new Set(prefs.dismissedJobIds),
-        lastVisit: prefs.lastVisit,
+        lastVisit: visitBaseline,
       }),
-    [jobs, index, filters, prefs],
+    [jobs, index, filters, prefs, visitBaseline],
   );
+
+  const showNewSinceVisit = useCallback(() => {
+    setFilters((current) => ({
+      ...current,
+      freshness: 'new_since_visit',
+      page: 1,
+      view: 'table',
+    }));
+    document.getElementById('roles')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, []);
+
+  const showLast2h = useCallback(() => {
+    setFilters((current) => ({
+      ...current,
+      freshness: '2h',
+      page: 1,
+      view: 'table',
+    }));
+    document.getElementById('roles')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, []);
 
   const pageJobs = useMemo(
     () => paginateJobs(filteredJobs, filters.page, filters.pageSize),
@@ -307,11 +355,11 @@ export default function JobSearch({
       const hotWindow = 24 * 60 * 60 * 1000;
       if (!Number.isNaN(firstSeen) && now - firstSeen < hotWindow) return true;
       if (!Number.isNaN(posted) && now - posted < hotWindow) return true;
-      if (!prefs.lastVisit) return false;
-      const visit = Date.parse(prefs.lastVisit);
-      return !Number.isNaN(posted) && !Number.isNaN(visit) && posted > visit;
+      if (!visitBaseline) return false;
+      const visit = Date.parse(visitBaseline);
+      return !Number.isNaN(firstSeen) && !Number.isNaN(visit) && firstSeen > visit;
     },
-    [prefs.lastVisit],
+    [visitBaseline],
   );
 
   useEffect(() => {
@@ -400,8 +448,21 @@ export default function JobSearch({
         </div>
 
         <div className="job-search__main">
-          {showHero ? <HeroBanner /> : null}
-          {showStats ? <StatsBar stats={stats} loading={loading} syncing={syncing} /> : null}
+          {showHero ? (
+            <HeroBanner
+              newSinceVisit={stats.newSinceVisit}
+              onShowNew={showNewSinceVisit}
+              onShowLast2h={showLast2h}
+            />
+          ) : null}
+          {showStats ? (
+            <StatsBar
+              stats={stats}
+              loading={loading}
+              syncing={syncing}
+              onNewSinceVisit={showNewSinceVisit}
+            />
+          ) : null}
 
           <section id="roles" className="job-search__results" aria-label="Job results">
             <div className="job-search__toolbar">

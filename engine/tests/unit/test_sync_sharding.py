@@ -58,3 +58,57 @@ def test_sources_due_keeps_simplify_on_shard_zero_only(tmp_path) -> None:
     for shard in (1, 2, 3):
         due = orchestrator._sources_due(state, now, shard=shard, shards=4)
         assert all(s.adapter != "simplify" for s in due)
+
+
+def test_sources_due_always_includes_hot_skips_future_cold(tmp_path) -> None:
+    from datetime import timedelta
+
+    orchestrator = SyncOrchestrator(root=find_repo_root(), state_dir=tmp_path / "state")
+    now = datetime.now(UTC)
+    state = LiveState(
+        sources={
+            "hot": Source(
+                source_id="hot1",
+                company_id="co1",
+                company_name="HotCo",
+                company_domain="hot.com",
+                careers_url="https://hot.com/careers",
+                adapter="greenhouse",
+                adapter_tenant="hot",
+                first_discovered_at=now,
+                poll_tier="hot",
+                next_due_at=now + timedelta(hours=2),
+                enabled=True,
+            ),
+            "cold-future": Source(
+                source_id="cold1",
+                company_id="co2",
+                company_name="ColdCo",
+                company_domain="cold.com",
+                careers_url="https://cold.com/careers",
+                adapter="greenhouse",
+                adapter_tenant="cold",
+                first_discovered_at=now,
+                poll_tier="cold",
+                next_due_at=now + timedelta(hours=2),
+                enabled=True,
+            ),
+            "cold-due": Source(
+                source_id="cold2",
+                company_id="co3",
+                company_name="DueCo",
+                company_domain="due.com",
+                careers_url="https://due.com/careers",
+                adapter="greenhouse",
+                adapter_tenant="due",
+                first_discovered_at=now,
+                poll_tier="cold",
+                next_due_at=now - timedelta(minutes=1),
+                enabled=True,
+            ),
+        }
+    )
+    due_ids = {s.source_id for s in orchestrator._sources_due(state, now)}
+    assert "hot1" in due_ids
+    assert "cold2" in due_ids
+    assert "cold1" not in due_ids

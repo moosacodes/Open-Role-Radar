@@ -1,4 +1,6 @@
 const STORAGE_PREFIX = 'orr:';
+const SESSION_BASELINE_KEY = `${STORAGE_PREFIX}sessionBaseline`;
+const SESSION_STARTED_KEY = `${STORAGE_PREFIX}sessionStarted`;
 
 export interface UserPreferences {
   savedJobIds: string[];
@@ -22,6 +24,10 @@ function storageKey(key: keyof UserPreferences): string {
 
 function canUseStorage(): boolean {
   return typeof window !== 'undefined' && typeof window.localStorage !== 'undefined';
+}
+
+function canUseSession(): boolean {
+  return typeof window !== 'undefined' && typeof window.sessionStorage !== 'undefined';
 }
 
 function readJson<T>(key: string, fallback: T): T {
@@ -82,10 +88,47 @@ export function toggleDismissedJob(jobId: string): UserPreferences {
   return savePreferences({ dismissedJobIds: [...dismissed] });
 }
 
-export function recordVisit(): string {
+/**
+ * Start a browsing session. Captures the previous visit as the baseline for
+ * "new since last visit" without overwriting it until the user leaves.
+ */
+export function beginVisitSession(): string | null {
+  if (!canUseSession()) {
+    return loadPreferences().lastVisit;
+  }
+  const existing = window.sessionStorage.getItem(SESSION_STARTED_KEY);
+  if (existing) {
+    const baseline = window.sessionStorage.getItem(SESSION_BASELINE_KEY);
+    return baseline || null;
+  }
+  const baseline = loadPreferences().lastVisit;
+  window.sessionStorage.setItem(SESSION_STARTED_KEY, new Date().toISOString());
+  window.sessionStorage.setItem(SESSION_BASELINE_KEY, baseline ?? '');
+  return baseline;
+}
+
+/** Baseline timestamp for this tab session (previous visit), or null. */
+export function getSessionBaseline(): string | null {
+  if (!canUseSession()) {
+    return loadPreferences().lastVisit;
+  }
+  if (!window.sessionStorage.getItem(SESSION_STARTED_KEY)) {
+    return beginVisitSession();
+  }
+  const baseline = window.sessionStorage.getItem(SESSION_BASELINE_KEY);
+  return baseline || null;
+}
+
+/** Persist this session as the next visit marker (call on page leave only). */
+export function endVisitSession(): string {
   const now = new Date().toISOString();
   savePreferences({ lastVisit: now });
   return now;
+}
+
+/** @deprecated use endVisitSession — kept for call-site compatibility */
+export function recordVisit(): string {
+  return endVisitSession();
 }
 
 export function setOriginCountry(country: string): UserPreferences {

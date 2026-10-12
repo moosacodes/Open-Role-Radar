@@ -1,32 +1,41 @@
 # OpenRoleRadar Personal Watch
 
-Run your own lightweight job alert using the **public** OpenRoleRadar Atom feed—no API keys required.
+Run your own lightweight **new-role alerts** on free GitHub Actions minutes. Alerts only fire for roles you have not seen before.
 
 ## Quick start
 
-1. Copy `workflow.yml` into your repository at `.github/workflows/openroleradar-watch.yml`.
-2. (Optional) Add repository variables under **Settings → Secrets and variables → Actions → Variables**:
-   - `ORR_FEED_URL` — defaults to `https://moosacodes.github.io/Open-Role-Radar/feeds/jobs.atom` (use `jobs-wide.atom` for all disciplines)
-   - `ORR_KEYWORDS` — comma-separated terms, e.g. `backend,python,remote`
-   - `ORR_LOCATIONS` — comma-separated location hints, e.g. `london,berlin,remote`
-3. (Optional) Add secret `DISCORD_WEBHOOK` for Discord pings.
-4. Create a label named `openroleradar-watch` (or edit the workflow).
-5. Adjust the `schedule` cron expression to your preferred frequency (default every 15 minutes).
+1. Copy `workflow.yml` into **your** repo at `.github/workflows/openroleradar-watch.yml`.
+2. Create label `openroleradar-watch` (or edit the workflow).
+3. Optional variables (**Settings → Secrets and variables → Actions → Variables**):
+
+| Variable | Default | Purpose |
+| --- | --- | --- |
+| `ORR_FEED_URL` | Pages `jobs.atom` | Use `jobs-wide.atom` for all disciplines |
+| `ORR_KEYWORDS` | `intern,new grad,graduate,co-op,coop` | Title/summary match |
+| `ORR_LOCATIONS` | _(empty)_ | Location hints |
+| `ORR_COMPANIES` | _(empty)_ | Company name substrings |
+| `ORR_ONLY_NEW` | `true` | Skip roles already alerted |
+
+4. Optional secrets for instant pings:
+
+| Secret | Purpose |
+| --- | --- |
+| `DISCORD_WEBHOOK` | Discord channel webhook URL |
+| `TELEGRAM_BOT_TOKEN` | Bot token from @BotFather |
+| `TELEGRAM_CHAT_ID` | Your chat / channel id |
+
+5. Default schedule is every **15 minutes** — edit the cron if you want.
 
 ## How it works
 
-The workflow downloads the published Atom feed, filters entries locally in a short Python script, and opens a GitHub issue (and optional Discord message) when matches are found. It uses **read-only** `contents` permission plus `issues: write` to notify you.
+1. Downloads the public Atom feed.
+2. Diffs entry ids against a cached `seen_ids.json` (Actions cache).
+3. Opens a GitHub issue and/or pings Discord/Telegram **only for new ids**.
 
-## Privacy and security
+No OpenRoleRadar API keys. Forks of this template repo do not run against OpenRoleRadar’s minutes — they use **yours**.
 
-- No OpenRoleRadar secrets are needed.
-- The workflow only reads public feed URLs.
-- Forks of OpenRoleRadar itself do not execute this template automatically.
+## Tips
 
-## Customization ideas
-
-- Point `ORR_FEED_URL` at `feeds/jobs-wide.atom` for non-CS early-career roles.
-- Diff against a cached `last_seen.txt` artifact to report only new roles.
-- Combine with GitHub's `workflow_dispatch` for manual checks before interviews.
-
-See also: [docs/OPERATIONS.md](../../docs/OPERATIONS.md).
+- First run may alert on the whole current feed; after that only newcomers.
+- Set `ORR_ONLY_NEW=false` once if you want a full dump.
+- Pair with the site’s **Since last visit** filter while browsing manually.

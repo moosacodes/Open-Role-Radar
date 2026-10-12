@@ -33,6 +33,9 @@ polling:
     cold_minutes: 8
     dormant_minutes: 20
   max_sources_per_sync: 2000
+  # Hot boards (recent new roles) are always eligible; cold boards only when due.
+  max_hot_sources_per_sync: 600
+  max_cold_sources_per_sync: 400
   # Soft budget so sync can save + export before the Actions job timeout.
   # Fast path overrides via OPENROLERADAR_MAX_SYNC_RUNTIME_MINUTES.
   max_sync_runtime_minutes: 45

@@ -189,7 +189,7 @@ export type MobilityFlag =
   | 'housing'
   | 'airfare';
 
-export type FreshnessFilter = 'all' | '24h' | '7d' | '30d' | 'new_since_visit';
+export type FreshnessFilter = 'all' | '2h' | '24h' | '7d' | '30d' | 'new_since_visit';
 
 export type SortMode = 'diverse' | 'newest' | 'company' | 'title';
 

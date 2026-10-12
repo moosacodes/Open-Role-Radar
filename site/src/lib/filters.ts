@@ -13,7 +13,7 @@ export const DEFAULT_FILTERS: FilterState = {
   academicTerms: [],
   companyIds: [],
   startupsOnly: false,
-  // Default to last-day freshness so "be first" is the default experience.
+  // Prefer "new since visit" once a session baseline exists; else last 24h.
   freshness: '24h',
   mobility: [],
   originCountry: '',

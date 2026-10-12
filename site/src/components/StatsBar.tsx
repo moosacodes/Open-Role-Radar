@@ -6,6 +6,7 @@ interface StatsBarProps {
   stats: SiteStats;
   loading?: boolean;
   syncing?: boolean;
+  onNewSinceVisit?: () => void;
 }
 
 function useCountUp(target: number, enabled: boolean) {
@@ -38,7 +39,12 @@ function useCountUp(target: number, enabled: boolean) {
   return value;
 }
 
-export default function StatsBar({ stats, loading, syncing = false }: StatsBarProps) {
+export default function StatsBar({
+  stats,
+  loading,
+  syncing = false,
+  onNewSinceVisit,
+}: StatsBarProps) {
   const roles = useCountUp(stats.totalJobs, !loading);
   const companies = useCountUp(stats.totalCompanies, !loading);
   const visa = useCountUp(stats.withVisa, !loading);
@@ -119,7 +125,19 @@ export default function StatsBar({ stats, loading, syncing = false }: StatsBarPr
         </div>
       </div>
       {!loading && stats.newSinceVisit > 0 ? (
-        <p className="stats-bar__new">{stats.newSinceVisit} new since your last visit</p>
+        onNewSinceVisit ? (
+          <button
+            type="button"
+            className="stats-bar__new stats-bar__new--button"
+            onClick={onNewSinceVisit}
+          >
+            {stats.newSinceVisit.toLocaleString()} new since your last visit — view
+          </button>
+        ) : (
+          <p className="stats-bar__new">
+            {stats.newSinceVisit.toLocaleString()} new since your last visit
+          </p>
+        )
       ) : null}
     </section>
   );

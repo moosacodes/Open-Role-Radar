@@ -161,6 +161,7 @@ export default function FilterPanel({
   const internshipsActive = filters.careerLevels.includes('internship');
   const newGradActive = filters.careerLevels.includes('new_grad');
   const remoteActive = filters.workplaceTypes.includes('remote');
+  const twoHourActive = filters.freshness === '2h';
   const dayActive = filters.freshness === '24h';
   const sinceVisitActive = filters.freshness === 'new_since_visit';
 
@@ -175,16 +176,21 @@ export default function FilterPanel({
 
       <div className="filter-quick" role="group" aria-label="Quick filters">
         <QuickChip
-          label="Last 24h"
-          active={dayActive}
-          onClick={() => update({ freshness: dayActive ? 'all' : '24h' })}
-        />
-        <QuickChip
           label="Since last visit"
           active={sinceVisitActive}
           onClick={() =>
             update({ freshness: sinceVisitActive ? 'all' : 'new_since_visit' })
           }
+        />
+        <QuickChip
+          label="Last 2h"
+          active={twoHourActive}
+          onClick={() => update({ freshness: twoHourActive ? 'all' : '2h' })}
+        />
+        <QuickChip
+          label="Last 24h"
+          active={dayActive}
+          onClick={() => update({ freshness: dayActive ? 'all' : '24h' })}
         />
         <QuickChip
           label="Internships"
@@ -343,10 +349,11 @@ export default function FilterPanel({
           }
         >
           <option value="all">Any time</option>
+          <option value="new_since_visit">New since last visit</option>
+          <option value="2h">Last 2 hours</option>
           <option value="24h">Last 24 hours</option>
           <option value="7d">Last 7 days</option>
           <option value="30d">Last 30 days</option>
-          <option value="new_since_visit">New since last visit</option>
         </select>
       </FilterSection>
 

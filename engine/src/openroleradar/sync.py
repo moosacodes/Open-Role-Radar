@@ -133,11 +133,15 @@ class SyncOrchestrator:
         shard: int = 0,
         shards: int = 1,
     ) -> list[Source]:
-        """Return every enabled source each sync so refresh gets fresh publishes.
+        """Return sources this worker should poll.
 
-        Ordering still prefers the oldest / never-polled sources when capped.
-        When shards > 1, only this worker's partition is returned. Simplify /
-        multi-company feeds always run on shard 0 so discovery stays centralized.
+        Hot boards (and Simplify discovery feeds) are always eligible so we can
+        be first on active employers. Warm/cold/dormant boards only join when
+        ``next_due_at`` has elapsed, which rotates coverage across runs without
+        burning the whole budget on quiet boards every cycle.
+
+        When shards > 1, only this worker's partition is returned. Simplify
+        always runs on shard 0 so discovery stays centralized.
         """
         if shards < 1:
             raise ValueError("shards must be >= 1")
@@ -145,7 +149,11 @@ class SyncOrchestrator:
             raise ValueError(f"shard must be in [0, {shards})")
 
         max_sources = int(self.config.polling.get("max_sources_per_sync", 500))
-        due: list[Source] = []
+        max_hot = int(self.config.polling.get("max_hot_sources_per_sync", max_sources))
+        max_cold = int(self.config.polling.get("max_cold_sources_per_sync", max_sources))
+
+        hot: list[Source] = []
+        cold: list[Source] = []
         for source in state.sources.values():
             if not source.enabled:
                 continue
@@ -159,17 +167,32 @@ class SyncOrchestrator:
                         continue
                 elif self.source_shard(source.source_id, shards) != shard:
                     continue
-            due.append(source)
-        # Multi-company feeds (Simplify / SWE List) first — cheap and high-signal.
-        # Within a shard, prefer hot boards and the longest-overdue sources.
-        due.sort(
+
+            is_priority = source.adapter == "simplify" or source.poll_tier == "hot"
+            if is_priority:
+                hot.append(source)
+                continue
+            # Cold/warm rotate by due time — skip boards that are not due yet.
+            if source.next_due_at is not None and source.next_due_at > now:
+                continue
+            cold.append(source)
+
+        hot.sort(
             key=lambda s: (
                 0 if s.adapter == "simplify" else 1,
-                0 if s.poll_tier == "hot" else 1,
                 s.next_due_at or datetime.min.replace(tzinfo=UTC),
             )
         )
-        return due[:max_sources]
+        # Fair cold rotation: oldest due first, then stable source_id.
+        cold.sort(
+            key=lambda s: (
+                s.next_due_at or datetime.min.replace(tzinfo=UTC),
+                s.source_id,
+            )
+        )
+
+        selected = [*hot[:max_hot], *cold[:max_cold]]
+        return selected[:max_sources]
 
     def _company_for_raw(
         self,
@@ -530,9 +553,12 @@ class SyncOrchestrator:
                     seen_by_source[source.source_id] = self._ingest_raw_jobs(
                         state, source, raw_jobs, now=now, summary=summary
                     )
-                    # Boards that just produced brand-new roles stay on the hot tier.
+                    # Boards that just produced brand-new roles stay on the hot tier;
+                    # quiet boards demote so cold rotation can reclaim budget.
                     if int(summary["new_jobs"]) > new_before:
                         source.poll_tier = "hot"
+                    elif source.poll_tier == "hot" and source.adapter != "simplify":
+                        source.poll_tier = "warm"
 
                     if source.adapter == "simplify":
                         promoted = self._promote_boards_from_raw_jobs(

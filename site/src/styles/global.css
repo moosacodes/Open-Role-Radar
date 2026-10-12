@@ -557,6 +557,30 @@ main {
   font-weight: 700;
 }
 
+.stats-bar__new--button {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  font-weight: 700;
+}
+
+.stats-bar__new--button:hover,
+.stats-bar__new--button:focus-visible {
+  text-decoration: underline;
+  outline: none;
+}
+
+.hero__actions .btn {
+  cursor: pointer;
+}
+
 .job-search__layout {
   display: grid;
   grid-template-columns: minmax(260px, 300px) minmax(0, 1fr);

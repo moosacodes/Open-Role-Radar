@@ -1,5 +1,8 @@
 name: OpenRoleRadar Personal Watch
 
+# Poll the public Atom feed on your own GitHub Actions minutes and alert only on
+# NEW matches via GitHub Issues, Discord, and/or Telegram.
+
 on:
   schedule:
     - cron: "*/15 * * * *"
@@ -21,58 +24,119 @@ jobs:
             FEED="https://moosacodes.github.io/Open-Role-Radar/feeds/jobs.atom"
           fi
           curl -fsSL "$FEED" -o feed.atom
+          echo "Fetched $FEED"
 
-      - name: Filter matches
+      - name: Restore seen ids
+        uses: actions/cache@d4323d4df104b026a6aa633fdb11d772146be0bf # v4.2.2
+        with:
+          path: .orr-watch
+          key: orr-watch-${{ github.repository }}-${{ github.run_id }}
+          restore-keys: |
+            orr-watch-${{ github.repository }}-
+
+      - name: Filter new matches
         env:
           KEYWORDS: ${{ vars.ORR_KEYWORDS || 'intern,new grad,graduate,co-op,coop' }}
           LOCATIONS: ${{ vars.ORR_LOCATIONS || '' }}
+          COMPANIES: ${{ vars.ORR_COMPANIES || '' }}
+          ONLY_NEW: ${{ vars.ORR_ONLY_NEW || 'true' }}
         run: |
           python3 - <<'PY'
+          import json
           import os
           import xml.etree.ElementTree as ET
           from pathlib import Path
+
+          watch_dir = Path(".orr-watch")
+          watch_dir.mkdir(parents=True, exist_ok=True)
+          seen_path = watch_dir / "seen_ids.json"
+          seen: set[str] = set()
+          if seen_path.exists():
+              try:
+                  seen = {str(x) for x in json.loads(seen_path.read_text(encoding="utf-8"))}
+              except json.JSONDecodeError:
+                  seen = set()
 
           ns = {"a": "http://www.w3.org/2005/Atom"}
           root = ET.parse("feed.atom").getroot()
           keywords = [k.strip().lower() for k in os.environ.get("KEYWORDS", "").split(",") if k.strip()]
           locations = [l.strip().lower() for l in os.environ.get("LOCATIONS", "").split(",") if l.strip()]
+          companies = [c.strip().lower() for c in os.environ.get("COMPANIES", "").split(",") if c.strip()]
+          only_new = os.environ.get("ONLY_NEW", "true").lower() not in {"0", "false", "no"}
+
           matches = []
+          current_ids: set[str] = set()
           for entry in root.findall("a:entry", ns):
-              title = (entry.findtext("a:title", default="", namespaces=ns) or "").lower()
-              summary = (entry.findtext("a:summary", default="", namespaces=ns) or "").lower()
+              entry_id = (entry.findtext("a:id", default="", namespaces=ns) or "").strip()
+              title = entry.findtext("a:title", default="", namespaces=ns) or ""
+              summary = entry.findtext("a:summary", default="", namespaces=ns) or ""
+              author = entry.find("a:author", ns)
+              company = ""
+              if author is not None:
+                  name_el = author.find("a:name", ns)
+                  company = (name_el.text or "") if name_el is not None else ""
               link = entry.find("a:link", ns)
               href = link.get("href") if link is not None else ""
-              blob = f"{title} {summary}"
+              key = entry_id or href or title
+              if not key:
+                  continue
+              current_ids.add(key)
+              blob = f"{title} {summary} {company}".lower()
               if keywords and not any(k in blob for k in keywords):
                   continue
               if locations and not any(l in blob for l in locations):
                   continue
-              matches.append((entry.findtext("a:title", default="", namespaces=ns), href))
-          Path("matches.txt").write_text(
-              "\n".join(f"{t} | {u}" for t, u in matches[:50]),
-              encoding="utf-8",
-          )
-          print(f"Matched {len(matches)} roles")
+              if companies and not any(c in company.lower() or c in blob for c in companies):
+                  continue
+              if only_new and key in seen:
+                  continue
+              matches.append({"id": key, "title": title, "company": company, "url": href})
+
+          Path("matches.json").write_text(json.dumps(matches[:40], indent=2), encoding="utf-8")
+          lines = [
+              f"{m['title']} @ {m['company']} | {m['url']}".replace(" @  ", " ").strip()
+              for m in matches[:40]
+          ]
+          Path("matches.txt").write_text("\n".join(lines), encoding="utf-8")
+          if matches:
+              Path("has_matches").write_text("1", encoding="utf-8")
+          elif Path("has_matches").exists():
+              Path("has_matches").unlink()
+
+          merged = sorted(seen | current_ids)
+          if len(merged) > 20000:
+              merged = merged[-20000:]
+          seen_path.write_text(json.dumps(merged), encoding="utf-8")
+          print(f"Matched {len(matches)} new role(s); tracking {len(merged)} feed ids")
           PY
 
-      - name: Open issue on matches
-        if: hashFiles('matches.txt') != ''
+      - name: Open issue on new matches
+        if: hashFiles('has_matches') != ''
         uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
         with:
           script: |
             const fs = require('fs');
-            const body = fs.readFileSync('matches.txt', 'utf8');
-            if (!body.trim()) return;
+            const body = fs.readFileSync('matches.txt', 'utf8').trim();
+            if (!body) return;
+            const lines = body.split('\n').filter(Boolean);
             await github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              title: `OpenRoleRadar watch: ${body.split('\n').filter(Boolean).length} match(es)`,
-              body: ['Matches from your OpenRoleRadar watch workflow:', '', '```', body, '```'].join('\n'),
+              title: `OpenRoleRadar: ${lines.length} new match(es)`,
+              body: [
+                'New roles from your OpenRoleRadar watch (only previously unseen ids):',
+                '',
+                '```',
+                body,
+                '```',
+                '',
+                'Tip: set `DISCORD_WEBHOOK` or `TELEGRAM_BOT_TOKEN` + `TELEGRAM_CHAT_ID` secrets for instant pings.',
+              ].join('\n'),
               labels: ['openroleradar-watch']
             });
 
       - name: Discord webhook notify
-        if: hashFiles('matches.txt') != ''
+        if: hashFiles('has_matches') != ''
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: |
@@ -86,7 +150,7 @@ jobs:
           text = Path("matches.txt").read_text(encoding="utf-8").strip()
           if not text:
               raise SystemExit(0)
-          content = "**OpenRoleRadar watch**\n" + "\n".join(text.splitlines()[:15])
+          content = "**OpenRoleRadar — new roles**\n" + "\n".join(text.splitlines()[:12])
           req = urllib.request.Request(
               os.environ["DISCORD_WEBHOOK"],
               data=json.dumps({"content": content[:1900]}).encode(),
@@ -96,3 +160,38 @@ jobs:
           urllib.request.urlopen(req, timeout=20)
           print("Discord notified")
           PY
+
+      - name: Telegram notify
+        if: hashFiles('has_matches') != ''
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          if [ -z "${TELEGRAM_BOT_TOKEN:-}" ] || [ -z "${TELEGRAM_CHAT_ID:-}" ]; then
+            echo "Telegram secrets not set — skipping"
+            exit 0
+          fi
+          python3 - <<'PY'
+          import os, urllib.parse, urllib.request
+          from pathlib import Path
+          text = Path("matches.txt").read_text(encoding="utf-8").strip()
+          if not text:
+              raise SystemExit(0)
+          body = "OpenRoleRadar — new roles\n" + "\n".join(text.splitlines()[:12])
+          token = os.environ["TELEGRAM_BOT_TOKEN"]
+          chat = os.environ["TELEGRAM_CHAT_ID"]
+          url = f"https://api.telegram.org/bot{token}/sendMessage"
+          payload = urllib.parse.urlencode(
+              {"chat_id": chat, "text": body[:3900], "disable_web_page_preview": "true"}
+          ).encode()
+          req = urllib.request.Request(url, data=payload, method="POST")
+          urllib.request.urlopen(req, timeout=20)
+          print("Telegram notified")
+          PY
+
+      - name: Save seen ids
+        if: always()
+        uses: actions/cache/save@d4323d4df104b026a6aa633fdb11d772146be0bf # v4.2.2
+        with:
+          path: .orr-watch
+          key: orr-watch-${{ github.repository }}-${{ github.run_id }}

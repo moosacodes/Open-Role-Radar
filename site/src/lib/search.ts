@@ -21,6 +21,7 @@ import {
 } from './types';
 
 const FRESHNESS_MS: Record<string, number> = {
+  '2h': 2 * 60 * 60 * 1000,
   '24h': 24 * 60 * 60 * 1000,
   '7d': 7 * 24 * 60 * 60 * 1000,
   '30d': 30 * 24 * 60 * 60 * 1000,
@@ -113,6 +114,17 @@ export function matchesQuery(entry: SearchIndexEntry, tokens: string[]): boolean
   return tokens.every((token) => haystack.includes(token));
 }
 
+/** Prefer radar first-seen for "new since visit"; posted_at for time windows. */
+export function freshnessTimestamp(
+  job: Pick<Job, 'source_posted_at' | 'first_seen_at'>,
+  freshness: FilterState['freshness'],
+): string {
+  if (freshness === 'new_since_visit') {
+    return job.first_seen_at || postedAt(job);
+  }
+  return postedAt(job);
+}
+
 export function matchesFreshness(
   dateIso: string,
   freshness: FilterState['freshness'],
@@ -123,7 +135,10 @@ export function matchesFreshness(
   if (Number.isNaN(seen)) return true;
 
   if (freshness === 'new_since_visit') {
-    if (!lastVisit) return true;
+    // No prior visit yet — show last 24h so the feed still feels fresh.
+    if (!lastVisit) {
+      return Date.now() - seen <= FRESHNESS_MS['24h'];
+    }
     const visit = Date.parse(lastVisit);
     return !Number.isNaN(visit) && seen > visit;
   }
@@ -272,7 +287,11 @@ export function filterJobs(
       return false;
     }
 
-    if (!matchesFreshness(entry.posted_at, filters.freshness, options.lastVisit ?? null)) {
+    const freshnessAt = freshnessTimestamp(
+      { source_posted_at: job.source_posted_at, first_seen_at: entry.first_seen_at },
+      filters.freshness,
+    );
+    if (!matchesFreshness(freshnessAt, filters.freshness, options.lastVisit ?? null)) {
       return false;
     }
 
@@ -315,10 +334,13 @@ export function computeStats(
     (job) => job.mobility.relocation_assistance.status === 'confirmed',
   ).length;
   const remoteCount = jobs.filter((job) => job.workplace_type === 'remote').length;
-  const newSinceVisit = lastVisit
-    ? jobs.filter((job) => matchesFreshness(postedAt(job), 'new_since_visit', lastVisit))
-        .length
-    : 0;
+  const newSinceVisit = jobs.filter((job) =>
+    matchesFreshness(
+      freshnessTimestamp(job, 'new_since_visit'),
+      'new_since_visit',
+      lastVisit,
+    ),
+  ).length;
 
   return {
     totalJobs: jobs.length,

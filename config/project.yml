@@ -33,18 +33,22 @@ polling:
     cold_minutes: 8
     dormant_minutes: 20
   max_sources_per_sync: 2000
+  # Soft budget so sync can save + export before the Actions job timeout.
+  # Fast path overrides via OPENROLERADAR_MAX_SYNC_RUNTIME_MINUTES.
   max_sync_runtime_minutes: 45
 
 http:
-  timeout_seconds: 30
+  timeout_seconds: 20
   max_redirects: 5
   # Large Ashby/Greenhouse boards exceed 10MB; keep headroom for full payloads.
   max_response_bytes: 33554432
   global_concurrency: 32
-  per_host_concurrency: 4
-  retry_max_attempts: 3
-  retry_base_delay_seconds: 1.0
-  retry_max_delay_seconds: 60.0
+  # Shared ATS hosts (boards.greenhouse.io / api.lever.co) dominate the fast
+  # path; 4 concurrent slots made ~500 boards overrun the 12m job timeout.
+  per_host_concurrency: 12
+  retry_max_attempts: 2
+  retry_base_delay_seconds: 0.5
+  retry_max_delay_seconds: 8.0
 
 lifecycle:
   misses_before_suspected_closed: 2

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import asyncio
 import logging
+import os
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import Any
@@ -385,6 +386,17 @@ class SyncOrchestrator:
             company.last_seen_at = now
         return source_job_ids
 
+    def _sync_runtime_limit_minutes(self) -> float | None:
+        """Return soft sync deadline in minutes, or None when unbounded."""
+        raw = os.environ.get("OPENROLERADAR_MAX_SYNC_RUNTIME_MINUTES")
+        if raw is not None and raw.strip() != "":
+            minutes = float(raw)
+        else:
+            minutes = float(self.config.polling.get("max_sync_runtime_minutes", 0) or 0)
+        if minutes <= 0:
+            return None
+        return minutes
+
     async def run_sync(
         self,
         *,
@@ -398,6 +410,11 @@ class SyncOrchestrator:
         if sample:
             due = due[:3]
 
+        runtime_minutes = self._sync_runtime_limit_minutes()
+        deadline = (
+            now + timedelta(minutes=runtime_minutes) if runtime_minutes is not None else None
+        )
+
         summary: dict[str, Any] = {
             "sources_due": len(due),
             "fetched": 0,
@@ -408,26 +425,46 @@ class SyncOrchestrator:
             "reopened": 0,
             "failures": 0,
             "promoted_boards": 0,
+            "truncated": False,
+            "skipped_sources": 0,
             "started_at": now.isoformat(),
         }
 
         seen_by_source: dict[str, set[str]] = {}
         concurrency = max(1, int(self.config.http.get("global_concurrency", 32)))
+        # One gather wave at a time so a soft deadline can stop between batches.
+        # A single gather over hundreds of Greenhouse boards cannot be interrupted,
+        # and that is what was blowing the Sync Fast Path job timeout.
+        chunk_size = concurrency
         sem = asyncio.Semaphore(concurrency)
 
         async def poll_one(source: Source) -> tuple[Source, AdapterFetchResult | dict[str, Any]]:
             async with sem:
                 return source, await self._poll_adapter(client, source)
 
+        polled_ids: set[str] = set()
         async with SafeHTTPClient(self.config) as client:
             pending = list(due)
-            polled_ids: set[str] = set()
 
             while pending:
-                batch = [source for source in pending if source.source_id not in polled_ids]
-                pending = []
-                if not batch:
+                if deadline is not None and datetime.now(UTC) >= deadline:
+                    skipped = [s for s in pending if s.source_id not in polled_ids]
+                    summary["truncated"] = True
+                    summary["skipped_sources"] = len(skipped)
+                    logger.warning(
+                        "Sync runtime budget exhausted after %s sources; skipping %s",
+                        len(polled_ids),
+                        len(skipped),
+                    )
                     break
+
+                remaining = [source for source in pending if source.source_id not in polled_ids]
+                pending = []
+                if not remaining:
+                    break
+
+                batch = remaining[:chunk_size]
+                leftover = remaining[chunk_size:]
 
                 polls = await asyncio.gather(
                     *[poll_one(source) for source in batch],
@@ -478,7 +515,8 @@ class SyncOrchestrator:
                                 continue
                             newly_promoted.append(board)
 
-                # Same-cycle poll for boards discovered from Simplify apply URLs.
+                # Keep unpolled sources, then same-cycle Simplify promotions.
+                pending.extend(leftover)
                 pending.extend(newly_promoted)
 
         for source_id, seen_ids in seen_by_source.items():
@@ -499,6 +537,7 @@ class SyncOrchestrator:
         self.store.save(state)
         summary["finished_at"] = state.generated_at.isoformat()
         summary["total_jobs"] = len(state.jobs)
+        summary["polled_sources"] = len(polled_ids)
         return summary
 
     def build_exports(self) -> dict[str, Any]:

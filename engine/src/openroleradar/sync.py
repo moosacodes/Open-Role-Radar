@@ -499,7 +499,11 @@ class SyncOrchestrator:
 
         polled_ids: set[str] = set()
         async with SafeHTTPClient(self.config) as client:
-            pending = list(due)
+            # Simplify discovery first so promotions can be polled in-cycle before
+            # the soft runtime budget is spent on cold boards.
+            simplify_due = [source for source in due if source.adapter == "simplify"]
+            other_due = [source for source in due if source.adapter != "simplify"]
+            pending = [*simplify_due, *other_due]
 
             while pending:
                 if deadline is not None and datetime.now(UTC) >= deadline:
@@ -577,9 +581,10 @@ class SyncOrchestrator:
                                 continue
                             newly_promoted.append(board)
 
-                # Keep unpolled sources, then same-cycle Simplify promotions.
-                pending.extend(leftover)
+                # Promoted boards jump the queue so discovery converts to
+                # first-party polls before cold leftovers burn the budget.
                 pending.extend(newly_promoted)
+                pending.extend(leftover)
 
         for source_id, seen_ids in seen_by_source.items():
             src = state.sources.get(source_id)

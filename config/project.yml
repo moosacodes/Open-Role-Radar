@@ -70,10 +70,11 @@ feeds:
   max_items: 500
 
 discovery:
-  github_search_per_run: 100
-  common_crawl_per_run: 150
-  quarantine_retry_hours: 48
-  promotion_min_confidence: 0.55
+  github_search_per_run: 200
+  common_crawl_per_run: 200
+  quarantine_retry_hours: 24
+  # Known Greenhouse/Lever/Ashby/Workable/SR tenants validate well above this.
+  promotion_min_confidence: 0.50
 
 health:
   adapter_failure_threshold: 0.5

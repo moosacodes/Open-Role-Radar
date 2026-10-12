@@ -124,6 +124,32 @@ async def github_harvest(token: str | None) -> set[tuple[str, str]]:
     return found
 
 
+def _payload_has_jobs(adapter: str, payload: object, content: bytes) -> bool:
+    """Reject empty public boards that still return HTTP 200."""
+    if len(content) < 20:
+        return False
+    if adapter == "greenhouse":
+        jobs = payload.get("jobs") if isinstance(payload, dict) else payload
+        return isinstance(jobs, list)
+    if adapter == "lever":
+        return isinstance(payload, list)
+    if adapter == "ashby":
+        jobs = payload.get("jobs") if isinstance(payload, dict) else None
+        return isinstance(jobs, list)
+    if adapter == "workable":
+        jobs = payload.get("jobs") if isinstance(payload, dict) else None
+        return isinstance(jobs, list) and len(jobs) > 0
+    if adapter == "smartrecruiters":
+        if not isinstance(payload, dict):
+            return False
+        total = payload.get("totalFound")
+        rows = payload.get("content")
+        if isinstance(total, int):
+            return total > 0
+        return isinstance(rows, list) and len(rows) > 0
+    return len(content) > 80
+
+
 async def verify(candidates: set[tuple[str, str]]) -> list[dict[str, str]]:
     sem = asyncio.Semaphore(20)
     verified: list[dict[str, str]] = []
@@ -139,8 +165,11 @@ async def verify(candidates: set[tuple[str, str]]) -> list[dict[str, str]]:
                     return
             if response.status_code != 200:
                 return
-            # Reject empty / tiny error pages.
-            if len(response.content) < 20:
+            try:
+                payload = response.json()
+            except ValueError:
+                return
+            if not _payload_has_jobs(adapter, payload, response.content):
                 return
             company = tenant.replace("-", " ").replace("_", " ").title()
             domain = f"{tenant.replace('_', '-')}.com"

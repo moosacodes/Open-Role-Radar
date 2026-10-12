@@ -2,8 +2,8 @@ name: Source Discovery
 
 on:
   schedule:
-    # Discovery every 6 hours so new ATS boards land in live-state quickly.
-    - cron: "15 */6 * * *"
+    # Every 3 hours — land new ATS boards in seeds + live-state quickly.
+    - cron: "20 */3 * * *"
   workflow_dispatch:
     inputs:
       github:
@@ -12,6 +12,10 @@ on:
         default: true
       common_crawl:
         description: Run Common Crawl index discovery
+        type: boolean
+        default: true
+      harvest:
+        description: Harvest + Simplify seed expansion into sources.yml
         type: boolean
         default: true
 
@@ -24,9 +28,8 @@ concurrency:
 
 jobs:
   discover:
-    name: Discover new sources
+    name: Discover + expand sources
     runs-on: ubuntu-latest
-    # Discovery writes candidate lists only on the default branch with elevated token.
     if: github.event_name == 'workflow_dispatch' || github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
     steps:
       - name: Checkout
@@ -46,15 +49,40 @@ jobs:
         uses: actions/cache@d4323d4df104b026a6aa633fdb11d772146be0bf # v4.2.2
         with:
           path: .local/state
-          key: live-state-${{ github.run_id }}
+          key: live-state-main-${{ github.run_id }}-discover
           restore-keys: |
+            live-state-main-
             live-state-
 
-      - name: Run discovery
+      - name: Expand seeds from Simplify + GitHub harvest
+        if: github.event_name == 'schedule' || github.event.inputs.harvest != 'false'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          uv run --project engine python scripts/seed-from-simplify.py
+          uv run --project engine python scripts/harvest-ats-tenants.py
+
+      - name: Commit expanded sources.yml
+        if: github.event_name == 'schedule' || github.event.inputs.harvest != 'false'
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- config/sources.yml; then
+            echo "No seed changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add config/sources.yml
+          git commit -m "Expand ATS seed boards from Simplify + GitHub harvest."
+          git push origin HEAD
+
+      - name: Run discovery into live state
         working-directory: engine
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          set -euo pipefail
           ARGS="--publish"
           if [ "${{ github.event.inputs.github }}" = "false" ]; then
             ARGS="$ARGS --no-github"
@@ -69,4 +97,4 @@ jobs:
         uses: actions/cache/save@d4323d4df104b026a6aa633fdb11d772146be0bf # v4.2.2
         with:
           path: .local/state
-          key: live-state-${{ github.run_id }}
+          key: live-state-main-${{ github.run_id }}

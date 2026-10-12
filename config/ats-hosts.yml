@@ -96,6 +96,12 @@ platforms:
 discovery_patterns:
   - boards.greenhouse.io
   - job-boards.greenhouse.io
+  - boards-api.greenhouse.io
   - jobs.lever.co
+  - api.lever.co
   - jobs.ashbyhq.com
+  - api.ashbyhq.com/posting-api/job-board
   - careers.smartrecruiters.com
+  - api.smartrecruiters.com/v1/companies
+  - apply.workable.com
+  - apply.workable.com/api/v1/widget/accounts

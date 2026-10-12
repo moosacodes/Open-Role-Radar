@@ -90,10 +90,25 @@ class SafeHTTPClient:
 
         self._host_semaphores: dict[str, asyncio.Semaphore] = {}
         self._owns_client = client is None
+        # Keepalive pool so shared ATS hosts reuse TCP connections across boards.
+        limits = httpx.Limits(
+            max_connections=max(64, self.per_host_concurrency * 8),
+            max_keepalive_connections=max(32, self.per_host_concurrency * 4),
+            keepalive_expiry=30.0,
+        )
+        http2 = False
+        try:
+            import h2  # noqa: F401
+
+            http2 = True
+        except ImportError:
+            http2 = False
         self._client = client or httpx.AsyncClient(
             timeout=httpx.Timeout(self.timeout_seconds),
             follow_redirects=False,
             headers={"User-Agent": self.user_agent},
+            limits=limits,
+            http2=http2,
         )
 
     async def __aenter__(self) -> SafeHTTPClient:

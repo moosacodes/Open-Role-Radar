@@ -34,6 +34,7 @@ class SiteDataManifest:
     total_jobs: int
     hash_buckets: int
     shards: list[ShardInfo]
+    feed_mode: str = "strict"
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -41,6 +42,7 @@ class SiteDataManifest:
             "generated_at": self.generated_at,
             "total_jobs": self.total_jobs,
             "hash_buckets": self.hash_buckets,
+            "feed_mode": self.feed_mode,
             "shards": [
                 {
                     "bucket": shard.bucket,
@@ -72,11 +74,11 @@ class SiteDataBuilder:
         payload = [job.to_public_dict() for job in jobs]
         return orjson.dumps(payload)
 
-    def build(self, state: LiveState) -> dict[int, list[Job]]:
-        """Partition open jobs into hash buckets."""
+    def build(self, state: LiveState, *, mode: str = "strict") -> dict[int, list[Job]]:
+        """Partition public jobs into hash buckets for the given feed mode."""
         buckets: dict[int, list[Job]] = {index: [] for index in range(self.hash_buckets)}
         for job in state.jobs.values():
-            if not is_public_job(job):
+            if not is_public_job(job, mode=mode):
                 continue
             bucket = self.bucket_for_job(job.job_id, self.hash_buckets)
             buckets[bucket].append(job)
@@ -84,16 +86,24 @@ class SiteDataBuilder:
             bucket_jobs.sort(key=lambda job: job.last_seen_at, reverse=True)
         return buckets
 
-    def write(self, state: LiveState, output_dir: Path) -> SiteDataManifest:
-        """Write sharded JSON files and return manifest metadata."""
+    def write(
+        self,
+        state: LiveState,
+        output_dir: Path,
+        *,
+        mode: str = "strict",
+    ) -> SiteDataManifest:
+        """Write sharded JSON files, delta, and return manifest metadata."""
         output_dir.mkdir(parents=True, exist_ok=True)
-        buckets = self.build(state)
+        buckets = self.build(state, mode=mode)
         shards: list[ShardInfo] = []
         total_jobs = 0
+        all_jobs: list[Job] = []
 
         for bucket, jobs in buckets.items():
             if not jobs:
                 continue
+            all_jobs.extend(jobs)
             chunks: list[list[Job]] = []
             current: list[Job] = []
             for job in jobs:
@@ -132,14 +142,13 @@ class SiteDataBuilder:
             total_jobs=total_jobs,
             hash_buckets=self.hash_buckets,
             shards=shards,
+            feed_mode=mode,
         )
         (output_dir / "manifest.json").write_bytes(
             orjson.dumps(manifest.to_dict(), option=orjson.OPT_INDENT_2)
         )
 
-        current_ids = sorted(
-            job.job_id for bucket_jobs in buckets.values() for job in bucket_jobs
-        )
+        current_ids = sorted(job.job_id for job in all_jobs)
         previous_ids: set[str] = set()
         ids_path = output_dir / "job-ids.json"
         if ids_path.exists():
@@ -150,16 +159,27 @@ class SiteDataBuilder:
             except orjson.JSONDecodeError:
                 previous_ids = set()
         current_set = set(current_ids)
-        opened = sorted(current_set - previous_ids)
-        closed = sorted(previous_ids - current_set)
+        opened_ids = sorted(current_set - previous_ids)
+        closed_ids = sorted(previous_ids - current_set)
+        opened_set = set(opened_ids)
+        opened_jobs = sorted(
+            (job for job in all_jobs if job.job_id in opened_set),
+            key=lambda job: job.first_seen_at,
+            reverse=True,
+        )[:100]
+
         (output_dir / "delta.json").write_bytes(
             orjson.dumps(
                 {
                     "generated_at": state.generated_at.isoformat(),
-                    "opened_count": len(opened),
-                    "closed_count": len(closed),
-                    "opened": opened[:5000],
-                    "closed": closed[:5000],
+                    "feed_mode": mode,
+                    "opened_count": len(opened_ids),
+                    "closed_count": len(closed_ids),
+                    "opened": opened_ids[:5000],
+                    "closed": closed_ids[:5000],
+                    # Full records for the newest openings so clients can patch
+                    # without re-downloading every shard.
+                    "opened_jobs": [job.to_public_dict() for job in opened_jobs],
                 },
                 option=orjson.OPT_INDENT_2,
             )

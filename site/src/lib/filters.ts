@@ -15,6 +15,7 @@ export const DEFAULT_FILTERS: FilterState = {
   startupsOnly: false,
   // Prefer "new since visit" once a session baseline exists; else last 24h.
   freshness: '24h',
+  feedMode: 'strict',
   mobility: [],
   originCountry: '',
   showSavedOnly: false,
@@ -93,6 +94,11 @@ export function parseFiltersFromUrl(search: string): FilterState {
 
     if (key === 'freshness') {
       next.freshness = value as FreshnessFilter;
+      continue;
+    }
+
+    if (key === 'feedMode') {
+      next.feedMode = value === 'wide' ? 'wide' : 'strict';
       continue;
     }
 
@@ -175,6 +181,7 @@ export function countActiveFilters(filters: FilterState): number {
   if (filters.companyIds.length) count += 1;
   if (filters.startupsOnly) count += 1;
   if (filters.freshness !== 'all') count += 1;
+  if (filters.feedMode !== 'strict') count += 1;
   if (filters.mobility.length) count += 1;
   if (filters.originCountry) count += 1;
   if (filters.showSavedOnly) count += 1;

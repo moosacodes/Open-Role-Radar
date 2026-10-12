@@ -157,7 +157,10 @@ export interface DataManifest {
   total_jobs: number;
   hash_buckets: number;
   shards: ShardInfo[];
+  feed_mode?: 'strict' | 'wide';
 }
+
+export type FeedMode = 'strict' | 'wide';
 
 export interface CompanySummary {
   company_id: string;
@@ -205,6 +208,7 @@ export interface FilterState {
   companyIds: string[];
   startupsOnly: boolean;
   freshness: FreshnessFilter;
+  feedMode: FeedMode;
   mobility: MobilityFlag[];
   originCountry: string;
   showSavedOnly: boolean;

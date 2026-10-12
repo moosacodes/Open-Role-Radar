@@ -71,6 +71,14 @@ jobs:
           fi
           WORK="$(mktemp -d)"
           cp -R site/public/data/. "$WORK/"
+          if [ -d site/public/data-wide ]; then
+            mkdir -p "$WORK/wide"
+            cp -R site/public/data-wide/. "$WORK/wide/"
+          fi
+          if [ -d site/public/feeds ]; then
+            mkdir -p "$WORK/feeds"
+            cp -R site/public/feeds/. "$WORK/feeds/"
+          fi
           cd "$WORK"
           git init
           git checkout -b live-feed

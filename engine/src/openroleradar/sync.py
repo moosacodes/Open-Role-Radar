@@ -613,26 +613,38 @@ class SyncOrchestrator:
 
         state = self.store.load()
         reclassified = reclassify_state(state, root=self.root)
+        # One linear pass to refresh company active counts after classify.
+        open_counts: dict[str, int] = {}
+        for job in state.jobs.values():
+            if job.lifecycle.value in ("open", "reopened"):
+                open_counts[job.company_id] = open_counts.get(job.company_id, 0) + 1
+        for company in state.companies.values():
+            company.active_job_count = open_counts.get(company.company_id, 0)
         state.generated_at = datetime.now(UTC)
         self.store.save(state)
 
         site_root = self.root / "site"
         StaticApiExporter(self.config).export(state, site_root)
 
+        builder = SiteDataBuilder(self.config)
         data_dir = site_root / "public" / "data"
-        manifest = SiteDataBuilder(self.config).write(state, data_dir)
+        manifest = builder.write(state, data_dir, mode="strict")
+        wide_dir = site_root / "public" / "data-wide"
+        wide_manifest = builder.write(state, wide_dir, mode="wide")
 
         feeds_dir = site_root / "public" / "feeds"
         FeedGenerator(self.config).write_all(state, feeds_dir)
 
-        public_jobs = manifest.total_jobs
         return {
             "api_dir": str(site_root / "public" / "api" / "v1"),
             "data_shards": len(manifest.shards),
-            "total_jobs": public_jobs,
+            "wide_shards": len(wide_manifest.shards),
+            "total_jobs": manifest.total_jobs,
+            "wide_jobs": wide_manifest.total_jobs,
             "tracked_jobs": len(state.jobs),
             "sources": len(state.sources),
             "reclassified": reclassified,
+            "classification_skipped": state.metadata.get("classification_skipped", 0),
         }
 
     def publish_live_state_release(self) -> dict[str, Any]:

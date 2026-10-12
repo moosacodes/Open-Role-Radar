@@ -8,7 +8,8 @@ license = { text = "MIT" }
 authors = [{ name = "OpenRoleRadar Contributors" }]
 dependencies = [
     "pydantic>=2.10,<3",
-    "httpx>=0.28,<1",
+    "httpx[http2]>=0.28,<1",
+    "h2>=4.1,<5",
     "typer>=0.15,<1",
     "tenacity>=9.0,<10",
     "selectolax>=0.3,<1",

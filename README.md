@@ -13,7 +13,7 @@ First-party early-career roles (internships, co-ops, new grad) scraped from publ
 - **Fast path every 5 minutes**: 4 parallel shards poll Greenhouse / Lever / Ashby / Workable / SmartRecruiters across **2,300+** first-party boards (seeded from Simplify listings + GitHub harvest), auto-promote new tenants in-cycle before cold boards, then always merge and publish `live-feed`
 - **Discovery every 3 hours**: GitHub code search + Common Crawl + seed harvest commit new boards into `config/sources.yml` and live-state
 - Classifies early-career titles (intern / co-op / new-grad / junior / engineer I / campus, plus ATS metadata tags)
-- Exports static JSON + Atom feeds (`jobs` strict CS + `jobs-wide`); browser defaults to **new since last visit** / last 24h; `delta.json` lists roles opened/closed since the last sync
+- Exports dual site shards (`data` CS-strict + `data-wide`) and Atom feeds; browser paints from IndexedDB instantly, patches via `delta.json` (with opened job previews), and toggles **CS / software** vs **All early-career**
 - Optional [personal watch template](templates/user-watch/) alerts on **new** matches via GitHub Issues, Discord, or Telegram using your own Actions minutes
 
 ## What it does not do

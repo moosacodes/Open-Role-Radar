@@ -1,6 +1,15 @@
 import { startTransition, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { postedAt } from '../lib/dates';
-import { loadAllJobs, loadManifest, peekNewestManifest, resetDataLoader } from '../lib/data-loader';
+import {
+  applyDelta,
+  hydrateFromCache,
+  loadAllJobs,
+  loadDelta,
+  loadManifest,
+  peekNewestManifest,
+  resetDataLoader,
+  setFeedMode,
+} from '../lib/data-loader';
 import {
   countActiveFilters,
   DEFAULT_FILTERS,
@@ -144,6 +153,11 @@ export default function JobSearch({
   const lastStampRef = useRef<string | null>(null);
   const knownIdsRef = useRef<Set<string>>(new Set());
   const pollInFlightRef = useRef(false);
+  const jobsRef = useRef<Job[]>([]);
+
+  useEffect(() => {
+    jobsRef.current = jobs;
+  }, [jobs]);
 
   const reload = useCallback((silent = false) => {
     silentRef.current = silent;
@@ -155,10 +169,35 @@ export default function JobSearch({
 
     async function load() {
       const silent = silentRef.current;
+      const mode = filters.feedMode;
+      setFeedMode(mode);
+
+      if (!silent) {
+        const cached = await hydrateFromCache(mode);
+        if (!cancelled && cached) {
+          const scoped = companySlug
+            ? cached.jobs.filter(
+                (job) =>
+                  job.company_name
+                    .toLowerCase()
+                    .replace(/[^a-z0-9]+/g, '-')
+                    .replace(/^-+|-+$/g, '') === companySlug,
+              )
+            : cached.jobs;
+          const baseline = getSessionBaseline() ?? sessionBaseline;
+          startTransition(() => {
+            setJobs(scoped);
+            setStats(computeStats(scoped, baseline, cached.generatedAt));
+            setLoading(false);
+          });
+          lastStampRef.current = cached.generatedAt;
+          knownIdsRef.current = new Set(scoped.map((job) => job.job_id));
+        }
+      }
 
       if (silent && lastStampRef.current) {
         try {
-          const peek = await peekNewestManifest();
+          const peek = await peekNewestManifest(mode);
           if (cancelled) return;
           if (peek.generated_at === lastStampRef.current) {
             silentRef.current = false;
@@ -166,19 +205,68 @@ export default function JobSearch({
             return;
           }
           setSyncing(true);
+
+          // Fast path: patch via delta when the change set is small.
+          resetDataLoader();
+          setFeedMode(mode);
+          const manifest = await loadManifest(mode);
+          const delta = await loadDelta();
+          const currentJobs = jobsRef.current;
+          if (
+            delta &&
+            currentJobs.length > 0 &&
+            delta.generated_at === manifest.generated_at
+          ) {
+            const patched = applyDelta(currentJobs, delta);
+            if (patched) {
+              const scopedJobs = companySlug
+                ? patched.filter(
+                    (job) =>
+                      job.company_name
+                        .toLowerCase()
+                        .replace(/[^a-z0-9]+/g, '-')
+                        .replace(/^-+|-+$/g, '') === companySlug,
+                  )
+                : patched;
+              const nextIds = new Set(scopedJobs.map((job) => job.job_id));
+              const fresh = scopedJobs
+                .filter((job) => !knownIdsRef.current.has(job.job_id))
+                .map((job) => job.job_id);
+              if (fresh.length > 0) {
+                setArrivedIds(new Set(fresh));
+                setLiveNotice(
+                  `${fresh.length.toLocaleString()} new role${fresh.length === 1 ? '' : 's'} just landed`,
+                );
+                window.setTimeout(() => setLiveNotice(null), 4500);
+                window.setTimeout(() => setArrivedIds(new Set()), 1600);
+              }
+              knownIdsRef.current = nextIds;
+              lastStampRef.current = manifest.generated_at;
+              const baseline = getSessionBaseline() ?? sessionBaseline;
+              startTransition(() => {
+                setJobs(scopedJobs);
+                setStats(computeStats(scopedJobs, baseline, manifest.generated_at));
+              });
+              silentRef.current = false;
+              pollInFlightRef.current = false;
+              setSyncing(false);
+              return;
+            }
+          }
         } catch {
           if (cancelled) return;
           setSyncing(true);
         }
       }
 
-      if (!silent) {
+      if (!silent && jobsRef.current.length === 0) {
         setLoading(true);
       }
       setError(null);
       try {
         resetDataLoader();
-        const manifest = await loadManifest();
+        setFeedMode(mode);
+        const manifest = await loadManifest(mode);
         const allJobs = await loadAllJobs(manifest);
         if (cancelled) return;
 
@@ -243,7 +331,7 @@ export default function JobSearch({
       cancelled = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [companySlug, reloadToken]);
+  }, [companySlug, reloadToken, filters.feedMode]);
 
   useEffect(() => {
     let armed = false;
@@ -511,6 +599,25 @@ export default function JobSearch({
                 </p>
               </div>
               <div className="job-search__controls">
+                <label className="job-search__sort">
+                  <span className="sr-only">Feed scope</span>
+                  <select
+                    value={filters.feedMode}
+                    onChange={(event) => {
+                      const feedMode = event.target.value === 'wide' ? 'wide' : 'strict';
+                      setFilters((current) => ({
+                        ...current,
+                        feedMode,
+                        page: 1,
+                        view: 'table',
+                      }));
+                    }}
+                    title="CS-focused vs all early-career disciplines"
+                  >
+                    <option value="strict">CS / software</option>
+                    <option value="wide">All early-career</option>
+                  </select>
+                </label>
                 <button
                   type="button"
                   className={

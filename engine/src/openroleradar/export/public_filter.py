@@ -126,9 +126,7 @@ def is_early_career_job(job: Job, *, min_confidence: float | None = None) -> boo
         return False
     if job.career_level not in EARLY_CAREER_LEVELS:
         return False
-    if job.career_level_confidence < threshold:
-        return False
-    return True
+    return job.career_level_confidence >= threshold
 
 
 def is_public_job(

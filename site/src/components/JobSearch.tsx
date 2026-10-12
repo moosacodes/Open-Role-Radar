@@ -9,6 +9,7 @@ import {
   peekNewestManifest,
   resetDataLoader,
   setFeedMode,
+  writeCachedFeed,
 } from '../lib/data-loader';
 import {
   countActiveFilters,
@@ -242,6 +243,7 @@ export default function JobSearch({
               }
               knownIdsRef.current = nextIds;
               lastStampRef.current = manifest.generated_at;
+              void writeCachedFeed(mode, manifest, patched);
               const baseline = getSessionBaseline() ?? sessionBaseline;
               startTransition(() => {
                 setJobs(scopedJobs);

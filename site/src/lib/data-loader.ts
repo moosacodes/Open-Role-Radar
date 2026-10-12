@@ -1,3 +1,4 @@
+import { applyDelta, type FeedDelta } from './delta';
 import { readCachedFeed, writeCachedFeed, type FeedMode } from './job-cache';
 import type { DataManifest, Job, ShardInfo } from './types';
 import { bucketForJobId } from './sha256';
@@ -6,6 +7,8 @@ declare const __SITE_BASE__: string;
 declare const __GITHUB_REPO__: string;
 
 export type { FeedMode };
+export type { FeedDelta };
+export { applyDelta };
 
 function feedBases(mode: FeedMode): readonly string[] {
   if (mode === 'wide') {
@@ -31,16 +34,6 @@ let activeMode: FeedMode = 'strict';
 let manifestPromise: Promise<DataManifest> | null = null;
 let manifestVersion = '';
 let activeDataBase: string = feedBases('strict')[2];
-
-export interface FeedDelta {
-  generated_at: string;
-  feed_mode?: string;
-  opened_count: number;
-  closed_count: number;
-  opened: string[];
-  closed: string[];
-  opened_jobs?: Job[];
-}
 
 export function getDataBaseUrl(): string {
   return activeDataBase;
@@ -189,30 +182,6 @@ export async function loadAllJobs(manifest?: DataManifest): Promise<Job[]> {
   const jobs = shardResults.flat();
   void writeCachedFeed(activeMode, resolvedManifest, jobs);
   return jobs;
-}
-
-/** Apply a small delta onto an existing job list when possible. */
-export function applyDelta(jobs: Job[], delta: FeedDelta): Job[] | null {
-  const changeCount = (delta.opened_count || 0) + (delta.closed_count || 0);
-  if (changeCount > 800) return null;
-
-  const closed = new Set(delta.closed || []);
-  const byId = new Map<string, Job>();
-  for (const job of jobs) {
-    if (!closed.has(job.job_id)) {
-      byId.set(job.job_id, job);
-    }
-  }
-
-  const openedJobs = delta.opened_jobs || [];
-  if (openedJobs.length === 0 && (delta.opened?.length || 0) > 0) {
-    // Need shard fetches — signal caller.
-    return null;
-  }
-  for (const job of openedJobs) {
-    byId.set(job.job_id, job);
-  }
-  return [...byId.values()];
 }
 
 export async function loadJobsForBuckets(

@@ -2,11 +2,19 @@
 
 from __future__ import annotations
 
+from collections.abc import Iterable
 from datetime import datetime
-from typing import Iterable
 
+from openroleradar.models.enums import JobLifecycle
 from openroleradar.models.job import Company, Job, JobEvent, Source
 from openroleradar.models.state import AdapterHealthStats, LiveState
+
+_LIFECYCLE_RANK = {
+    JobLifecycle.OPEN: 0,
+    JobLifecycle.REOPENED: 0,
+    JobLifecycle.SUSPECTED_CLOSED: 1,
+    JobLifecycle.CLOSED: 2,
+}
 
 
 def _newer(a: datetime | None, b: datetime | None) -> bool:
@@ -39,11 +47,50 @@ def _merge_source(current: Source | None, incoming: Source) -> Source:
 
 
 def _merge_job(current: Job | None, incoming: Job) -> Job:
+    """Prefer fresher sightings; on ties, prefer advanced closure state.
+
+    Closing a role does not bump ``last_seen_at``, so a shard that never
+    polled the board still carries a stale OPEN copy with the same timestamp.
+    Without lifecycle-aware ties, merge order can resurrect filled roles.
+    """
     if current is None:
         return incoming
-    if _newer(incoming.last_seen_at, current.last_seen_at):
+    if incoming.last_seen_at != current.last_seen_at:
+        if _newer(incoming.last_seen_at, current.last_seen_at):
+            return incoming
+        return current
+    # Equal last_seen: prefer newer closed_at, then more terminal lifecycle.
+    if incoming.closed_at != current.closed_at:
+        if _newer(incoming.closed_at, current.closed_at):
+            return incoming
+        if _newer(current.closed_at, incoming.closed_at):
+            return current
+    incoming_rank = _LIFECYCLE_RANK.get(incoming.lifecycle, 0)
+    current_rank = _LIFECYCLE_RANK.get(current.lifecycle, 0)
+    if incoming_rank > current_rank:
         return incoming
     return current
+
+
+def _merge_metadata(current: dict, incoming: dict) -> dict:
+    """Shallow-merge metadata, deep-merging per-job miss counters."""
+    merged = {**current, **incoming}
+    miss_a = current.get("miss_counts")
+    miss_b = incoming.get("miss_counts")
+    if isinstance(miss_a, dict) or isinstance(miss_b, dict):
+        out: dict[str, int] = {}
+        if isinstance(miss_a, dict):
+            for key, value in miss_a.items():
+                if isinstance(value, int):
+                    out[str(key)] = value
+        if isinstance(miss_b, dict):
+            for key, value in miss_b.items():
+                if not isinstance(value, int):
+                    continue
+                job_id = str(key)
+                out[job_id] = max(out.get(job_id, 0), value)
+        merged["miss_counts"] = out
+    return merged
 
 
 def _merge_company(current: Company | None, incoming: Company) -> Company:
@@ -142,7 +189,7 @@ def merge_states(states: Iterable[LiveState]) -> LiveState:
                 state.discovery.quarantined_candidates
             )
 
-        merged.metadata = {**merged.metadata, **(state.metadata or {})}
+        merged.metadata = _merge_metadata(merged.metadata or {}, state.metadata or {})
         if _newer(state.generated_at, merged.generated_at):
             merged.generated_at = state.generated_at
         merged.schema_version = max(merged.schema_version, state.schema_version)

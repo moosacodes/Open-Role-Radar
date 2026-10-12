@@ -96,7 +96,8 @@ async def github_harvest(token: str | None) -> set[tuple[str, str]]:
                     "https://api.github.com/search/code",
                     params={"q": f'"{query}" in:file', "per_page": 100, "page": page},
                 )
-                if response.status_code in {403, 422}:
+                if response.status_code in {403, 422, 429}:
+                    # Secondary rate limits / abuse detection — stop this query.
                     break
                 response.raise_for_status()
                 payload = response.json()
@@ -120,7 +121,7 @@ async def github_harvest(token: str | None) -> set[tuple[str, str]]:
                     found |= extract_candidates(blob)
                 if len(items) < 100:
                     break
-                await asyncio.sleep(1.2)
+                await asyncio.sleep(2.0)
     return found
 
 
@@ -130,12 +131,12 @@ def _payload_has_jobs(adapter: str, payload: object, content: bytes) -> bool:
         return False
     if adapter == "greenhouse":
         jobs = payload.get("jobs") if isinstance(payload, dict) else payload
-        return isinstance(jobs, list)
+        return isinstance(jobs, list) and len(jobs) > 0
     if adapter == "lever":
-        return isinstance(payload, list)
+        return isinstance(payload, list) and len(payload) > 0
     if adapter == "ashby":
         jobs = payload.get("jobs") if isinstance(payload, dict) else None
-        return isinstance(jobs, list)
+        return isinstance(jobs, list) and len(jobs) > 0
     if adapter == "workable":
         jobs = payload.get("jobs") if isinstance(payload, dict) else None
         return isinstance(jobs, list) and len(jobs) > 0

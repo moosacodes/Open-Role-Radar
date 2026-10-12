@@ -41,13 +41,22 @@ describe('filters URL serialization', () => {
   it('counts active filters', () => {
     const count = countActiveFilters({
       ...DEFAULT_FILTERS,
+      freshness: 'all',
       q: 'data',
       careerLevels: ['internship'],
       academicTerms: ['summer'],
       startupsOnly: true,
       originCountry: 'Canada',
     });
+    // q + career + academic + startups + origin
     expect(count).toBe(5);
+    expect(
+      countActiveFilters({
+        ...DEFAULT_FILTERS,
+        feedMode: 'wide',
+        freshness: 'all',
+      }),
+    ).toBe(1);
   });
 
   it('serializes saved-only toggle', () => {

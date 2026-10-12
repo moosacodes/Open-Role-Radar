@@ -72,3 +72,34 @@ def test_merge_states_prefers_fresher_job_and_source() -> None:
     assert "j2" in merged.jobs
     assert merged.sources["src1"].last_success_at == t1
     assert merged.generated_at == t1
+
+
+def test_merge_states_prefers_closed_lifecycle_on_equal_last_seen() -> None:
+    """Closing does not bump last_seen_at; stale OPEN shards must not win."""
+    t0 = datetime(2026, 1, 1, tzinfo=UTC)
+    open_job = _job("j1", t0)
+    closed_job = _job("j1", t0).model_copy(
+        update={"lifecycle": JobLifecycle.CLOSED, "closed_at": t0 + timedelta(minutes=5)}
+    )
+    open_state = LiveState(jobs={"j1": open_job}, generated_at=t0)
+    closed_state = LiveState(
+        jobs={"j1": closed_job},
+        generated_at=t0 + timedelta(minutes=5),
+        metadata={"miss_counts": {"j1": 4}},
+    )
+    # Stale OPEN snapshot merged after the closing shard.
+    merged = merge_states([closed_state, open_state])
+    assert merged.jobs["j1"].lifecycle == JobLifecycle.CLOSED
+    assert merged.metadata["miss_counts"]["j1"] == 4
+
+
+def test_merge_states_merges_miss_counts_across_shards() -> None:
+    t0 = datetime(2026, 1, 1, tzinfo=UTC)
+    a = LiveState(generated_at=t0, metadata={"miss_counts": {"a": 2, "shared": 1}})
+    b = LiveState(
+        generated_at=t0 + timedelta(seconds=1),
+        metadata={"miss_counts": {"b": 3, "shared": 4}, "other": "x"},
+    )
+    merged = merge_states([a, b])
+    assert merged.metadata["miss_counts"] == {"a": 2, "b": 3, "shared": 4}
+    assert merged.metadata["other"] == "x"

@@ -54,14 +54,18 @@ jobs:
             live-state-main-
             live-state-
 
-      - name: Expand seeds from Simplify + GitHub harvest
+      - name: Expand seeds from Simplify
         if: github.event_name == 'schedule' || github.event.inputs.harvest != 'false'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          set -euo pipefail
-          uv run --project engine python scripts/seed-from-simplify.py
-          uv run --project engine python scripts/harvest-ats-tenants.py
+        run: uv run --project engine python scripts/seed-from-simplify.py
+
+      - name: Harvest ATS tenants from GitHub code search
+        if: github.event_name == 'schedule' || github.event.inputs.harvest != 'false'
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: uv run --project engine python scripts/harvest-ats-tenants.py
 
       - name: Commit expanded sources.yml
         if: github.event_name == 'schedule' || github.event.inputs.harvest != 'false'

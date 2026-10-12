@@ -69,12 +69,14 @@ def test_full_export_pipeline(tmp_path: Path, pipeline_state: LiveState) -> None
     assert jobs_manifest["total_jobs"] == 3
     assert manifest.endpoints["meta"].endswith("meta.json")
 
-    # Feeds
+    # Feeds (strict + wide formats, plus early-career.atom alias)
     feed_gen = FeedGenerator()
     artifacts = feed_gen.write_all(loaded, feeds_dir)
-    assert len(artifacts) == 3
+    assert len(artifacts) == 7
     feed_json = orjson.loads((feeds_dir / "jobs.json").read_bytes())
     assert len(feed_json["items"]) == 3
+    assert (feeds_dir / "jobs-wide.json").exists()
+    assert (feeds_dir / "early-career.atom").exists()
 
     # Archive
     archive = ArchiveExporter()

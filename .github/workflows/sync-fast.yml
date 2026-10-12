@@ -118,10 +118,13 @@ jobs:
         continue-on-error: true
         run: |
           set -euo pipefail
-          mkdir -p site/public/data
+          mkdir -p site/public/data site/public/data-wide
           curl -fsSL \
             "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/live-feed/job-ids.json" \
             -o site/public/data/job-ids.json || rm -f site/public/data/job-ids.json
+          curl -fsSL \
+            "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/live-feed/wide/job-ids.json" \
+            -o site/public/data-wide/job-ids.json || rm -f site/public/data-wide/job-ids.json
 
       - name: Build data exports
         working-directory: engine

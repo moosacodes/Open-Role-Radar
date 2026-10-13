@@ -2370,3 +2370,6 @@
 
 # --- Seeded from SimplifyJobs listings ---
 - { company: Goodlord, domain: goodlord.com, adapter: ashby, tenant: goodlord }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Liberty Mutual Canada, domain: liberty-mutual-canada.com, adapter: workable, tenant: liberty-mutual-canada }

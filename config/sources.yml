@@ -2367,3 +2367,6 @@
 - { company: MEMX, domain: memx.com, adapter: greenhouse, tenant: memx }
 - { company: Azul Systems, domain: azul-systems.com, adapter: lever, tenant: azul }
 - { company: Brillio, domain: brillio.com, adapter: lever, tenant: brillio-2 }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Goodlord, domain: goodlord.com, adapter: ashby, tenant: goodlord }

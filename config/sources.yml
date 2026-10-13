@@ -2362,3 +2362,8 @@
 - { company: Trustbank, domain: trustbank.com, adapter: greenhouse, tenant: trustbank }
 - { company: Wehrtyou, domain: wehrtyou.com, adapter: greenhouse, tenant: wehrtyou }
 - { company: Xebiacee, domain: xebiacee.com, adapter: greenhouse, tenant: xebiacee }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: MEMX, domain: memx.com, adapter: greenhouse, tenant: memx }
+- { company: Azul Systems, domain: azul-systems.com, adapter: lever, tenant: azul }
+- { company: Brillio, domain: brillio.com, adapter: lever, tenant: brillio-2 }

@@ -2378,3 +2378,8 @@
 - { company: PDI Technologies, domain: pdi-technologies.com, adapter: lever, tenant: pditechnologies }
 - { company: Rhombus, domain: rhombus.com, adapter: lever, tenant: rhombus-systems }
 - { company: Eurostar International, domain: eurostar-international.com, adapter: workable, tenant: eurostar }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Brain Co., domain: brain-co.com, adapter: ashby, tenant: brainco }
+- { company: Groma, domain: groma.com, adapter: greenhouse, tenant: groma }
+- { company: Trove Brands, domain: trove-brands.com, adapter: greenhouse, tenant: trovebrands }

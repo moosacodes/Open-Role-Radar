@@ -2383,3 +2383,10 @@
 - { company: Brain Co., domain: brain-co.com, adapter: ashby, tenant: brainco }
 - { company: Groma, domain: groma.com, adapter: greenhouse, tenant: groma }
 - { company: Trove Brands, domain: trove-brands.com, adapter: greenhouse, tenant: trovebrands }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Check, domain: check.com, adapter: ashby, tenant: check-technologies }
+
+# --- Harvested GitHub ATS boards ---
+- { company: Appfire, domain: appfire.com, adapter: greenhouse, tenant: appfire }
+- { company: Paypay, domain: paypay.com, adapter: greenhouse, tenant: paypay }

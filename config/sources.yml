@@ -2373,3 +2373,8 @@
 
 # --- Seeded from SimplifyJobs listings ---
 - { company: Liberty Mutual Canada, domain: liberty-mutual-canada.com, adapter: workable, tenant: liberty-mutual-canada }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: PDI Technologies, domain: pdi-technologies.com, adapter: lever, tenant: pditechnologies }
+- { company: Rhombus, domain: rhombus.com, adapter: lever, tenant: rhombus-systems }
+- { company: Eurostar International, domain: eurostar-international.com, adapter: workable, tenant: eurostar }

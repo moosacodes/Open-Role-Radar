@@ -2390,3 +2390,8 @@
 # --- Harvested GitHub ATS boards ---
 - { company: Appfire, domain: appfire.com, adapter: greenhouse, tenant: appfire }
 - { company: Paypay, domain: paypay.com, adapter: greenhouse, tenant: paypay }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Kairos Power, domain: kairos-power.com, adapter: greenhouse, tenant: kairospower }
+- { company: SirenOpt, domain: sirenopt.com, adapter: greenhouse, tenant: sirenopt }
+- { company: Atom Computing, domain: atom-computing.com, adapter: lever, tenant: atomcomputing }

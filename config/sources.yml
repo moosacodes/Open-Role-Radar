@@ -2401,3 +2401,61 @@
 - { company: Angel City, domain: angel-city.com, adapter: greenhouse, tenant: wfclainc }
 - { company: Commonwealth Fusion Systems, domain: commonwealth-fusion-systems.com, adapter: lever, tenant: cfsenergy }
 - { company: Research Innovations, domain: research-innovations.com, adapter: lever, tenant: researchinnovations.com }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: AgZen, domain: agzen.com, adapter: ashby, tenant: agzen }
+- { company: Assort Health, domain: assort-health.com, adapter: ashby, tenant: assorthealth }
+- { company: Blockchain.com, domain: blockchain-com.com, adapter: greenhouse, tenant: blockchain }
+- { company: Pattern, domain: pattern.com, adapter: lever, tenant: pattern }
+- { company: Accellor, domain: accellor.com, adapter: workable, tenant: accellor }
+- { company: Albert Bartlett, domain: albert-bartlett.com, adapter: workable, tenant: albert-bartlett }
+
+# --- Harvested GitHub ATS boards ---
+- { company: Company, domain: company.com, adapter: ashby, tenant: company }
+- { company: Hook, domain: hook.com, adapter: greenhouse, tenant: hook }
+- { company: Infuse, domain: infuse.com, adapter: greenhouse, tenant: infuse }
+- { company: Missionlane, domain: missionlane.com, adapter: greenhouse, tenant: missionlane }
+- { company: Taxbit, domain: taxbit.com, adapter: greenhouse, tenant: taxbit }
+- { company: Wizinc, domain: wizinc.com, adapter: greenhouse, tenant: wizinc }
+- { company: Accesssoftek, domain: accesssoftek.com, adapter: lever, tenant: accesssoftek }
+- { company: Ansatzcapital, domain: ansatzcapital.com, adapter: lever, tenant: ansatzcapital }
+- { company: Anyscale, domain: anyscale.com, adapter: lever, tenant: anyscale }
+- { company: Binance, domain: binance.com, adapter: lever, tenant: binance }
+- { company: Bounteous, domain: bounteous.com, adapter: lever, tenant: bounteous }
+- { company: Brightedge, domain: brightedge.com, adapter: lever, tenant: brightedge }
+- { company: Contentsquare, domain: contentsquare.com, adapter: lever, tenant: contentsquare }
+- { company: Csit, domain: csit.com, adapter: lever, tenant: csit }
+- { company: Dlocal, domain: dlocal.com, adapter: lever, tenant: dlocal }
+- { company: Dnb, domain: dnb.com, adapter: lever, tenant: dnb }
+- { company: Edpuzzle, domain: edpuzzle.com, adapter: lever, tenant: edpuzzle }
+- { company: Entrata, domain: entrata.com, adapter: lever, tenant: entrata }
+- { company: Fieldnation, domain: fieldnation.com, adapter: lever, tenant: fieldnation }
+- { company: Finn, domain: finn.com, adapter: lever, tenant: finn }
+- { company: Fuellabs, domain: fuellabs.com, adapter: lever, tenant: fuellabs }
+- { company: Gopuff, domain: gopuff.com, adapter: lever, tenant: gopuff }
+- { company: Incorta, domain: incorta.com, adapter: lever, tenant: incorta }
+- { company: Invinity, domain: invinity.com, adapter: lever, tenant: invinity }
+- { company: Iyzico, domain: iyzico.com, adapter: lever, tenant: iyzico }
+- { company: Jobgether, domain: jobgether.com, adapter: lever, tenant: jobgether }
+- { company: Lalamove, domain: lalamove.com, adapter: lever, tenant: lalamove }
+- { company: Leverdemo, domain: leverdemo.com, adapter: lever, tenant: leverdemo }
+- { company: Loadsmart, domain: loadsmart.com, adapter: lever, tenant: loadsmart }
+- { company: Mainspringenergy, domain: mainspringenergy.com, adapter: lever, tenant: mainspringenergy }
+- { company: Mindtickle, domain: mindtickle.com, adapter: lever, tenant: mindtickle }
+- { company: Ml4T, domain: ml4t.com, adapter: lever, tenant: ml4t }
+- { company: Mujininc, domain: mujininc.com, adapter: lever, tenant: mujininc }
+- { company: Ninjavan, domain: ninjavan.com, adapter: lever, tenant: ninjavan }
+- { company: Oliverwyman, domain: oliverwyman.com, adapter: lever, tenant: oliverwyman }
+- { company: Oowlish, domain: oowlish.com, adapter: lever, tenant: oowlish }
+- { company: Orbitalsidekick, domain: orbitalsidekick.com, adapter: lever, tenant: orbitalsidekick }
+- { company: Payjoy, domain: payjoy.com, adapter: lever, tenant: payjoy }
+- { company: Paytm, domain: paytm.com, adapter: lever, tenant: paytm }
+- { company: Peerspace, domain: peerspace.com, adapter: lever, tenant: peerspace }
+- { company: Pipedrive, domain: pipedrive.com, adapter: lever, tenant: pipedrive }
+- { company: Qualysoft, domain: qualysoft.com, adapter: lever, tenant: qualysoft }
+- { company: Researchgate, domain: researchgate.com, adapter: lever, tenant: researchgate }
+- { company: Safe, domain: safe.com, adapter: lever, tenant: safe }
+- { company: Shakacode, domain: shakacode.com, adapter: lever, tenant: shakacode }
+- { company: Teller, domain: teller.com, adapter: lever, tenant: teller }
+- { company: Verdigris, domain: verdigris.com, adapter: lever, tenant: verdigris }
+- { company: Sumerge 1, domain: sumerge-1.com, adapter: workable, tenant: sumerge-1 }

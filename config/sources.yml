@@ -2395,3 +2395,9 @@
 - { company: Kairos Power, domain: kairos-power.com, adapter: greenhouse, tenant: kairospower }
 - { company: SirenOpt, domain: sirenopt.com, adapter: greenhouse, tenant: sirenopt }
 - { company: Atom Computing, domain: atom-computing.com, adapter: lever, tenant: atomcomputing }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Luminai, domain: luminai.com, adapter: ashby, tenant: luminai }
+- { company: Angel City, domain: angel-city.com, adapter: greenhouse, tenant: wfclainc }
+- { company: Commonwealth Fusion Systems, domain: commonwealth-fusion-systems.com, adapter: lever, tenant: cfsenergy }
+- { company: Research Innovations, domain: research-innovations.com, adapter: lever, tenant: researchinnovations.com }

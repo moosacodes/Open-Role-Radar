@@ -2466,3 +2466,7 @@
 - { company: G-20 Group, domain: g-20-group.com, adapter: workable, tenant: g-20-advisors-ag }
 - { company: Keycafe, domain: keycafe.com, adapter: workable, tenant: keycafe }
 - { company: Scientific Systems, domain: scientific-systems.com, adapter: workable, tenant: ssci }
+
+# --- Harvested GitHub ATS boards ---
+- { company: Clutch, domain: clutch.com, adapter: greenhouse, tenant: clutch }
+- { company: Nyisointernships, domain: nyisointernships.com, adapter: greenhouse, tenant: nyisointernships }

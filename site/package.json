@@ -14,7 +14,7 @@
     "playwright": "playwright test"
   },
   "dependencies": {
-    "@astrojs/react": "^4.2.0",
+    "@astrojs/react": "^6.0.4",
     "@astrojs/sitemap": "^3.3.0",
     "@tanstack/react-virtual": "^3.13.2",
     "astro": "^5.5.0",

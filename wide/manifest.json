@@ -1,0 +1,393 @@
+{
+  "version": 1,
+  "generated_at": "2026-10-17T13:27:56.480013+00:00",
+  "total_jobs": 17619,
+  "hash_buckets": 32,
+  "feed_mode": "wide",
+  "shards": [
+    {
+      "bucket": 0,
+      "filename": "jobs-bucket-00-0.json",
+      "job_count": 501,
+      "byte_size": 2093099
+    },
+    {
+      "bucket": 0,
+      "filename": "jobs-bucket-00-1.json",
+      "job_count": 50,
+      "byte_size": 267960
+    },
+    {
+      "bucket": 1,
+      "filename": "jobs-bucket-01-0.json",
+      "job_count": 518,
+      "byte_size": 2096585
+    },
+    {
+      "bucket": 1,
+      "filename": "jobs-bucket-01-1.json",
+      "job_count": 73,
+      "byte_size": 390615
+    },
+    {
+      "bucket": 2,
+      "filename": "jobs-bucket-02-0.json",
+      "job_count": 503,
+      "byte_size": 2093077
+    },
+    {
+      "bucket": 2,
+      "filename": "jobs-bucket-02-1.json",
+      "job_count": 63,
+      "byte_size": 346672
+    },
+    {
+      "bucket": 3,
+      "filename": "jobs-bucket-03-0.json",
+      "job_count": 498,
+      "byte_size": 2092461
+    },
+    {
+      "bucket": 3,
+      "filename": "jobs-bucket-03-1.json",
+      "job_count": 46,
+      "byte_size": 249303
+    },
+    {
+      "bucket": 4,
+      "filename": "jobs-bucket-04-0.json",
+      "job_count": 498,
+      "byte_size": 2094065
+    },
+    {
+      "bucket": 4,
+      "filename": "jobs-bucket-04-1.json",
+      "job_count": 40,
+      "byte_size": 218591
+    },
+    {
+      "bucket": 5,
+      "filename": "jobs-bucket-05-0.json",
+      "job_count": 512,
+      "byte_size": 2096216
+    },
+    {
+      "bucket": 5,
+      "filename": "jobs-bucket-05-1.json",
+      "job_count": 63,
+      "byte_size": 350442
+    },
+    {
+      "bucket": 6,
+      "filename": "jobs-bucket-06-0.json",
+      "job_count": 512,
+      "byte_size": 2092082
+    },
+    {
+      "bucket": 6,
+      "filename": "jobs-bucket-06-1.json",
+      "job_count": 67,
+      "byte_size": 367081
+    },
+    {
+      "bucket": 7,
+      "filename": "jobs-bucket-07-0.json",
+      "job_count": 495,
+      "byte_size": 2096720
+    },
+    {
+      "bucket": 7,
+      "filename": "jobs-bucket-07-1.json",
+      "job_count": 17,
+      "byte_size": 93608
+    },
+    {
+      "bucket": 8,
+      "filename": "jobs-bucket-08-0.json",
+      "job_count": 510,
+      "byte_size": 2092662
+    },
+    {
+      "bucket": 8,
+      "filename": "jobs-bucket-08-1.json",
+      "job_count": 52,
+      "byte_size": 277585
+    },
+    {
+      "bucket": 9,
+      "filename": "jobs-bucket-09-0.json",
+      "job_count": 506,
+      "byte_size": 2094630
+    },
+    {
+      "bucket": 9,
+      "filename": "jobs-bucket-09-1.json",
+      "job_count": 54,
+      "byte_size": 290338
+    },
+    {
+      "bucket": 10,
+      "filename": "jobs-bucket-10-0.json",
+      "job_count": 507,
+      "byte_size": 2094424
+    },
+    {
+      "bucket": 10,
+      "filename": "jobs-bucket-10-1.json",
+      "job_count": 69,
+      "byte_size": 383716
+    },
+    {
+      "bucket": 11,
+      "filename": "jobs-bucket-11-0.json",
+      "job_count": 512,
+      "byte_size": 2093008
+    },
+    {
+      "bucket": 11,
+      "filename": "jobs-bucket-11-1.json",
+      "job_count": 56,
+      "byte_size": 308003
+    },
+    {
+      "bucket": 12,
+      "filename": "jobs-bucket-12-0.json",
+      "job_count": 502,
+      "byte_size": 2092914
+    },
+    {
+      "bucket": 12,
+      "filename": "jobs-bucket-12-1.json",
+      "job_count": 50,
+      "byte_size": 271851
+    },
+    {
+      "bucket": 13,
+      "filename": "jobs-bucket-13-0.json",
+      "job_count": 506,
+      "byte_size": 2094914
+    },
+    {
+      "bucket": 13,
+      "filename": "jobs-bucket-13-1.json",
+      "job_count": 64,
+      "byte_size": 350270
+    },
+    {
+      "bucket": 14,
+      "filename": "jobs-bucket-14-0.json",
+      "job_count": 504,
+      "byte_size": 2094396
+    },
+    {
+      "bucket": 14,
+      "filename": "jobs-bucket-14-1.json",
+      "job_count": 35,
+      "byte_size": 190719
+    },
+    {
+      "bucket": 15,
+      "filename": "jobs-bucket-15-0.json",
+      "job_count": 503,
+      "byte_size": 2094325
+    },
+    {
+      "bucket": 15,
+      "filename": "jobs-bucket-15-1.json",
+      "job_count": 20,
+      "byte_size": 109284
+    },
+    {
+      "bucket": 16,
+      "filename": "jobs-bucket-16-0.json",
+      "job_count": 502,
+      "byte_size": 2094976
+    },
+    {
+      "bucket": 16,
+      "filename": "jobs-bucket-16-1.json",
+      "job_count": 45,
+      "byte_size": 245452
+    },
+    {
+      "bucket": 17,
+      "filename": "jobs-bucket-17-0.json",
+      "job_count": 500,
+      "byte_size": 2096178
+    },
+    {
+      "bucket": 17,
+      "filename": "jobs-bucket-17-1.json",
+      "job_count": 40,
+      "byte_size": 225235
+    },
+    {
+      "bucket": 18,
+      "filename": "jobs-bucket-18-0.json",
+      "job_count": 504,
+      "byte_size": 2095128
+    },
+    {
+      "bucket": 18,
+      "filename": "jobs-bucket-18-1.json",
+      "job_count": 57,
+      "byte_size": 296871
+    },
+    {
+      "bucket": 19,
+      "filename": "jobs-bucket-19-0.json",
+      "job_count": 497,
+      "byte_size": 2094183
+    },
+    {
+      "bucket": 19,
+      "filename": "jobs-bucket-19-1.json",
+      "job_count": 27,
+      "byte_size": 148148
+    },
+    {
+      "bucket": 20,
+      "filename": "jobs-bucket-20-0.json",
+      "job_count": 499,
+      "byte_size": 2095919
+    },
+    {
+      "bucket": 20,
+      "filename": "jobs-bucket-20-1.json",
+      "job_count": 26,
+      "byte_size": 140448
+    },
+    {
+      "bucket": 21,
+      "filename": "jobs-bucket-21-0.json",
+      "job_count": 505,
+      "byte_size": 2096503
+    },
+    {
+      "bucket": 21,
+      "filename": "jobs-bucket-21-1.json",
+      "job_count": 34,
+      "byte_size": 185272
+    },
+    {
+      "bucket": 22,
+      "filename": "jobs-bucket-22-0.json",
+      "job_count": 498,
+      "byte_size": 2096888
+    },
+    {
+      "bucket": 22,
+      "filename": "jobs-bucket-22-1.json",
+      "job_count": 34,
+      "byte_size": 183919
+    },
+    {
+      "bucket": 23,
+      "filename": "jobs-bucket-23-0.json",
+      "job_count": 503,
+      "byte_size": 2095914
+    },
+    {
+      "bucket": 23,
+      "filename": "jobs-bucket-23-1.json",
+      "job_count": 12,
+      "byte_size": 67499
+    },
+    {
+      "bucket": 24,
+      "filename": "jobs-bucket-24-0.json",
+      "job_count": 505,
+      "byte_size": 2092225
+    },
+    {
+      "bucket": 24,
+      "filename": "jobs-bucket-24-1.json",
+      "job_count": 50,
+      "byte_size": 272985
+    },
+    {
+      "bucket": 25,
+      "filename": "jobs-bucket-25-0.json",
+      "job_count": 506,
+      "byte_size": 2092767
+    },
+    {
+      "bucket": 25,
+      "filename": "jobs-bucket-25-1.json",
+      "job_count": 60,
+      "byte_size": 327627
+    },
+    {
+      "bucket": 26,
+      "filename": "jobs-bucket-26-0.json",
+      "job_count": 497,
+      "byte_size": 2094072
+    },
+    {
+      "bucket": 26,
+      "filename": "jobs-bucket-26-1.json",
+      "job_count": 23,
+      "byte_size": 127094
+    },
+    {
+      "bucket": 27,
+      "filename": "jobs-bucket-27-0.json",
+      "job_count": 511,
+      "byte_size": 2092587
+    },
+    {
+      "bucket": 27,
+      "filename": "jobs-bucket-27-1.json",
+      "job_count": 65,
+      "byte_size": 359333
+    },
+    {
+      "bucket": 28,
+      "filename": "jobs-bucket-28-0.json",
+      "job_count": 505,
+      "byte_size": 2094419
+    },
+    {
+      "bucket": 28,
+      "filename": "jobs-bucket-28-1.json",
+      "job_count": 27,
+      "byte_size": 148556
+    },
+    {
+      "bucket": 29,
+      "filename": "jobs-bucket-29-0.json",
+      "job_count": 501,
+      "byte_size": 2093799
+    },
+    {
+      "bucket": 29,
+      "filename": "jobs-bucket-29-1.json",
+      "job_count": 54,
+      "byte_size": 296665
+    },
+    {
+      "bucket": 30,
+      "filename": "jobs-bucket-30-0.json",
+      "job_count": 508,
+      "byte_size": 2095462
+    },
+    {
+      "bucket": 30,
+      "filename": "jobs-bucket-30-1.json",
+      "job_count": 70,
+      "byte_size": 369331
+    },
+    {
+      "bucket": 31,
+      "filename": "jobs-bucket-31-0.json",
+      "job_count": 504,
+      "byte_size": 2096469
+    },
+    {
+      "bucket": 31,
+      "filename": "jobs-bucket-31-1.json",
+      "job_count": 44,
+      "byte_size": 239323
+    }
+  ]
+}

@@ -1,0 +1,4620 @@
+{
+  "generated_at": "2026-10-17T13:27:56.480013+00:00",
+  "feed_mode": "wide",
+  "opened_count": 27,
+  "closed_count": 81,
+  "opened": [
+    "d640106a88cd6bee9861c594d111f82d660850f9a3e66ee7fd0ee86ccfa12fa5",
+    "cf3bca720d34c2bd065cbdcb6e722c93cfb7bcf4a0c3485811167caa5ad537d8",
+    "70b0140c5b89a28eea2b91608d13318efad700968d8b27bd9deb41a5a233777f",
+    "25cfe399758dfafe67a98b27be3aaeac52c91501dd5f615cbc61bc38c5551d35",
+    "53f3d900c838994699e5b5f5034da9df62ac9d5607a634a27ebfa35c2d50c109",
+    "df576743d0611e44e49a93ea3e53543189ba74585b2dcb7245fdbad90857ce74",
+    "ae4b04414160b7008385ec0a6f8829987fecddd4175dc4c9367f20ce6657e7a4",
+    "e79d0ccc23931c41a94f5fb2624235b6f7549a4ef8528abdc803d541b204a3e1",
+    "494a0ada3e71c6bc442633c99451f8c025cc9b40b41288f6b2894d81a373fc7b",
+    "7392dc6e03d850d1bc0b7fd35a75797443395fd1ed467365106333ae68b02e73",
+    "7090402e06a49e1198f10a70edd8bcd886fc485026e3aa6fa2618ef94613fe28",
+    "e2c7342d9097d30ce55552a7c0930ec7ae80961679df8854f05222aef23067d6",
+    "50a1548e78b15f2827450a8b588b831d2937eb2bfb1cea075b5be4f717524b42",
+    "22b329a961e016b550ad9cc2dc4f769e3095dde2f788aa0c17e75fbfb30ee588",
+    "899532a48812b6174f8e191a7eac8ff28abad8a5b499f0e561ac43f9832b8489",
+    "7acced0843a4d8cd65f368fc4c6784aaf3956c15e8b1bf3cf0b884a5e5d62ab3",
+    "df3c4e260aa0024521dfd813293e13a8edbeb72352be11166cadedd2779441bf",
+    "acb729dd3fb58c58e74592b59be4b72b2f8703c6fd13f42ae0c1dfa0b930d48b",
+    "afdcf8aad46db2aabb24dc32e236b32fa9fd0dc9c02a8b5687c2c2388b30eedd",
+    "deb3c12435abd2a7301e5a18a269239dd5c991061d9f87c4801947195d17b3f2",
+    "98eba926af4148acb587901cb299f37569c07c573a940b90486d7725bb21127e",
+    "45f7fb8c7b31ef6b7049b35f1999e05a504eb84e5ca02dbbaf7b10e71870c3a0",
+    "e0cbe51623e2bd382cc936d81ed01353df8a4911607886f352c61b5ac3eae412",
+    "c8db287c7feb1f7bf3e6779ff038a88abda94960900e06c3feb307bb38d62208",
+    "b8d00322b979a658d9958b71faa9e4364d4e6a46f2be79187a663c8110e28e6f",
+    "8d29380b30527edac23f1840f17c68077dae61abed07340c201c4264116ab2a2",
+    "79de8c13460b2ac6bbba403c157e32ef9c76770045be631116a3f5b80e768569"
+  ],
+  "closed": [
+    "013ba6e8272ba5c56606f7e9ee6f7255cdad593f322b87031c5f198026a25a8e",
+    "033012671fecd3bfd3e8b04d6d7cbf46fb2e752cd5d1c3b080a2facd1fd6b625",
+    "0513789f1f9b1e212f24c6b8e12313467287b8a9260fc759f1a99b61a7a0c844",
+    "05657ac43642cf0ab88f4f4197ed0bc13acb275eba491f4e88a6da303fba2dd1",
+    "14f80ff1392c33ed70780d5a4ee4e4c82e141d226d824aa64331fc5bff4c65e4",
+    "1862384c695254729b64253c3de13ffcd67bc0758abb5686822c88a90edc23b8",
+    "1a83c0e56a64637ff632dca54875349d72c7d44054f4b7e9afd3e4d1b0538fa2",
+    "1ad6b2c6631daa7aee98a3a7b97e998466c043dc0da2168cc936e807473b4787",
+    "1c944582e46001f99013a212a5185fc8b45c9edbf4028055c505134260ace82f",
+    "1f5ac1a8fabba0e70804fc45391ac9e9d33f4c969771ccf3ecad3fe6997524fe",
+    "206a75a38ee9a16ec31fc52538369bc6c999aa20ec8c50e623c40c2b0bce8747",
+    "25b8c91734f8e431df3932158bb77a3f6866ec91235873ab7586f9be98ad574f",
+    "25d341acb2e7b2df9e968c465aaa42372dc44b5eaddcce24c9efcad517e9cb58",
+    "26d1eef14cb180f8ffe6e956679ae818651b62df9feb5c8d3dd500f07c0ce619",
+    "29e60f0909b95870daa650a8d8c24f9c2e8ecaacdcddcac9c7c49f35ef36738e",
+    "2a21b509f5635edaf5c01ae8638b346964d4cd4d75060dc59492a76049c53927",
+    "2a70c81097593b4545521cc868e95e0b6284dc8d0925c57f7ecb2690a03a1174",
+    "314a7dac7078a983da5b1c245b77abfffd0204bad4cc3c79270836a0541075fa",
+    "32b10aca43c20bc312c3c9fbca547930172ab1408000bd3b8dd7c29af430595e",
+    "390db9752bf5f0df39e43740b46395bcc32f3b4e0a2d18e75ca3d730a07ddf6a",
+    "3988fd6b010de06d319aca37eefdb2bcba7a5afb22b787a8b3ac1a4a9a831e2b",
+    "3e3d270194fa67a3a247ef1a9798de6f7ae44315937c92a176d3f6a7f6ee035a",
+    "3ed2ff23e10b39d829f975e5bdda19072c4f7afa3ea9d98d20a8f0710d646cfe",
+    "3ee291448a373e1d85bb71bb7eb2dacacc3ff47699fc24d00f28e26342472d7d",
+    "3ff3692478bea477e820a32ff605b78c167f40671ea830fc838e7d4ff5bb8673",
+    "421cc5a9e7d05d8da5922041156da12117f5896538173529817c3c10c6e1454d",
+    "438234c2cf6e32e4470f8e37fb32b218423e90dc213af9f70d854461d4188920",
+    "45364ff2ca4efc3da912c3b512346eabc0c1bf68da9cb52975267abff17b9884",
+    "486910f98f4a0f25f48b603c76cccc5e50de43f173c2a4d51314b528aaf8dc5d",
+    "4d870df77ca306ae218aebcaedf6656d2af5cabca0afcc18665b06b2f1cee51e",
+    "52ac6d701790b0aa3c63c26027b32d0a3185ca664546f0f321c705e02ee81ab1",
+    "5862991ccc2f709dd66a4aa62c422546f0497040ca396c84f7b5f03515da3a32",
+    "59df4cc8e879c69088c054e49e950c5faa4c35d7e62b4f49a60dad8ad8e8ecc8",
+    "607c8ac7176d4a7e729c183833949a2d5599133c4c22e91204dc28b9d4ba93e5",
+    "60db9ffb9557c2e32996f1083a0586d1f7adb478389a6be2ef1b69c59c605d27",
+    "62955c1dace83e291ca7c078a3bf09edd551e7a7584173fabc1bda89c3d611a3",
+    "6407efb21f85a3ea72d8dec8b69a5ad9aaf9237c6a6f04f13e7506f399ed2ef0",
+    "64ea43e43b18419994e079b88d703665924b4153a7f8ab8539ab6890b3946a50",
+    "670e5db18a5c15c022400d05600d0493f6d64cfe9d1b15bc9f9d290e9d958fd9",
+    "675c88ce2fe473965d7d6544e6f3b98912e239c6b6210d91ceaa792d1524ecbe",
+    "6a26abd5fa5f6e7f6b9dfd40664740f8b61440b63839886d85e2564ef86d17ba",
+    "6b0ad97bfc4672087a2e0d579eda48fce2275b82113505ff6812a6fcf6705099",
+    "7203d1a933f6c4473b29ccc08c7e5432b9804871d79928efea46df5bc6ae0eff",
+    "721ac54d02ba080a4613f5487c5a016da2e368d9c83b19ffc52df48dc969e299",
+    "7b7aca6c056b0833660fc812890bca11e1edaf7b124d4a814675621d52b8bbd0",
+    "7cf1e428dbc4db68a02956b48abaff2047b99e9e5db58a93f2723b8ea0b3323f",
+    "7e2344876df53c170d9afacef003cbc823ce87b42f35e5d8354590642ebf41bb",
+    "7f19f4cd307360991587ae3c427d4da339dd3e0c8d0cf771647cc9f5361a540f",
+    "7fdb72da458dcfb956653c40af0feb4317f4745493f577af0476d682bf935e30",
+    "823a3807cada2eb9b08dedc4d8115896e081d82ee2ffe1d50e3409a6efe73128",
+    "8517ce1f756992e27151efa81607819ece501d4b84c10751880c2a7e23b4943e",
+    "8bbd0585f051fb6969d9bceee23826662a7dd9dc9d5fd8aa7b2c9bc36ff431b3",
+    "9331be4caef0357a4bad21ad7bbfa0c6f202d14e932d00e84a7c0d70a621a535",
+    "9721db36fe6d9f7775f362ca70908930f0d985bd5988336408d7d943613cdae6",
+    "98cfa497b3d92b7b82351ce0b64c36ff48b6dc9b83670381897c296bc0dc8077",
+    "a6263c967e95f2faa969b44d28a7804ee009036c781ca64bd9943bebfcee1da8",
+    "a7e794f442792a89037bf25f34dcb11f0725f15a922935a2fa6eeadc937680a4",
+    "a96baea02e1d6e5fd8be34d401530bb6cc4dcf972d56f518bb98bbfae2a2345e",
+    "afa5a7fcf4d5752c1e07b1fb4a81801f083244139f94bcf68e3d3951c07bea5f",
+    "b10cd6ed06079f020b34cf0c7685988c665cc5e04861d6d388cf75979b77f0db",
+    "b83768e03bf3aeff3e9ec236c02159604389a5e53171162bf5ea793e86b46fc8",
+    "c19841a24a22ad4f01bb8e70f774c99742e77b05f64bdf4be9c95ca62d46410a",
+    "c64526962c03228df182bc81e76eb571f79e881a656867ab18d20ed0053eec35",
+    "c6812678f66a25ae284d0b94ebe89bbfa940adbbe4c14c1738edc207f5cd9718",
+    "c70790a2d9630468426f723d59f20ff65108903ea5ab9de38be0e1c012f900d1",
+    "ced34c1fe56c821cd3e3d536487587e33aefbcb1035356cf06fe98d98ac2afed",
+    "d0d4fe6cb7ee9abde78fb9206a130cea09366753b70cfbf4c717d9f086d03699",
+    "d65ddb4520ddac8e756353380d56295c34cdebfa3d9ffb83472f12387041e33e",
+    "d8281d90eeca53d25047cd21fe4af1417986d1bf791a44ba8aa4d94546ce7521",
+    "dfeb9593f87021b8d841874db14ec46fbc1bbdf8ee0619359a7b6263d369de88",
+    "e3674b9751d7bf7f8bf43a75011177acb8745da4dcba390097f8abf0518be559",
+    "e52827912b751a6f4a68878baf1ff222d06d5c559a6e45b001152a368a6994d9",
+    "e54a48c03f17882e08510af52d1dd7bef9b461b3bc18ad77efcd0313af5c2589",
+    "efa6f87b48435073cef4326473359fdee478d4a5e01bd3b4030a859dfbd9a692",
+    "f09918a47bfa56a23c8b7fda92643caf4ef8814a823e31ce464339d777cf1f6d",
+    "f20a2c15f5dd44ed90ab541b0ed4b41dc998599081b7d43d970a5885e0004903",
+    "f7c1ae50444b859624d4e41d52041bee712ea68cd238f6d704d0d5f69ddb97bf",
+    "f87d26e74e4187b280fe757cca1b559c489d32312450d4bbeeed4405859e5410",
+    "fe082f5173c0e6d9a44f645da69b782a04db3716bb548fa09d9ae3de5b1ba18d",
+    "feb05b743a64aeb797f471460d0308ff97eb06adfeb3b9ee6a0557b123a899e6",
+    "ff88766c70ba728a67fac54b185b5f598ca6bf3d4c2c6fb19e6aa8be933d540b"
+  ],
+  "opened_truncated": false,
+  "opened_jobs": [
+    {
+      "job_id": "d640106a88cd6bee9861c594d111f82d660850f9a3e66ee7fd0ee86ccfa12fa5",
+      "source_job_id": "9840a2d2-8fcf-4fa0-874f-407b2df36050",
+      "requisition_id": null,
+      "company_id": "f9fe859149a00beb",
+      "company_name": "Fasanara",
+      "title": "High-Frequency Trading Operations Engineer",
+      "job_url": "https://apply.workable.com/fasanara/j/188FC5244B/apply",
+      "apply_url": "https://apply.workable.com/fasanara/j/188FC5244B/apply",
+      "careers_url": null,
+      "source_url": null,
+      "summary": "High-Frequency Trading Operations Engineer - Fasanara - Quant",
+      "career_level": "new_grad",
+      "career_level_confidence": 0.8,
+      "employment_type": "full_time",
+      "disciplines": {
+        "primary": "quantitative_development",
+        "secondary": [],
+        "confidence": 0.65
+      },
+      "skills": [],
+      "locations": [
+        {
+          "raw": "London, UK",
+          "city": "London",
+          "region": "UK",
+          "country": "United Kingdom",
+          "country_code": "GB",
+          "continent": "Europe"
+        }
+      ],
+      "workplace_type": "onsite",
+      "remote_scope": "unknown",
+      "remote_allowed_countries": [],
+      "remote_allowed_regions": [],
+      "source_posted_at": "2026-10-08T22:29:08Z",
+      "first_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_changed_at": null,
+      "closed_at": null,
+      "reopened_at": null,
+      "application_deadline": null,
+      "expected_start_date": null,
+      "expected_end_date": null,
+      "duration_months": null,
+      "academic_term": "unknown",
+      "compensation": null,
+      "education": {
+        "student_required": null,
+        "return_to_school_required": null,
+        "degree_levels": [],
+        "graduation_years": [],
+        "majors": [],
+        "academic_years": []
+      },
+      "eligibility": {
+        "work_authorization": null,
+        "explicit_allowed_countries": [],
+        "explicit_excluded_countries": [],
+        "citizenship_requirements": [],
+        "residency_requirements": [],
+        "security_clearance": null,
+        "export_control_restrictions": null,
+        "language_requirements": [],
+        "origin_match": "unknown"
+      },
+      "mobility": {
+        "visa_sponsorship": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "immigration_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "international_candidates": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "moving_expenses": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "airfare": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "travel_reimbursement": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_provided": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "temporary_housing": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "fully_funded_relocation": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        }
+      },
+      "provenance": {
+        "adapter": "simplify",
+        "source_id": "0cb18013efc6a3da",
+        "source_job_id": "9840a2d2-8fcf-4fa0-874f-407b2df36050",
+        "fetched_at": "2026-10-17T13:08:35.674814Z",
+        "source_posted_at": "2026-10-08T22:29:08Z",
+        "first_seen_at": "2026-10-17T13:08:35.674814Z",
+        "parser_version": "1.0.0",
+        "classification_version": "1.0.0",
+        "content_hash": "6706b46d05ef04f9e8768c59fc50f3c7f7fab9b320b3b9cc520fed145d452b92",
+        "source_health_at_fetch": "healthy",
+        "first_party_verified": false
+      },
+      "lifecycle": "open",
+      "extra": {
+        "company_name": "Fasanara",
+        "company_domain": "fasanara.com",
+        "simplify_feed": "new-grad-positions",
+        "simplify_category": "Quant",
+        "simplify_terms": [],
+        "simplify_sponsorship": "Other",
+        "simplify_source": "Simplify",
+        "experience_level": "New Grad"
+      }
+    },
+    {
+      "job_id": "cf3bca720d34c2bd065cbdcb6e722c93cfb7bcf4a0c3485811167caa5ad537d8",
+      "source_job_id": "ff723fb0-8021-476f-94d8-a14675f7883f",
+      "requisition_id": null,
+      "company_id": "6e475caa77837da2",
+      "company_name": "The Focusrite Group",
+      "title": "Production Systems Developer Intern",
+      "job_url": "https://apply.workable.com/focusrite/j/EB05509AE0/apply",
+      "apply_url": "https://apply.workable.com/focusrite/j/EB05509AE0/apply",
+      "careers_url": null,
+      "source_url": null,
+      "summary": "Production Systems Developer Intern - The Focusrite Group - Software - N/A",
+      "career_level": "internship",
+      "career_level_confidence": 0.82,
+      "employment_type": "internship",
+      "disciplines": {
+        "primary": "software",
+        "secondary": [
+          "systems"
+        ],
+        "confidence": 0.98
+      },
+      "skills": [],
+      "locations": [
+        {
+          "raw": "High Wycombe, UK",
+          "city": "High Wycombe",
+          "region": "UK",
+          "country": "United Kingdom",
+          "country_code": "GB",
+          "continent": "Europe"
+        }
+      ],
+      "workplace_type": "onsite",
+      "remote_scope": "unknown",
+      "remote_allowed_countries": [],
+      "remote_allowed_regions": [],
+      "source_posted_at": "2026-09-28T22:20:35Z",
+      "first_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_changed_at": null,
+      "closed_at": null,
+      "reopened_at": null,
+      "application_deadline": null,
+      "expected_start_date": null,
+      "expected_end_date": null,
+      "duration_months": null,
+      "academic_term": "unknown",
+      "compensation": null,
+      "education": {
+        "student_required": null,
+        "return_to_school_required": null,
+        "degree_levels": [],
+        "graduation_years": [],
+        "majors": [],
+        "academic_years": []
+      },
+      "eligibility": {
+        "work_authorization": null,
+        "explicit_allowed_countries": [],
+        "explicit_excluded_countries": [],
+        "citizenship_requirements": [],
+        "residency_requirements": [],
+        "security_clearance": null,
+        "export_control_restrictions": null,
+        "language_requirements": [],
+        "origin_match": "unknown"
+      },
+      "mobility": {
+        "visa_sponsorship": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "immigration_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "international_candidates": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "moving_expenses": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "airfare": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "travel_reimbursement": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_provided": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "temporary_housing": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "fully_funded_relocation": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        }
+      },
+      "provenance": {
+        "adapter": "simplify",
+        "source_id": "813cd086b43576fc",
+        "source_job_id": "ff723fb0-8021-476f-94d8-a14675f7883f",
+        "fetched_at": "2026-10-17T13:08:35.674814Z",
+        "source_posted_at": "2026-09-28T22:20:35Z",
+        "first_seen_at": "2026-10-17T13:08:35.674814Z",
+        "parser_version": "1.0.0",
+        "classification_version": "1.0.0",
+        "content_hash": "93a9073485cc0ca0ada78e03f448c545587e49e45b9e77742b579cff3e4e9b03",
+        "source_health_at_fetch": "healthy",
+        "first_party_verified": false
+      },
+      "lifecycle": "open",
+      "extra": {
+        "company_name": "The Focusrite Group",
+        "company_domain": "the-focusrite-group.com",
+        "simplify_feed": "summer2026-internships",
+        "simplify_category": "Software",
+        "simplify_terms": [
+          "N/A"
+        ],
+        "simplify_sponsorship": "Other",
+        "simplify_source": "Simplify",
+        "experience_level": "Internship"
+      }
+    },
+    {
+      "job_id": "70b0140c5b89a28eea2b91608d13318efad700968d8b27bd9deb41a5a233777f",
+      "source_job_id": "f940f70a-cfb4-4dbb-bb7a-154fb8d11427",
+      "requisition_id": null,
+      "company_id": "6e475caa77837da2",
+      "company_name": "The Focusrite Group",
+      "title": "Hardware - Electronics and Firmware Intern",
+      "job_url": "https://apply.workable.com/focusrite/j/4296FAD493/apply",
+      "apply_url": "https://apply.workable.com/focusrite/j/4296FAD493/apply",
+      "careers_url": null,
+      "source_url": null,
+      "summary": "Hardware - Electronics and Firmware Intern - The Focusrite Group - Hardware - N/A",
+      "career_level": "internship",
+      "career_level_confidence": 0.82,
+      "employment_type": "internship",
+      "disciplines": {
+        "primary": "hardware",
+        "secondary": [
+          "firmware"
+        ],
+        "confidence": 0.9
+      },
+      "skills": [],
+      "locations": [
+        {
+          "raw": "High Wycombe, UK",
+          "city": "High Wycombe",
+          "region": "UK",
+          "country": "United Kingdom",
+          "country_code": "GB",
+          "continent": "Europe"
+        }
+      ],
+      "workplace_type": "onsite",
+      "remote_scope": "unknown",
+      "remote_allowed_countries": [],
+      "remote_allowed_regions": [],
+      "source_posted_at": "2026-09-28T22:20:31Z",
+      "first_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_changed_at": null,
+      "closed_at": null,
+      "reopened_at": null,
+      "application_deadline": null,
+      "expected_start_date": null,
+      "expected_end_date": null,
+      "duration_months": null,
+      "academic_term": "unknown",
+      "compensation": null,
+      "education": {
+        "student_required": null,
+        "return_to_school_required": null,
+        "degree_levels": [],
+        "graduation_years": [],
+        "majors": [],
+        "academic_years": []
+      },
+      "eligibility": {
+        "work_authorization": null,
+        "explicit_allowed_countries": [],
+        "explicit_excluded_countries": [],
+        "citizenship_requirements": [],
+        "residency_requirements": [],
+        "security_clearance": null,
+        "export_control_restrictions": null,
+        "language_requirements": [],
+        "origin_match": "unknown"
+      },
+      "mobility": {
+        "visa_sponsorship": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "immigration_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "international_candidates": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "moving_expenses": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "airfare": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "travel_reimbursement": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_provided": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "temporary_housing": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "fully_funded_relocation": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        }
+      },
+      "provenance": {
+        "adapter": "simplify",
+        "source_id": "9d6c1c37a5b89eb1",
+        "source_job_id": "f940f70a-cfb4-4dbb-bb7a-154fb8d11427",
+        "fetched_at": "2026-10-17T13:08:35.674814Z",
+        "source_posted_at": "2026-09-28T22:20:31Z",
+        "first_seen_at": "2026-10-17T13:08:35.674814Z",
+        "parser_version": "1.0.0",
+        "classification_version": "1.0.0",
+        "content_hash": "2cfa1e0bbe6eee23d2fe28164a6427b52a4c8ca0e42b7416ede334f60c85848e",
+        "source_health_at_fetch": "healthy",
+        "first_party_verified": false
+      },
+      "lifecycle": "open",
+      "extra": {
+        "company_name": "The Focusrite Group",
+        "company_domain": "the-focusrite-group.com",
+        "simplify_feed": "summer2027-internships",
+        "simplify_category": "Hardware",
+        "simplify_terms": [
+          "N/A"
+        ],
+        "simplify_sponsorship": "Other",
+        "simplify_source": "Simplify",
+        "experience_level": "Internship"
+      }
+    },
+    {
+      "job_id": "25cfe399758dfafe67a98b27be3aaeac52c91501dd5f615cbc61bc38c5551d35",
+      "source_job_id": "ff723fb0-8021-476f-94d8-a14675f7883f",
+      "requisition_id": null,
+      "company_id": "6e475caa77837da2",
+      "company_name": "The Focusrite Group",
+      "title": "Production Systems Developer Intern",
+      "job_url": "https://apply.workable.com/focusrite/j/EB05509AE0/apply",
+      "apply_url": "https://apply.workable.com/focusrite/j/EB05509AE0/apply",
+      "careers_url": null,
+      "source_url": null,
+      "summary": "Production Systems Developer Intern - The Focusrite Group - Software - N/A",
+      "career_level": "internship",
+      "career_level_confidence": 0.82,
+      "employment_type": "internship",
+      "disciplines": {
+        "primary": "software",
+        "secondary": [
+          "systems"
+        ],
+        "confidence": 0.98
+      },
+      "skills": [],
+      "locations": [
+        {
+          "raw": "High Wycombe, UK",
+          "city": "High Wycombe",
+          "region": "UK",
+          "country": "United Kingdom",
+          "country_code": "GB",
+          "continent": "Europe"
+        }
+      ],
+      "workplace_type": "onsite",
+      "remote_scope": "unknown",
+      "remote_allowed_countries": [],
+      "remote_allowed_regions": [],
+      "source_posted_at": "2026-09-28T22:20:35Z",
+      "first_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_changed_at": null,
+      "closed_at": null,
+      "reopened_at": null,
+      "application_deadline": null,
+      "expected_start_date": null,
+      "expected_end_date": null,
+      "duration_months": null,
+      "academic_term": "unknown",
+      "compensation": null,
+      "education": {
+        "student_required": null,
+        "return_to_school_required": null,
+        "degree_levels": [],
+        "graduation_years": [],
+        "majors": [],
+        "academic_years": []
+      },
+      "eligibility": {
+        "work_authorization": null,
+        "explicit_allowed_countries": [],
+        "explicit_excluded_countries": [],
+        "citizenship_requirements": [],
+        "residency_requirements": [],
+        "security_clearance": null,
+        "export_control_restrictions": null,
+        "language_requirements": [],
+        "origin_match": "unknown"
+      },
+      "mobility": {
+        "visa_sponsorship": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "immigration_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "international_candidates": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "moving_expenses": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "airfare": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "travel_reimbursement": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_provided": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "temporary_housing": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "fully_funded_relocation": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        }
+      },
+      "provenance": {
+        "adapter": "simplify",
+        "source_id": "9d6c1c37a5b89eb1",
+        "source_job_id": "ff723fb0-8021-476f-94d8-a14675f7883f",
+        "fetched_at": "2026-10-17T13:08:35.674814Z",
+        "source_posted_at": "2026-09-28T22:20:35Z",
+        "first_seen_at": "2026-10-17T13:08:35.674814Z",
+        "parser_version": "1.0.0",
+        "classification_version": "1.0.0",
+        "content_hash": "93a9073485cc0ca0ada78e03f448c545587e49e45b9e77742b579cff3e4e9b03",
+        "source_health_at_fetch": "healthy",
+        "first_party_verified": false
+      },
+      "lifecycle": "open",
+      "extra": {
+        "company_name": "The Focusrite Group",
+        "company_domain": "the-focusrite-group.com",
+        "simplify_feed": "summer2027-internships",
+        "simplify_category": "Software",
+        "simplify_terms": [
+          "N/A"
+        ],
+        "simplify_sponsorship": "Other",
+        "simplify_source": "Simplify",
+        "experience_level": "Internship"
+      }
+    },
+    {
+      "job_id": "53f3d900c838994699e5b5f5034da9df62ac9d5607a634a27ebfa35c2d50c109",
+      "source_job_id": "949230dd-d208-43ca-89c6-2f0fca003a69",
+      "requisition_id": null,
+      "company_id": "a3874971c1bccaa9",
+      "company_name": "CloudFactory",
+      "title": "Construction Reality Capture Technician",
+      "job_url": "https://apply.workable.com/cloudfactory/j/A27D7761F8/apply",
+      "apply_url": "https://apply.workable.com/cloudfactory/j/A27D7761F8/apply",
+      "careers_url": null,
+      "source_url": null,
+      "summary": "Construction Reality Capture Technician - CloudFactory - AI/ML/Data",
+      "career_level": "new_grad",
+      "career_level_confidence": 0.8,
+      "employment_type": "full_time",
+      "disciplines": {
+        "primary": "machine_learning",
+        "secondary": [
+          "data_science"
+        ],
+        "confidence": 0.75
+      },
+      "skills": [],
+      "locations": [
+        {
+          "raw": "Abilene, TX",
+          "city": "Abilene",
+          "region": "Texas",
+          "country": "United States",
+          "country_code": "US",
+          "continent": "North America"
+        }
+      ],
+      "workplace_type": "onsite",
+      "remote_scope": "unknown",
+      "remote_allowed_countries": [],
+      "remote_allowed_regions": [],
+      "source_posted_at": "2026-08-07T06:22:25Z",
+      "first_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_changed_at": null,
+      "closed_at": null,
+      "reopened_at": null,
+      "application_deadline": null,
+      "expected_start_date": null,
+      "expected_end_date": null,
+      "duration_months": null,
+      "academic_term": "unknown",
+      "compensation": null,
+      "education": {
+        "student_required": null,
+        "return_to_school_required": null,
+        "degree_levels": [],
+        "graduation_years": [],
+        "majors": [],
+        "academic_years": []
+      },
+      "eligibility": {
+        "work_authorization": null,
+        "explicit_allowed_countries": [],
+        "explicit_excluded_countries": [],
+        "citizenship_requirements": [],
+        "residency_requirements": [],
+        "security_clearance": null,
+        "export_control_restrictions": null,
+        "language_requirements": [],
+        "origin_match": "unknown"
+      },
+      "mobility": {
+        "visa_sponsorship": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "immigration_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "international_candidates": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "moving_expenses": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "airfare": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "travel_reimbursement": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_provided": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "temporary_housing": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "fully_funded_relocation": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        }
+      },
+      "provenance": {
+        "adapter": "simplify",
+        "source_id": "0cb18013efc6a3da",
+        "source_job_id": "949230dd-d208-43ca-89c6-2f0fca003a69",
+        "fetched_at": "2026-10-17T13:08:35.674814Z",
+        "source_posted_at": "2026-08-07T06:22:25Z",
+        "first_seen_at": "2026-10-17T13:08:35.674814Z",
+        "parser_version": "1.0.0",
+        "classification_version": "1.0.0",
+        "content_hash": "09d8f7aaf6507495cebe9f481ac38cc5c7b63e3e6c953528e01f8fa3b3e4ee1e",
+        "source_health_at_fetch": "healthy",
+        "first_party_verified": false
+      },
+      "lifecycle": "open",
+      "extra": {
+        "company_name": "CloudFactory",
+        "company_domain": "cloudfactory.com",
+        "simplify_feed": "new-grad-positions",
+        "simplify_category": "AI/ML/Data",
+        "simplify_terms": [],
+        "simplify_sponsorship": "Other",
+        "simplify_source": "Simplify",
+        "experience_level": "New Grad"
+      }
+    },
+    {
+      "job_id": "df576743d0611e44e49a93ea3e53543189ba74585b2dcb7245fdbad90857ce74",
+      "source_job_id": "cae61d2f-04b5-43ee-a03b-5b8b983c1b88",
+      "requisition_id": null,
+      "company_id": "f9e74e16fdf8ebb8",
+      "company_name": "Accuray",
+      "title": "Motion Controls & Robotics Software Engineer",
+      "job_url": "https://accuray.wd5.myworkdayjobs.com/external/job/Madison-WI/Motion-Controls---Robotics-Software-Engineer_3259-1",
+      "apply_url": "https://accuray.wd5.myworkdayjobs.com/external/job/Madison-WI/Motion-Controls---Robotics-Software-Engineer_3259-1",
+      "careers_url": null,
+      "source_url": null,
+      "summary": "Motion Controls & Robotics Software Engineer - Accuray - Hardware",
+      "career_level": "new_grad",
+      "career_level_confidence": 0.8,
+      "employment_type": "full_time",
+      "disciplines": {
+        "primary": "robotics",
+        "secondary": [
+          "software",
+          "hardware"
+        ],
+        "confidence": 0.75
+      },
+      "skills": [],
+      "locations": [
+        {
+          "raw": "Madison, WI",
+          "city": "Madison",
+          "region": "Wisconsin",
+          "country": "United States",
+          "country_code": "US",
+          "continent": "North America"
+        }
+      ],
+      "workplace_type": "onsite",
+      "remote_scope": "unknown",
+      "remote_allowed_countries": [],
+      "remote_allowed_regions": [],
+      "source_posted_at": "2026-10-02T00:00:00Z",
+      "first_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_changed_at": null,
+      "closed_at": null,
+      "reopened_at": null,
+      "application_deadline": null,
+      "expected_start_date": null,
+      "expected_end_date": null,
+      "duration_months": null,
+      "academic_term": "unknown",
+      "compensation": null,
+      "education": {
+        "student_required": null,
+        "return_to_school_required": null,
+        "degree_levels": [],
+        "graduation_years": [],
+        "majors": [],
+        "academic_years": []
+      },
+      "eligibility": {
+        "work_authorization": null,
+        "explicit_allowed_countries": [],
+        "explicit_excluded_countries": [],
+        "citizenship_requirements": [],
+        "residency_requirements": [],
+        "security_clearance": null,
+        "export_control_restrictions": null,
+        "language_requirements": [],
+        "origin_match": "unknown"
+      },
+      "mobility": {
+        "visa_sponsorship": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "immigration_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "international_candidates": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "moving_expenses": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "airfare": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "travel_reimbursement": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_provided": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "temporary_housing": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "fully_funded_relocation": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        }
+      },
+      "provenance": {
+        "adapter": "simplify",
+        "source_id": "0cb18013efc6a3da",
+        "source_job_id": "cae61d2f-04b5-43ee-a03b-5b8b983c1b88",
+        "fetched_at": "2026-10-17T13:08:35.674814Z",
+        "source_posted_at": "2026-10-02T00:00:00Z",
+        "first_seen_at": "2026-10-17T13:08:35.674814Z",
+        "parser_version": "1.0.0",
+        "classification_version": "1.0.0",
+        "content_hash": "d9bc57627cf76b50595c32cd8c3620ab83f9997d84d86bc81bd2f018c3be8f84",
+        "source_health_at_fetch": "healthy",
+        "first_party_verified": false
+      },
+      "lifecycle": "open",
+      "extra": {
+        "company_name": "Accuray",
+        "company_domain": "accuray.com",
+        "simplify_feed": "new-grad-positions",
+        "simplify_category": "Hardware",
+        "simplify_terms": [],
+        "simplify_sponsorship": "Other",
+        "simplify_source": "Simplify",
+        "experience_level": "New Grad"
+      }
+    },
+    {
+      "job_id": "ae4b04414160b7008385ec0a6f8829987fecddd4175dc4c9367f20ce6657e7a4",
+      "source_job_id": "de77aed1-837d-409a-976d-bc4eabea5bda",
+      "requisition_id": null,
+      "company_id": "704cac94618e65a0",
+      "company_name": "Starling Bank",
+      "title": "iOS Engineer",
+      "job_url": "https://apply.workable.com/starling-bank/j/0A13F0BEE0/apply",
+      "apply_url": "https://apply.workable.com/starling-bank/j/0A13F0BEE0/apply",
+      "careers_url": null,
+      "source_url": null,
+      "summary": "iOS Engineer - Starling Bank - Software",
+      "career_level": "new_grad",
+      "career_level_confidence": 0.8,
+      "employment_type": "full_time",
+      "disciplines": {
+        "primary": "mobile",
+        "secondary": [
+          "software"
+        ],
+        "confidence": 0.75
+      },
+      "skills": [],
+      "locations": [
+        {
+          "raw": "London, UK",
+          "city": "London",
+          "region": "UK",
+          "country": "United Kingdom",
+          "country_code": "GB",
+          "continent": "Europe"
+        }
+      ],
+      "workplace_type": "onsite",
+      "remote_scope": "unknown",
+      "remote_allowed_countries": [],
+      "remote_allowed_regions": [],
+      "source_posted_at": "2026-09-09T15:07:24Z",
+      "first_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_changed_at": null,
+      "closed_at": null,
+      "reopened_at": null,
+      "application_deadline": null,
+      "expected_start_date": null,
+      "expected_end_date": null,
+      "duration_months": null,
+      "academic_term": "unknown",
+      "compensation": null,
+      "education": {
+        "student_required": null,
+        "return_to_school_required": null,
+        "degree_levels": [],
+        "graduation_years": [],
+        "majors": [],
+        "academic_years": []
+      },
+      "eligibility": {
+        "work_authorization": null,
+        "explicit_allowed_countries": [],
+        "explicit_excluded_countries": [],
+        "citizenship_requirements": [],
+        "residency_requirements": [],
+        "security_clearance": null,
+        "export_control_restrictions": null,
+        "language_requirements": [],
+        "origin_match": "unknown"
+      },
+      "mobility": {
+        "visa_sponsorship": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "immigration_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "international_candidates": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "moving_expenses": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "airfare": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "travel_reimbursement": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_provided": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "temporary_housing": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "fully_funded_relocation": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        }
+      },
+      "provenance": {
+        "adapter": "simplify",
+        "source_id": "0cb18013efc6a3da",
+        "source_job_id": "de77aed1-837d-409a-976d-bc4eabea5bda",
+        "fetched_at": "2026-10-17T13:08:35.674814Z",
+        "source_posted_at": "2026-09-09T15:07:24Z",
+        "first_seen_at": "2026-10-17T13:08:35.674814Z",
+        "parser_version": "1.0.0",
+        "classification_version": "1.0.0",
+        "content_hash": "6f11926b7c5df673b347393ac01c0f1ddebd411da51bd4fd23ceee455ede595e",
+        "source_health_at_fetch": "healthy",
+        "first_party_verified": false
+      },
+      "lifecycle": "open",
+      "extra": {
+        "company_name": "Starling Bank",
+        "company_domain": "starling-bank.com",
+        "simplify_feed": "new-grad-positions",
+        "simplify_category": "Software",
+        "simplify_terms": [],
+        "simplify_sponsorship": "Other",
+        "simplify_source": "Simplify",
+        "experience_level": "New Grad"
+      }
+    },
+    {
+      "job_id": "e79d0ccc23931c41a94f5fb2624235b6f7549a4ef8528abdc803d541b204a3e1",
+      "source_job_id": "b0fb54b5-eefe-4969-b998-22da93d6c774",
+      "requisition_id": null,
+      "company_id": "6e475caa77837da2",
+      "company_name": "The Focusrite Group",
+      "title": "Software Developer Placement Intern",
+      "job_url": "https://apply.workable.com/focusrite/j/BFA6731604/apply",
+      "apply_url": "https://apply.workable.com/focusrite/j/BFA6731604/apply",
+      "careers_url": null,
+      "source_url": null,
+      "summary": "Software Developer Placement Intern - The Focusrite Group - Software - Winter 2027",
+      "career_level": "internship",
+      "career_level_confidence": 0.82,
+      "employment_type": "internship",
+      "disciplines": {
+        "primary": "software",
+        "secondary": [],
+        "confidence": 0.98
+      },
+      "skills": [],
+      "locations": [
+        {
+          "raw": "Letchworth Garden City, UK",
+          "city": "Letchworth Garden City",
+          "region": "UK",
+          "country": "United Kingdom",
+          "country_code": "GB",
+          "continent": "Europe"
+        }
+      ],
+      "workplace_type": "onsite",
+      "remote_scope": "unknown",
+      "remote_allowed_countries": [],
+      "remote_allowed_regions": [],
+      "source_posted_at": "2026-09-28T22:20:35Z",
+      "first_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_changed_at": null,
+      "closed_at": null,
+      "reopened_at": null,
+      "application_deadline": null,
+      "expected_start_date": null,
+      "expected_end_date": null,
+      "duration_months": null,
+      "academic_term": "winter",
+      "compensation": null,
+      "education": {
+        "student_required": null,
+        "return_to_school_required": null,
+        "degree_levels": [],
+        "graduation_years": [],
+        "majors": [],
+        "academic_years": []
+      },
+      "eligibility": {
+        "work_authorization": null,
+        "explicit_allowed_countries": [],
+        "explicit_excluded_countries": [],
+        "citizenship_requirements": [],
+        "residency_requirements": [],
+        "security_clearance": null,
+        "export_control_restrictions": null,
+        "language_requirements": [],
+        "origin_match": "unknown"
+      },
+      "mobility": {
+        "visa_sponsorship": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "immigration_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "international_candidates": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "moving_expenses": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "airfare": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "travel_reimbursement": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_provided": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "temporary_housing": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "fully_funded_relocation": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        }
+      },
+      "provenance": {
+        "adapter": "simplify",
+        "source_id": "9d6c1c37a5b89eb1",
+        "source_job_id": "b0fb54b5-eefe-4969-b998-22da93d6c774",
+        "fetched_at": "2026-10-17T13:08:35.674814Z",
+        "source_posted_at": "2026-09-28T22:20:35Z",
+        "first_seen_at": "2026-10-17T13:08:35.674814Z",
+        "parser_version": "1.0.0",
+        "classification_version": "1.0.0",
+        "content_hash": "60c40cec9573ad30dbdabdbcdb3d8ed39b01700f94a880321bc4ba0545370853",
+        "source_health_at_fetch": "healthy",
+        "first_party_verified": false
+      },
+      "lifecycle": "open",
+      "extra": {
+        "company_name": "The Focusrite Group",
+        "company_domain": "the-focusrite-group.com",
+        "simplify_feed": "summer2027-internships",
+        "simplify_category": "Software",
+        "simplify_terms": [
+          "Winter 2027"
+        ],
+        "simplify_sponsorship": "Other",
+        "simplify_source": "Simplify",
+        "experience_level": "Internship"
+      }
+    },
+    {
+      "job_id": "494a0ada3e71c6bc442633c99451f8c025cc9b40b41288f6b2894d81a373fc7b",
+      "source_job_id": "c962eb59-df2d-4d2d-8188-daeb44ec9f83",
+      "requisition_id": null,
+      "company_id": "d5e25bf5483374f8",
+      "company_name": "Saalex",
+      "title": "Engineering Technician 1",
+      "job_url": "https://apply.workable.com/saalex/j/B4101AB996/apply",
+      "apply_url": "https://apply.workable.com/saalex/j/B4101AB996/apply",
+      "careers_url": null,
+      "source_url": null,
+      "summary": "Engineering Technician 1 - Saalex - Hardware",
+      "career_level": "new_grad",
+      "career_level_confidence": 0.8,
+      "employment_type": "full_time",
+      "disciplines": {
+        "primary": "hardware",
+        "secondary": [],
+        "confidence": 0.65
+      },
+      "skills": [],
+      "locations": [
+        {
+          "raw": "Ridgecrest, CA",
+          "city": "Ridgecrest",
+          "region": "California",
+          "country": "United States",
+          "country_code": "US",
+          "continent": "North America"
+        }
+      ],
+      "workplace_type": "onsite",
+      "remote_scope": "unknown",
+      "remote_allowed_countries": [],
+      "remote_allowed_regions": [],
+      "source_posted_at": "2026-09-03T23:12:12Z",
+      "first_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_changed_at": null,
+      "closed_at": null,
+      "reopened_at": null,
+      "application_deadline": null,
+      "expected_start_date": null,
+      "expected_end_date": null,
+      "duration_months": null,
+      "academic_term": "unknown",
+      "compensation": null,
+      "education": {
+        "student_required": null,
+        "return_to_school_required": null,
+        "degree_levels": [],
+        "graduation_years": [],
+        "majors": [],
+        "academic_years": []
+      },
+      "eligibility": {
+        "work_authorization": null,
+        "explicit_allowed_countries": [],
+        "explicit_excluded_countries": [],
+        "citizenship_requirements": [],
+        "residency_requirements": [],
+        "security_clearance": null,
+        "export_control_restrictions": null,
+        "language_requirements": [],
+        "origin_match": "unknown"
+      },
+      "mobility": {
+        "visa_sponsorship": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "immigration_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "international_candidates": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "moving_expenses": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "airfare": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "travel_reimbursement": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_provided": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "temporary_housing": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "fully_funded_relocation": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        }
+      },
+      "provenance": {
+        "adapter": "simplify",
+        "source_id": "0cb18013efc6a3da",
+        "source_job_id": "c962eb59-df2d-4d2d-8188-daeb44ec9f83",
+        "fetched_at": "2026-10-17T13:08:35.674814Z",
+        "source_posted_at": "2026-09-03T23:12:12Z",
+        "first_seen_at": "2026-10-17T13:08:35.674814Z",
+        "parser_version": "1.0.0",
+        "classification_version": "1.0.0",
+        "content_hash": "3edc9d7206554971fbe70576d528142506f02f85f224f63e24752c3b27fcc8f5",
+        "source_health_at_fetch": "healthy",
+        "first_party_verified": false
+      },
+      "lifecycle": "open",
+      "extra": {
+        "company_name": "Saalex",
+        "company_domain": "saalex.com",
+        "simplify_feed": "new-grad-positions",
+        "simplify_category": "Hardware",
+        "simplify_terms": [],
+        "simplify_sponsorship": "Other",
+        "simplify_source": "Simplify",
+        "experience_level": "New Grad"
+      }
+    },
+    {
+      "job_id": "7392dc6e03d850d1bc0b7fd35a75797443395fd1ed467365106333ae68b02e73",
+      "source_job_id": "b0fb54b5-eefe-4969-b998-22da93d6c774",
+      "requisition_id": null,
+      "company_id": "6e475caa77837da2",
+      "company_name": "The Focusrite Group",
+      "title": "Software Developer Placement Intern",
+      "job_url": "https://apply.workable.com/focusrite/j/BFA6731604/apply",
+      "apply_url": "https://apply.workable.com/focusrite/j/BFA6731604/apply",
+      "careers_url": null,
+      "source_url": null,
+      "summary": "Software Developer Placement Intern - The Focusrite Group - Software - Winter 2027",
+      "career_level": "internship",
+      "career_level_confidence": 0.82,
+      "employment_type": "internship",
+      "disciplines": {
+        "primary": "software",
+        "secondary": [],
+        "confidence": 0.98
+      },
+      "skills": [],
+      "locations": [
+        {
+          "raw": "Letchworth Garden City, UK",
+          "city": "Letchworth Garden City",
+          "region": "UK",
+          "country": "United Kingdom",
+          "country_code": "GB",
+          "continent": "Europe"
+        }
+      ],
+      "workplace_type": "onsite",
+      "remote_scope": "unknown",
+      "remote_allowed_countries": [],
+      "remote_allowed_regions": [],
+      "source_posted_at": "2026-09-28T22:20:35Z",
+      "first_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_changed_at": null,
+      "closed_at": null,
+      "reopened_at": null,
+      "application_deadline": null,
+      "expected_start_date": null,
+      "expected_end_date": null,
+      "duration_months": null,
+      "academic_term": "winter",
+      "compensation": null,
+      "education": {
+        "student_required": null,
+        "return_to_school_required": null,
+        "degree_levels": [],
+        "graduation_years": [],
+        "majors": [],
+        "academic_years": []
+      },
+      "eligibility": {
+        "work_authorization": null,
+        "explicit_allowed_countries": [],
+        "explicit_excluded_countries": [],
+        "citizenship_requirements": [],
+        "residency_requirements": [],
+        "security_clearance": null,
+        "export_control_restrictions": null,
+        "language_requirements": [],
+        "origin_match": "unknown"
+      },
+      "mobility": {
+        "visa_sponsorship": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "immigration_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "international_candidates": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "moving_expenses": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "airfare": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "travel_reimbursement": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_provided": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "temporary_housing": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "fully_funded_relocation": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        }
+      },
+      "provenance": {
+        "adapter": "simplify",
+        "source_id": "813cd086b43576fc",
+        "source_job_id": "b0fb54b5-eefe-4969-b998-22da93d6c774",
+        "fetched_at": "2026-10-17T13:08:35.674814Z",
+        "source_posted_at": "2026-09-28T22:20:35Z",
+        "first_seen_at": "2026-10-17T13:08:35.674814Z",
+        "parser_version": "1.0.0",
+        "classification_version": "1.0.0",
+        "content_hash": "60c40cec9573ad30dbdabdbcdb3d8ed39b01700f94a880321bc4ba0545370853",
+        "source_health_at_fetch": "healthy",
+        "first_party_verified": false
+      },
+      "lifecycle": "open",
+      "extra": {
+        "company_name": "The Focusrite Group",
+        "company_domain": "the-focusrite-group.com",
+        "simplify_feed": "summer2026-internships",
+        "simplify_category": "Software",
+        "simplify_terms": [
+          "Winter 2027"
+        ],
+        "simplify_sponsorship": "Other",
+        "simplify_source": "Simplify",
+        "experience_level": "Internship"
+      }
+    },
+    {
+      "job_id": "7090402e06a49e1198f10a70edd8bcd886fc485026e3aa6fa2618ef94613fe28",
+      "source_job_id": "9a019136-13e7-4685-8187-00ec9d7fd140",
+      "requisition_id": null,
+      "company_id": "45c152d4d91d104f",
+      "company_name": "Avalore",
+      "title": "Systems Engineer",
+      "job_url": "https://apply.workable.com/avalore/j/D96DEC462B/apply",
+      "apply_url": "https://apply.workable.com/avalore/j/D96DEC462B/apply",
+      "careers_url": null,
+      "source_url": null,
+      "summary": "Systems Engineer - Avalore - Software",
+      "career_level": "new_grad",
+      "career_level_confidence": 0.8,
+      "employment_type": "full_time",
+      "disciplines": {
+        "primary": "systems",
+        "secondary": [
+          "software"
+        ],
+        "confidence": 0.85
+      },
+      "skills": [],
+      "locations": [
+        {
+          "raw": "Arlington, VA",
+          "city": "Arlington",
+          "region": "Virginia",
+          "country": "Holy See (Vatican City State)",
+          "country_code": "VA",
+          "continent": null
+        }
+      ],
+      "workplace_type": "onsite",
+      "remote_scope": "unknown",
+      "remote_allowed_countries": [],
+      "remote_allowed_regions": [],
+      "source_posted_at": "2026-08-31T23:29:04Z",
+      "first_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_changed_at": null,
+      "closed_at": null,
+      "reopened_at": null,
+      "application_deadline": null,
+      "expected_start_date": null,
+      "expected_end_date": null,
+      "duration_months": null,
+      "academic_term": "unknown",
+      "compensation": null,
+      "education": {
+        "student_required": null,
+        "return_to_school_required": null,
+        "degree_levels": [],
+        "graduation_years": [],
+        "majors": [],
+        "academic_years": []
+      },
+      "eligibility": {
+        "work_authorization": null,
+        "explicit_allowed_countries": [],
+        "explicit_excluded_countries": [],
+        "citizenship_requirements": [],
+        "residency_requirements": [],
+        "security_clearance": null,
+        "export_control_restrictions": null,
+        "language_requirements": [],
+        "origin_match": "unknown"
+      },
+      "mobility": {
+        "visa_sponsorship": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "immigration_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "international_candidates": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "moving_expenses": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "airfare": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "travel_reimbursement": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_provided": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "temporary_housing": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "fully_funded_relocation": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        }
+      },
+      "provenance": {
+        "adapter": "simplify",
+        "source_id": "0cb18013efc6a3da",
+        "source_job_id": "9a019136-13e7-4685-8187-00ec9d7fd140",
+        "fetched_at": "2026-10-17T13:08:35.674814Z",
+        "source_posted_at": "2026-08-31T23:29:04Z",
+        "first_seen_at": "2026-10-17T13:08:35.674814Z",
+        "parser_version": "1.0.0",
+        "classification_version": "1.0.0",
+        "content_hash": "55b7896d097146c53fc70e52496a2a736b5c7c9b7b67b1f56cbe49750aeb7db3",
+        "source_health_at_fetch": "healthy",
+        "first_party_verified": false
+      },
+      "lifecycle": "open",
+      "extra": {
+        "company_name": "Avalore",
+        "company_domain": "avalore.com",
+        "simplify_feed": "new-grad-positions",
+        "simplify_category": "Software",
+        "simplify_terms": [],
+        "simplify_sponsorship": "Other",
+        "simplify_source": "Simplify",
+        "experience_level": "New Grad"
+      }
+    },
+    {
+      "job_id": "e2c7342d9097d30ce55552a7c0930ec7ae80961679df8854f05222aef23067d6",
+      "source_job_id": "dc1736a5-1d63-4f9d-b1cb-88598e3fa554",
+      "requisition_id": null,
+      "company_id": "ba8711cf08449a80",
+      "company_name": "Galatea Associates",
+      "title": "Entry-Level Financial Software Consultant",
+      "job_url": "https://jobs.lever.co/galatea-associates/d5bceaf1-0137-4cc3-9353-72cc7a4f937b/apply",
+      "apply_url": "https://jobs.lever.co/galatea-associates/d5bceaf1-0137-4cc3-9353-72cc7a4f937b/apply",
+      "careers_url": null,
+      "source_url": null,
+      "summary": "Entry-Level Financial Software Consultant - Galatea Associates - Software",
+      "career_level": "entry_level",
+      "career_level_confidence": 0.82,
+      "employment_type": "full_time",
+      "disciplines": {
+        "primary": "software",
+        "secondary": [],
+        "confidence": 0.9
+      },
+      "skills": [],
+      "locations": [
+        {
+          "raw": "St. Petersburg, FL",
+          "city": "St. Petersburg",
+          "region": "Florida",
+          "country": "United States",
+          "country_code": "US",
+          "continent": "North America"
+        }
+      ],
+      "workplace_type": "onsite",
+      "remote_scope": "unknown",
+      "remote_allowed_countries": [],
+      "remote_allowed_regions": [],
+      "source_posted_at": "2026-10-13T22:15:37Z",
+      "first_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_changed_at": null,
+      "closed_at": null,
+      "reopened_at": null,
+      "application_deadline": null,
+      "expected_start_date": null,
+      "expected_end_date": null,
+      "duration_months": null,
+      "academic_term": "unknown",
+      "compensation": null,
+      "education": {
+        "student_required": null,
+        "return_to_school_required": null,
+        "degree_levels": [],
+        "graduation_years": [],
+        "majors": [],
+        "academic_years": []
+      },
+      "eligibility": {
+        "work_authorization": null,
+        "explicit_allowed_countries": [],
+        "explicit_excluded_countries": [],
+        "citizenship_requirements": [],
+        "residency_requirements": [],
+        "security_clearance": null,
+        "export_control_restrictions": null,
+        "language_requirements": [],
+        "origin_match": "unknown"
+      },
+      "mobility": {
+        "visa_sponsorship": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "immigration_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "international_candidates": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "moving_expenses": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "airfare": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "travel_reimbursement": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_provided": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "temporary_housing": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "fully_funded_relocation": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        }
+      },
+      "provenance": {
+        "adapter": "simplify",
+        "source_id": "0cb18013efc6a3da",
+        "source_job_id": "dc1736a5-1d63-4f9d-b1cb-88598e3fa554",
+        "fetched_at": "2026-10-17T13:08:35.674814Z",
+        "source_posted_at": "2026-10-13T22:15:37Z",
+        "first_seen_at": "2026-10-17T13:08:35.674814Z",
+        "parser_version": "1.0.0",
+        "classification_version": "1.0.0",
+        "content_hash": "6a42c83dca38deb995f2684b6e76aa63dcffaf0a45320b2f40ae6f33fa1acdea",
+        "source_health_at_fetch": "healthy",
+        "first_party_verified": false
+      },
+      "lifecycle": "open",
+      "extra": {
+        "company_name": "Galatea Associates",
+        "company_domain": "galatea-associates.com",
+        "simplify_feed": "new-grad-positions",
+        "simplify_category": "Software",
+        "simplify_terms": [],
+        "simplify_sponsorship": "Other",
+        "simplify_source": "Simplify",
+        "experience_level": "New Grad"
+      }
+    },
+    {
+      "job_id": "50a1548e78b15f2827450a8b588b831d2937eb2bfb1cea075b5be4f717524b42",
+      "source_job_id": "9fd33762-2f2f-4dbc-824b-dac8b43af020",
+      "requisition_id": null,
+      "company_id": "61ed27625cb0c869",
+      "company_name": "Mustard Systems",
+      "title": "Cricket Trader",
+      "job_url": "https://apply.workable.com/mustard-systems/j/E5B69CE521/apply",
+      "apply_url": "https://apply.workable.com/mustard-systems/j/E5B69CE521/apply",
+      "careers_url": null,
+      "source_url": null,
+      "summary": "Cricket Trader - Mustard Systems - Quant",
+      "career_level": "new_grad",
+      "career_level_confidence": 0.8,
+      "employment_type": "full_time",
+      "disciplines": {
+        "primary": "quantitative_development",
+        "secondary": [],
+        "confidence": 0.65
+      },
+      "skills": [],
+      "locations": [
+        {
+          "raw": "London, UK",
+          "city": "London",
+          "region": "UK",
+          "country": "United Kingdom",
+          "country_code": "GB",
+          "continent": "Europe"
+        }
+      ],
+      "workplace_type": "onsite",
+      "remote_scope": "unknown",
+      "remote_allowed_countries": [],
+      "remote_allowed_regions": [],
+      "source_posted_at": "2026-09-25T14:16:35Z",
+      "first_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_changed_at": null,
+      "closed_at": null,
+      "reopened_at": null,
+      "application_deadline": null,
+      "expected_start_date": null,
+      "expected_end_date": null,
+      "duration_months": null,
+      "academic_term": "unknown",
+      "compensation": null,
+      "education": {
+        "student_required": null,
+        "return_to_school_required": null,
+        "degree_levels": [],
+        "graduation_years": [],
+        "majors": [],
+        "academic_years": []
+      },
+      "eligibility": {
+        "work_authorization": null,
+        "explicit_allowed_countries": [],
+        "explicit_excluded_countries": [],
+        "citizenship_requirements": [],
+        "residency_requirements": [],
+        "security_clearance": null,
+        "export_control_restrictions": null,
+        "language_requirements": [],
+        "origin_match": "unknown"
+      },
+      "mobility": {
+        "visa_sponsorship": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "immigration_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "international_candidates": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "moving_expenses": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "airfare": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "travel_reimbursement": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_provided": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "temporary_housing": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "fully_funded_relocation": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        }
+      },
+      "provenance": {
+        "adapter": "simplify",
+        "source_id": "0cb18013efc6a3da",
+        "source_job_id": "9fd33762-2f2f-4dbc-824b-dac8b43af020",
+        "fetched_at": "2026-10-17T13:08:35.674814Z",
+        "source_posted_at": "2026-09-25T14:16:35Z",
+        "first_seen_at": "2026-10-17T13:08:35.674814Z",
+        "parser_version": "1.0.0",
+        "classification_version": "1.0.0",
+        "content_hash": "10bac31d6db6c4e3d2ad49306549c4e969e714a550c84d2ed4526123a89a0d95",
+        "source_health_at_fetch": "healthy",
+        "first_party_verified": false
+      },
+      "lifecycle": "open",
+      "extra": {
+        "company_name": "Mustard Systems",
+        "company_domain": "mustard-systems.com",
+        "simplify_feed": "new-grad-positions",
+        "simplify_category": "Quant",
+        "simplify_terms": [],
+        "simplify_sponsorship": "Other",
+        "simplify_source": "Simplify",
+        "experience_level": "New Grad"
+      }
+    },
+    {
+      "job_id": "22b329a961e016b550ad9cc2dc4f769e3095dde2f788aa0c17e75fbfb30ee588",
+      "source_job_id": "aec682d0-cef7-4fab-b024-14111b89bd50",
+      "requisition_id": null,
+      "company_id": "318d64fd66d633d4",
+      "company_name": "AMAX",
+      "title": "Junior Systems Engineer",
+      "job_url": "https://apply.workable.com/amax-1/j/FE4BA3799A/apply",
+      "apply_url": "https://apply.workable.com/amax-1/j/FE4BA3799A/apply",
+      "careers_url": null,
+      "source_url": null,
+      "summary": "Junior Systems Engineer - AMAX - Hardware",
+      "career_level": "new_grad",
+      "career_level_confidence": 0.8,
+      "employment_type": "full_time",
+      "disciplines": {
+        "primary": "systems",
+        "secondary": [
+          "hardware"
+        ],
+        "confidence": 0.85
+      },
+      "skills": [],
+      "locations": [
+        {
+          "raw": "Fremont, CA",
+          "city": "Fremont",
+          "region": "California",
+          "country": "United States",
+          "country_code": "US",
+          "continent": "North America"
+        }
+      ],
+      "workplace_type": "onsite",
+      "remote_scope": "unknown",
+      "remote_allowed_countries": [],
+      "remote_allowed_regions": [],
+      "source_posted_at": "2026-08-08T01:16:51Z",
+      "first_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_changed_at": null,
+      "closed_at": null,
+      "reopened_at": null,
+      "application_deadline": null,
+      "expected_start_date": null,
+      "expected_end_date": null,
+      "duration_months": null,
+      "academic_term": "unknown",
+      "compensation": null,
+      "education": {
+        "student_required": null,
+        "return_to_school_required": null,
+        "degree_levels": [],
+        "graduation_years": [],
+        "majors": [],
+        "academic_years": []
+      },
+      "eligibility": {
+        "work_authorization": null,
+        "explicit_allowed_countries": [],
+        "explicit_excluded_countries": [],
+        "citizenship_requirements": [],
+        "residency_requirements": [],
+        "security_clearance": null,
+        "export_control_restrictions": null,
+        "language_requirements": [],
+        "origin_match": "unknown"
+      },
+      "mobility": {
+        "visa_sponsorship": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "immigration_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "international_candidates": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "moving_expenses": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "airfare": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "travel_reimbursement": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_provided": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "temporary_housing": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "fully_funded_relocation": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        }
+      },
+      "provenance": {
+        "adapter": "simplify",
+        "source_id": "0cb18013efc6a3da",
+        "source_job_id": "aec682d0-cef7-4fab-b024-14111b89bd50",
+        "fetched_at": "2026-10-17T13:08:35.674814Z",
+        "source_posted_at": "2026-08-08T01:16:51Z",
+        "first_seen_at": "2026-10-17T13:08:35.674814Z",
+        "parser_version": "1.0.0",
+        "classification_version": "1.0.0",
+        "content_hash": "8e538c628e0310e8c80c6e3cc93b0b362c878cbaab98f29a9c1d57b30ec28f18",
+        "source_health_at_fetch": "healthy",
+        "first_party_verified": false
+      },
+      "lifecycle": "open",
+      "extra": {
+        "company_name": "AMAX",
+        "company_domain": "amax.com",
+        "simplify_feed": "new-grad-positions",
+        "simplify_category": "Hardware",
+        "simplify_terms": [],
+        "simplify_sponsorship": "Other",
+        "simplify_source": "Simplify",
+        "experience_level": "New Grad"
+      }
+    },
+    {
+      "job_id": "899532a48812b6174f8e191a7eac8ff28abad8a5b499f0e561ac43f9832b8489",
+      "source_job_id": "d1d59849-acaf-4fac-8763-72a6042a75f8",
+      "requisition_id": null,
+      "company_id": "26f824c122a5f379",
+      "company_name": "Grayce",
+      "title": "Graduate Software Engineer - Bridgend",
+      "job_url": "https://apply.workable.com/grayce/j/1789116104/apply",
+      "apply_url": "https://apply.workable.com/grayce/j/1789116104/apply",
+      "careers_url": null,
+      "source_url": null,
+      "summary": "Graduate Software Engineer - Bridgend - Grayce - Software",
+      "career_level": "new_grad",
+      "career_level_confidence": 0.9199999999999999,
+      "employment_type": "full_time",
+      "disciplines": {
+        "primary": "software",
+        "secondary": [],
+        "confidence": 0.9
+      },
+      "skills": [],
+      "locations": [
+        {
+          "raw": "Bridgend, UK",
+          "city": "Bridgend",
+          "region": "UK",
+          "country": "United Kingdom",
+          "country_code": "GB",
+          "continent": "Europe"
+        }
+      ],
+      "workplace_type": "onsite",
+      "remote_scope": "unknown",
+      "remote_allowed_countries": [],
+      "remote_allowed_regions": [],
+      "source_posted_at": "2026-09-23T09:32:23Z",
+      "first_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_changed_at": null,
+      "closed_at": null,
+      "reopened_at": null,
+      "application_deadline": null,
+      "expected_start_date": null,
+      "expected_end_date": null,
+      "duration_months": null,
+      "academic_term": "unknown",
+      "compensation": null,
+      "education": {
+        "student_required": null,
+        "return_to_school_required": null,
+        "degree_levels": [],
+        "graduation_years": [],
+        "majors": [],
+        "academic_years": []
+      },
+      "eligibility": {
+        "work_authorization": null,
+        "explicit_allowed_countries": [],
+        "explicit_excluded_countries": [],
+        "citizenship_requirements": [],
+        "residency_requirements": [],
+        "security_clearance": null,
+        "export_control_restrictions": null,
+        "language_requirements": [],
+        "origin_match": "unknown"
+      },
+      "mobility": {
+        "visa_sponsorship": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "immigration_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "international_candidates": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "moving_expenses": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "airfare": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "travel_reimbursement": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_provided": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "temporary_housing": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "fully_funded_relocation": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        }
+      },
+      "provenance": {
+        "adapter": "simplify",
+        "source_id": "0cb18013efc6a3da",
+        "source_job_id": "d1d59849-acaf-4fac-8763-72a6042a75f8",
+        "fetched_at": "2026-10-17T13:08:35.674814Z",
+        "source_posted_at": "2026-09-23T09:32:23Z",
+        "first_seen_at": "2026-10-17T13:08:35.674814Z",
+        "parser_version": "1.0.0",
+        "classification_version": "1.0.0",
+        "content_hash": "d8c7df004e011c07dc07872715d6cd48a69f7ca1ca979339ac7f45def3a3a004",
+        "source_health_at_fetch": "healthy",
+        "first_party_verified": false
+      },
+      "lifecycle": "open",
+      "extra": {
+        "company_name": "Grayce",
+        "company_domain": "grayce.com",
+        "simplify_feed": "new-grad-positions",
+        "simplify_category": "Software",
+        "simplify_terms": [],
+        "simplify_sponsorship": "Other",
+        "simplify_source": "Simplify",
+        "experience_level": "New Grad"
+      }
+    },
+    {
+      "job_id": "7acced0843a4d8cd65f368fc4c6784aaf3956c15e8b1bf3cf0b884a5e5d62ab3",
+      "source_job_id": "f940f70a-cfb4-4dbb-bb7a-154fb8d11427",
+      "requisition_id": null,
+      "company_id": "6e475caa77837da2",
+      "company_name": "The Focusrite Group",
+      "title": "Hardware - Electronics and Firmware Intern",
+      "job_url": "https://apply.workable.com/focusrite/j/4296FAD493/apply",
+      "apply_url": "https://apply.workable.com/focusrite/j/4296FAD493/apply",
+      "careers_url": null,
+      "source_url": null,
+      "summary": "Hardware - Electronics and Firmware Intern - The Focusrite Group - Hardware - N/A",
+      "career_level": "internship",
+      "career_level_confidence": 0.82,
+      "employment_type": "internship",
+      "disciplines": {
+        "primary": "hardware",
+        "secondary": [
+          "firmware"
+        ],
+        "confidence": 0.9
+      },
+      "skills": [],
+      "locations": [
+        {
+          "raw": "High Wycombe, UK",
+          "city": "High Wycombe",
+          "region": "UK",
+          "country": "United Kingdom",
+          "country_code": "GB",
+          "continent": "Europe"
+        }
+      ],
+      "workplace_type": "onsite",
+      "remote_scope": "unknown",
+      "remote_allowed_countries": [],
+      "remote_allowed_regions": [],
+      "source_posted_at": "2026-09-28T22:20:31Z",
+      "first_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_changed_at": null,
+      "closed_at": null,
+      "reopened_at": null,
+      "application_deadline": null,
+      "expected_start_date": null,
+      "expected_end_date": null,
+      "duration_months": null,
+      "academic_term": "unknown",
+      "compensation": null,
+      "education": {
+        "student_required": null,
+        "return_to_school_required": null,
+        "degree_levels": [],
+        "graduation_years": [],
+        "majors": [],
+        "academic_years": []
+      },
+      "eligibility": {
+        "work_authorization": null,
+        "explicit_allowed_countries": [],
+        "explicit_excluded_countries": [],
+        "citizenship_requirements": [],
+        "residency_requirements": [],
+        "security_clearance": null,
+        "export_control_restrictions": null,
+        "language_requirements": [],
+        "origin_match": "unknown"
+      },
+      "mobility": {
+        "visa_sponsorship": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "immigration_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "international_candidates": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "moving_expenses": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "airfare": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "travel_reimbursement": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_provided": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "temporary_housing": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "fully_funded_relocation": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        }
+      },
+      "provenance": {
+        "adapter": "simplify",
+        "source_id": "813cd086b43576fc",
+        "source_job_id": "f940f70a-cfb4-4dbb-bb7a-154fb8d11427",
+        "fetched_at": "2026-10-17T13:08:35.674814Z",
+        "source_posted_at": "2026-09-28T22:20:31Z",
+        "first_seen_at": "2026-10-17T13:08:35.674814Z",
+        "parser_version": "1.0.0",
+        "classification_version": "1.0.0",
+        "content_hash": "2cfa1e0bbe6eee23d2fe28164a6427b52a4c8ca0e42b7416ede334f60c85848e",
+        "source_health_at_fetch": "healthy",
+        "first_party_verified": false
+      },
+      "lifecycle": "open",
+      "extra": {
+        "company_name": "The Focusrite Group",
+        "company_domain": "the-focusrite-group.com",
+        "simplify_feed": "summer2026-internships",
+        "simplify_category": "Hardware",
+        "simplify_terms": [
+          "N/A"
+        ],
+        "simplify_sponsorship": "Other",
+        "simplify_source": "Simplify",
+        "experience_level": "Internship"
+      }
+    },
+    {
+      "job_id": "df3c4e260aa0024521dfd813293e13a8edbeb72352be11166cadedd2779441bf",
+      "source_job_id": "d5bceaf1-0137-4cc3-9353-72cc7a4f937b",
+      "requisition_id": null,
+      "company_id": "ba8711cf08449a80",
+      "company_name": "Galatea Associates",
+      "title": "Entry-Level Financial Software Consultant",
+      "job_url": "https://jobs.lever.co/galatea-associates/d5bceaf1-0137-4cc3-9353-72cc7a4f937b",
+      "apply_url": "https://jobs.lever.co/galatea-associates/d5bceaf1-0137-4cc3-9353-72cc7a4f937b/apply",
+      "careers_url": null,
+      "source_url": null,
+      "summary": "Candidates must be willing to work fully in the office based on their client assignment. Travel to client offices may also be required.\nFor recruiting purposes, this position is described as an Entry-Level Financial Software Consultant. While this description reflects the responsibilities and level of the position, Galatea does not use formal job titles or levels internally. Employees are designated as \"Associates\" regardless of their role or level of responsibility.\nGalatea Associates is seeking an Entry-Level Financial Software Consultant to join our growing team!\nThis role offers the opportunity to build your technical and consulting skills while working on real-world projects for clients across the financial services industry. You will learn from experienced Galateans, work directly with clients and teammates to solve business and technical problems.\n>\nAt Galatea, we value collaboration, ownership, and open communication. We encourage teammates to ask questions, share ideas, and learn from each other.\n>\n>\n>\nWhat You'll Do\nGeneral Responsibilities\n>\nUnderstand the Business - Learn how our clients' systems and processes work and how they support business goals.\n>\n>\nAnalyze & Solve Problems - Investigate issues, analyze information, and develop practical solutions to technical and business problems.\n>\n>\nWork with Clients & Teammates - Collaborate with client stakeholders and teammates to refine requirements, gather information, and communicate progress.\n>\n>\nApply Technical Skills - Use your technical knowledge to build, test, analyze, and improve solutions across different technologies and environments.\n>\n>\nOwn Your Work - Take responsibility for your work from initial analysis and design through testing and delivery.\n>\n>\nBuild Financial Knowledge - Develop an understanding of finance, capital markets, and the businesses our clients support.\n>\n>\nGrow as a Consultant - Learn from experienced Galateans, seek feedback, and develop the skills needed to work...",
+      "career_level": "entry_level",
+      "career_level_confidence": 0.82,
+      "employment_type": "full_time",
+      "disciplines": {
+        "primary": "software",
+        "secondary": [
+          "other",
+          "product",
+          "systems"
+        ],
+        "confidence": 0.75
+      },
+      "skills": [
+        "AWS",
+        "Java",
+        "Kubernetes"
+      ],
+      "locations": [
+        {
+          "raw": "St. Petersburg, FL",
+          "city": "St. Petersburg",
+          "region": "Florida",
+          "country": "United States",
+          "country_code": "US",
+          "continent": "North America"
+        }
+      ],
+      "workplace_type": "onsite",
+      "remote_scope": "unknown",
+      "remote_allowed_countries": [],
+      "remote_allowed_regions": [],
+      "source_posted_at": "2026-10-09T19:41:43.523000Z",
+      "first_seen_at": "2026-10-17T13:08:33.285902Z",
+      "last_seen_at": "2026-10-17T13:08:33.285902Z",
+      "last_changed_at": null,
+      "closed_at": null,
+      "reopened_at": null,
+      "application_deadline": null,
+      "expected_start_date": null,
+      "expected_end_date": null,
+      "duration_months": null,
+      "academic_term": "unknown",
+      "compensation": {
+        "min_amount": 95000.0,
+        "max_amount": null,
+        "currency": "USD",
+        "period": "year",
+        "raw": "Recent Graduate (Bachelor's Degree) - $95K base plus a $5K bonus after one year"
+      },
+      "education": {
+        "student_required": null,
+        "return_to_school_required": null,
+        "degree_levels": [],
+        "graduation_years": [],
+        "majors": [],
+        "academic_years": []
+      },
+      "eligibility": {
+        "work_authorization": null,
+        "explicit_allowed_countries": [],
+        "explicit_excluded_countries": [],
+        "citizenship_requirements": [],
+        "residency_requirements": [],
+        "security_clearance": null,
+        "export_control_restrictions": false,
+        "language_requirements": [],
+        "origin_match": "unknown"
+      },
+      "mobility": {
+        "visa_sponsorship": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "immigration_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "international_candidates": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "moving_expenses": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "airfare": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "travel_reimbursement": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_provided": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "temporary_housing": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "fully_funded_relocation": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        }
+      },
+      "provenance": {
+        "adapter": "lever",
+        "source_id": "0087eadc9dd8cefd",
+        "source_job_id": "d5bceaf1-0137-4cc3-9353-72cc7a4f937b",
+        "fetched_at": "2026-10-17T13:08:33.285902Z",
+        "source_posted_at": "2026-10-09T19:41:43.523000Z",
+        "first_seen_at": "2026-10-17T13:08:33.285902Z",
+        "parser_version": "1.0.0",
+        "classification_version": "1.0.0",
+        "content_hash": "d64749c23f1e7bcada20e05ee21fac213be63392fe73dd5dabfbf28fa04c696f",
+        "source_health_at_fetch": "healthy",
+        "first_party_verified": false
+      },
+      "lifecycle": "open",
+      "extra": {
+        "team": "Financial Software Consultants",
+        "company_name": "Galatea Associates"
+      }
+    },
+    {
+      "job_id": "acb729dd3fb58c58e74592b59be4b72b2f8703c6fd13f42ae0c1dfa0b930d48b",
+      "source_job_id": "d3762d72-05c4-4bfa-96c7-4cd40871756c",
+      "requisition_id": null,
+      "company_id": "617396870e89d10a",
+      "company_name": "Kepler Communications",
+      "title": "People & Culture Intern (January 2027) (4 months)",
+      "job_url": "https://jobs.lever.co/kepler/d3762d72-05c4-4bfa-96c7-4cd40871756c",
+      "apply_url": "https://jobs.lever.co/kepler/d3762d72-05c4-4bfa-96c7-4cd40871756c/apply",
+      "careers_url": null,
+      "source_url": null,
+      "summary": "At Kepler Communications, we're not just imagining the future of on-demand space connectivity - we're leading it!\nOur mission is to provide real-time on-orbit connectivity for critical missions, enabling a new era of data-driven intelligence and innovation. With 33 satellites launched to date, Kepler operates the first commercial optical data relay constellation, enabling real-time, continuous space communications while supporting advanced on-orbit compute and hosted payload capabilities.\nIndustry-leading technology is only part of the story. What sets Kepler apart is our team: bold thinkers, skilled builders, and passionate problem-solvers who thrive on pushing the boundaries of what's possible in space. We believe great ideas come from diverse perspectives, and we're committed to creating an environment where you can grow, lead, and make a global impact.\nIf you're ready to reach higher, move faster, and do work that shapes the future space economy - this is your launchpad. Come build the future with Kepler!\nWhat We Offer:\n- Dedicated mentorship to support your learning and growth.\n- Fun and collaborative work environment where you'll learn quickly and feel supported.\n- Team-building events and opportunities to connect across the company.\n- Fully stocked Toronto office kitchen with snacks, drinks, games, and top-notch kitchen appliances.\n- Frequent in-office and company-wide events to stay connected and engaged.\n- Make a direct impact on Kepler's growth and success.\n- We're a certified Great Place to Work® seven years in a row.\nThe People & Culture team plays a significant role at Kepler to help shape the Kepler culture but also support operations and engineering through a period of growth. As the People & Culture Intern, you will be part of this transformational journey, working with specialists on initiatives that span across the organization. Kepler has designed the P&C internship to offer you a wide range of diverse projects and prepare you for an exciting...",
+      "career_level": "internship",
+      "career_level_confidence": 0.87,
+      "employment_type": "unknown",
+      "disciplines": {
+        "primary": "it",
+        "secondary": [
+          "software"
+        ],
+        "confidence": 0.5
+      },
+      "skills": [
+        "C"
+      ],
+      "locations": [
+        {
+          "raw": "Toronto, Ontario",
+          "city": "Toronto",
+          "region": "Ontario",
+          "country": null,
+          "country_code": null,
+          "continent": null
+        }
+      ],
+      "workplace_type": "hybrid",
+      "remote_scope": "worldwide",
+      "remote_allowed_countries": [],
+      "remote_allowed_regions": [],
+      "source_posted_at": "2026-10-16T14:07:44.632000Z",
+      "first_seen_at": "2026-10-17T13:08:33.040143Z",
+      "last_seen_at": "2026-10-17T13:08:33.040143Z",
+      "last_changed_at": null,
+      "closed_at": null,
+      "reopened_at": null,
+      "application_deadline": null,
+      "expected_start_date": null,
+      "expected_end_date": null,
+      "duration_months": null,
+      "academic_term": "unknown",
+      "compensation": null,
+      "education": {
+        "student_required": null,
+        "return_to_school_required": null,
+        "degree_levels": [],
+        "graduation_years": [],
+        "majors": [],
+        "academic_years": []
+      },
+      "eligibility": {
+        "work_authorization": null,
+        "explicit_allowed_countries": [],
+        "explicit_excluded_countries": [],
+        "citizenship_requirements": [],
+        "residency_requirements": [],
+        "security_clearance": null,
+        "export_control_restrictions": false,
+        "language_requirements": [],
+        "origin_match": "unknown"
+      },
+      "mobility": {
+        "visa_sponsorship": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "immigration_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "international_candidates": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "moving_expenses": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "airfare": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "travel_reimbursement": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_provided": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "temporary_housing": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "fully_funded_relocation": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        }
+      },
+      "provenance": {
+        "adapter": "lever",
+        "source_id": "930f0191d0293500",
+        "source_job_id": "d3762d72-05c4-4bfa-96c7-4cd40871756c",
+        "fetched_at": "2026-10-17T13:08:33.040143Z",
+        "source_posted_at": "2026-10-16T14:07:44.632000Z",
+        "first_seen_at": "2026-10-17T13:08:33.040143Z",
+        "parser_version": "1.0.0",
+        "classification_version": "1.0.0",
+        "content_hash": "754b8d54aefa5e41b4d17ab0fcec04e1907aa87e492dd8b0c8019c7bd92de790",
+        "source_health_at_fetch": "healthy",
+        "first_party_verified": false
+      },
+      "lifecycle": "open",
+      "extra": {
+        "team": "Internship",
+        "company_name": "Kepler Communications"
+      }
+    },
+    {
+      "job_id": "afdcf8aad46db2aabb24dc32e236b32fa9fd0dc9c02a8b5687c2c2388b30eedd",
+      "source_job_id": "01d654dc-ec62-4d83-bcd9-76cb80b9c347",
+      "requisition_id": null,
+      "company_id": "e80f2443784eb572",
+      "company_name": "Pattern",
+      "title": "Accounting Internship",
+      "job_url": "https://jobs.lever.co/pattern/01d654dc-ec62-4d83-bcd9-76cb80b9c347",
+      "apply_url": "https://jobs.lever.co/pattern/01d654dc-ec62-4d83-bcd9-76cb80b9c347/apply",
+      "careers_url": null,
+      "source_url": null,
+      "summary": "Are you obsessed with data, partner success, taking action, and changing the game? If you have a whole lot of hustle and a touch of nerd, come work with Pattern! We want you to use your skills to push one of the fastest-growing companies in the US to the top of the list.\nPattern accelerates brands on global ecommerce marketplaces leveraging proprietary technology and AI. Utilizing more than 66 trillion data points, sophisticated machine learning and AI models, Pattern optimizes and automates all levers of ecommerce growth for global brands, including advertising, content management, logistics and fulfillment, pricing, forecasting and customer service. Hundreds of global brands depend on Pattern's ecommerce acceleration platform every day to drive profitable revenue growth across 60+ global marketplaces-including Amazon, Walmart.com, Target.com, eBay, Tmall, TikTok Shop, JD, and Mercado Libre. To learn more, visit pattern.com or email press@pattern.com.\nPattern has been named one of the fastest growing tech companies headquartered in North America by Deloitte and one of best-led companies by Inc. We place employee experience at the center of our business model and have been recognized as one of Newsweek's Global Most Loved Workplaces®.\nWe are looking for a driven Accounting Intern with a basic understanding of financial principles and terms who is ready for an immersive, real-world experience. Under the supervision of our staff, the Accounting Intern can expect to prepare journal entries and financial reports, analyze financial data, utilize ERP software, and assist the accounting staff with other accounting activities. If you are a motivated team player who can maintain efficiency and accuracy when multitasking, we encourage you to apply! This internship offers a year-long hybrid work schedule, running from May 2025 - May 2026 in Lehi, Utah. During the summer months the role is full-time, but will transition to part-time during the academic year.\nFrequently Asked...",
+      "career_level": "internship",
+      "career_level_confidence": 0.87,
+      "employment_type": "internship",
+      "disciplines": {
+        "primary": "machine_learning",
+        "secondary": [
+          "networking",
+          "other",
+          "software"
+        ],
+        "confidence": 0.5
+      },
+      "skills": [],
+      "locations": [
+        {
+          "raw": "Lehi, UT, US",
+          "city": "Lehi",
+          "region": "Utah",
+          "country": "United States",
+          "country_code": "US",
+          "continent": "North America"
+        }
+      ],
+      "workplace_type": "hybrid",
+      "remote_scope": "worldwide",
+      "remote_allowed_countries": [],
+      "remote_allowed_regions": [],
+      "source_posted_at": "2026-10-16T16:30:59.268000Z",
+      "first_seen_at": "2026-10-17T13:08:33.040143Z",
+      "last_seen_at": "2026-10-17T13:08:33.040143Z",
+      "last_changed_at": null,
+      "closed_at": null,
+      "reopened_at": null,
+      "application_deadline": null,
+      "expected_start_date": null,
+      "expected_end_date": null,
+      "duration_months": null,
+      "academic_term": "summer",
+      "compensation": null,
+      "education": {
+        "student_required": null,
+        "return_to_school_required": null,
+        "degree_levels": [],
+        "graduation_years": [],
+        "majors": [],
+        "academic_years": []
+      },
+      "eligibility": {
+        "work_authorization": null,
+        "explicit_allowed_countries": [],
+        "explicit_excluded_countries": [],
+        "citizenship_requirements": [],
+        "residency_requirements": [],
+        "security_clearance": null,
+        "export_control_restrictions": false,
+        "language_requirements": [],
+        "origin_match": "unknown"
+      },
+      "mobility": {
+        "visa_sponsorship": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "immigration_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "international_candidates": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "moving_expenses": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "airfare": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "travel_reimbursement": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_provided": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "temporary_housing": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "fully_funded_relocation": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        }
+      },
+      "provenance": {
+        "adapter": "lever",
+        "source_id": "422a0a726bd2d797",
+        "source_job_id": "01d654dc-ec62-4d83-bcd9-76cb80b9c347",
+        "fetched_at": "2026-10-17T13:08:33.040143Z",
+        "source_posted_at": "2026-10-16T16:30:59.268000Z",
+        "first_seen_at": "2026-10-17T13:08:33.040143Z",
+        "parser_version": "1.0.0",
+        "classification_version": "1.0.0",
+        "content_hash": "e123914555214a31a47b8a74729f96ef37324db704f087e86dcf07329eece71c",
+        "source_health_at_fetch": "healthy",
+        "first_party_verified": false
+      },
+      "lifecycle": "open",
+      "extra": {
+        "team": "Accounting / Finance",
+        "company_name": "Pattern"
+      }
+    },
+    {
+      "job_id": "deb3c12435abd2a7301e5a18a269239dd5c991061d9f87c4801947195d17b3f2",
+      "source_job_id": "5514238a-8301-49f1-8116-26d38ea0900c",
+      "requisition_id": null,
+      "company_id": "617396870e89d10a",
+      "company_name": "Kepler Communications",
+      "title": "Software Engineering Intern (January 2027)",
+      "job_url": "https://jobs.lever.co/kepler/5514238a-8301-49f1-8116-26d38ea0900c",
+      "apply_url": "https://jobs.lever.co/kepler/5514238a-8301-49f1-8116-26d38ea0900c/apply",
+      "careers_url": null,
+      "source_url": null,
+      "summary": "At Kepler Communications, we're not just imagining the future of on-demand space connectivity - we're leading it!\nOur mission is to provide real-time on-orbit connectivity for critical missions, enabling a new era of data-driven intelligence and innovation. With 33 satellites launched to date, Kepler operates the first commercial optical data relay constellation, enabling real-time, continuous space communications while supporting advanced on-orbit compute and hosted payload capabilities.\nIndustry-leading technology is only part of the story. What sets Kepler apart is our team: bold thinkers, skilled builders, and passionate problem-solvers who thrive on pushing the boundaries of what's possible in space. We believe great ideas come from diverse perspectives, and we're committed to creating an environment where you can grow, lead, and make a global impact.\nIf you're ready to reach higher, move faster, and do work that shapes the future space economy - this is your launchpad. Come build the future with Kepler!\nWhat We Offer:\n- Build and operate real satellites!\n- Get hands-on with cutting-edge space technology and real-world engineering challenges.\n- Dedicated mentorship to support your learning and growth.\n- Fun and collaborative work environment where you'll learn quickly and feel supported.\n- Team-building events and opportunities to connect across the company.\n- Fully stocked Toronto office kitchen with snacks, drinks, games, and top-notch kitchen appliances.\n- Frequent in-office and company-wide events to stay connected and engaged.\n- Make a direct impact on Kepler's growth and success.\n- We're a certified Great Place to Work® seven years in a row.\nWe're on the hunt for a top-tier Software Engineering Intern who will assist in developing and maintaining high-performance backend services and infrastructure. You will work closely with cross-functional teams such as satellite operations, ground stations and software development to build scalable applications...",
+      "career_level": "internship",
+      "career_level_confidence": 0.87,
+      "employment_type": "unknown",
+      "disciplines": {
+        "primary": "software",
+        "secondary": [
+          "backend",
+          "infrastructure",
+          "it"
+        ],
+        "confidence": 0.95
+      },
+      "skills": [
+        "Ansible",
+        "Git",
+        "Kubernetes",
+        "PostgreSQL",
+        "Python",
+        "SQL",
+        "Terraform"
+      ],
+      "locations": [
+        {
+          "raw": "Toronto, Ontario",
+          "city": "Toronto",
+          "region": "Ontario",
+          "country": null,
+          "country_code": null,
+          "continent": null
+        }
+      ],
+      "workplace_type": "hybrid",
+      "remote_scope": "worldwide",
+      "remote_allowed_countries": [],
+      "remote_allowed_regions": [],
+      "source_posted_at": "2026-10-16T15:15:29.033000Z",
+      "first_seen_at": "2026-10-17T13:08:33.040143Z",
+      "last_seen_at": "2026-10-17T13:08:33.040143Z",
+      "last_changed_at": null,
+      "closed_at": null,
+      "reopened_at": null,
+      "application_deadline": null,
+      "expected_start_date": null,
+      "expected_end_date": null,
+      "duration_months": null,
+      "academic_term": "unknown",
+      "compensation": null,
+      "education": {
+        "student_required": null,
+        "return_to_school_required": null,
+        "degree_levels": [],
+        "graduation_years": [],
+        "majors": [],
+        "academic_years": []
+      },
+      "eligibility": {
+        "work_authorization": null,
+        "explicit_allowed_countries": [],
+        "explicit_excluded_countries": [],
+        "citizenship_requirements": [],
+        "residency_requirements": [],
+        "security_clearance": null,
+        "export_control_restrictions": false,
+        "language_requirements": [],
+        "origin_match": "unknown"
+      },
+      "mobility": {
+        "visa_sponsorship": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "immigration_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "international_candidates": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "moving_expenses": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "airfare": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "travel_reimbursement": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_provided": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "temporary_housing": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "fully_funded_relocation": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        }
+      },
+      "provenance": {
+        "adapter": "lever",
+        "source_id": "930f0191d0293500",
+        "source_job_id": "5514238a-8301-49f1-8116-26d38ea0900c",
+        "fetched_at": "2026-10-17T13:08:33.040143Z",
+        "source_posted_at": "2026-10-16T15:15:29.033000Z",
+        "first_seen_at": "2026-10-17T13:08:33.040143Z",
+        "parser_version": "1.0.0",
+        "classification_version": "1.0.0",
+        "content_hash": "d5fb7a7fa08746b062a5e39a20db7b9b45d5e9035dccf0e42d55f3aa06be8cb9",
+        "source_health_at_fetch": "healthy",
+        "first_party_verified": false
+      },
+      "lifecycle": "open",
+      "extra": {
+        "team": "Internship",
+        "company_name": "Kepler Communications"
+      }
+    },
+    {
+      "job_id": "98eba926af4148acb587901cb299f37569c07c573a940b90486d7725bb21127e",
+      "source_job_id": "ba606839-0f3b-47db-bd36-12406aec5a37",
+      "requisition_id": null,
+      "company_id": "c6eeec6060a9e127",
+      "company_name": "Luminai",
+      "title": "Forward Deployed Engineer - New Grad",
+      "job_url": "https://jobs.ashbyhq.com/luminai/ba606839-0f3b-47db-bd36-12406aec5a37",
+      "apply_url": "https://jobs.ashbyhq.com/luminai/ba606839-0f3b-47db-bd36-12406aec5a37/application",
+      "careers_url": null,
+      "source_url": null,
+      "summary": "ABOUT LUMINAI\nHealthcare operations have always depended on people to bridge the gaps that technology couldn't. It relies on complex manual work to carry out critical internal processes, yet most health systems don't have enough resources to properly automate these tasks, leaving them stuck in outdated, labor-intensive SOPs.\nLuminai structures the chaos, automates the manual handoffs, and deploys end-to-end workflows across every system, providing the integrated intelligence layer to improve processes over time. By delegating to autonomous AI systems those mission-critical workflows that previously expended valuable human time, Luminai allows doctors and administrators to do what they do best: Focus on Patients.\nWe've raised $60M in funding, including our recent Series B led by Peak XV Partners (formerly Sequoia India), with participation from healthcare-focused Define Ventures and continued support from General Catalyst and Y Combinator. We're backed by some of the best investors in Silicon Valley, including Kevin Weil (Chief Product Officer at OpenAI), Arash Ferdowsi (co-founder of Dropbox), Katie Stanton (former VP Global Media, Twitter), and CEOs of companies such as Flexport, Notion, Front, Ramp, and Twitch.\nOur team is in-office 4 days a week (Monday - Friday, Wednesday optional WFH) in either San Francisco, California or New York, New York.\nABOUT THE ROLE\nAs a Forward Deployed Engineer, you will sit at the intersection of engineering, product, and customer delivery. You'll embed directly with customers, deeply understand their workflows, and design and deploy AI-powered solutions that deliver immediate, real-world impact.\nThis is a highly autonomous, hands-on role for someone who thrives in ambiguous environments, enjoys working directly with customers, and wants to shape product direction through what they see in the field. You'll partner closely with Product and Engineering to turn customer needs into scalable systems that improve how healthcare...",
+      "career_level": "new_grad",
+      "career_level_confidence": 0.82,
+      "employment_type": "unknown",
+      "disciplines": {
+        "primary": "cloud",
+        "secondary": [
+          "infrastructure",
+          "it",
+          "product"
+        ],
+        "confidence": 0.5
+      },
+      "skills": [
+        "AWS",
+        "Azure",
+        "GCP",
+        "JavaScript",
+        "Python",
+        "TypeScript"
+      ],
+      "locations": [
+        {
+          "raw": "SF Bay Area",
+          "city": "SF Bay Area",
+          "region": null,
+          "country": null,
+          "country_code": null,
+          "continent": null
+        }
+      ],
+      "workplace_type": "hybrid",
+      "remote_scope": "worldwide",
+      "remote_allowed_countries": [],
+      "remote_allowed_regions": [],
+      "source_posted_at": "2026-10-15T18:21:35.184000Z",
+      "first_seen_at": "2026-10-17T13:08:33.040143Z",
+      "last_seen_at": "2026-10-17T13:08:33.040143Z",
+      "last_changed_at": null,
+      "closed_at": null,
+      "reopened_at": null,
+      "application_deadline": null,
+      "expected_start_date": null,
+      "expected_end_date": null,
+      "duration_months": null,
+      "academic_term": "unknown",
+      "compensation": null,
+      "education": {
+        "student_required": null,
+        "return_to_school_required": null,
+        "degree_levels": [],
+        "graduation_years": [],
+        "majors": [],
+        "academic_years": []
+      },
+      "eligibility": {
+        "work_authorization": null,
+        "explicit_allowed_countries": [],
+        "explicit_excluded_countries": [],
+        "citizenship_requirements": [],
+        "residency_requirements": [],
+        "security_clearance": null,
+        "export_control_restrictions": false,
+        "language_requirements": [],
+        "origin_match": "unknown"
+      },
+      "mobility": {
+        "visa_sponsorship": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "immigration_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "international_candidates": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "moving_expenses": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "airfare": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "travel_reimbursement": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_provided": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "temporary_housing": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "fully_funded_relocation": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        }
+      },
+      "provenance": {
+        "adapter": "ashby",
+        "source_id": "cf9d3dfc5e4a3a9c",
+        "source_job_id": "ba606839-0f3b-47db-bd36-12406aec5a37",
+        "fetched_at": "2026-10-17T13:08:33.040143Z",
+        "source_posted_at": "2026-10-15T18:21:35.184000Z",
+        "first_seen_at": "2026-10-17T13:08:33.040143Z",
+        "parser_version": "1.0.0",
+        "classification_version": "1.0.0",
+        "content_hash": "9715f3ebb163da916932b3be24c801e47da630fba3fa6373e473ac26ed1817a5",
+        "source_health_at_fetch": "healthy",
+        "first_party_verified": false
+      },
+      "lifecycle": "open",
+      "extra": {
+        "team": "Deployments",
+        "company_name": "Luminai"
+      }
+    },
+    {
+      "job_id": "45f7fb8c7b31ef6b7049b35f1999e05a504eb84e5ca02dbbaf7b10e71870c3a0",
+      "source_job_id": "79945988-cd73-422b-9694-a3a3b4be94f5",
+      "requisition_id": null,
+      "company_id": "e80f2443784eb572",
+      "company_name": "Pattern",
+      "title": "Legal Internship",
+      "job_url": "https://jobs.lever.co/pattern/79945988-cd73-422b-9694-a3a3b4be94f5",
+      "apply_url": "https://jobs.lever.co/pattern/79945988-cd73-422b-9694-a3a3b4be94f5/apply",
+      "careers_url": null,
+      "source_url": null,
+      "summary": "Are you obsessed with data, partner success, taking action, and changing the game? If you have a whole lot of hustle and a touch of nerd, come work with Pattern! We want you to use your skills to push one of the fastest-growing companies in the US to the top of the list.\nPattern accelerates brands on global ecommerce marketplaces leveraging proprietary technology and AI. Utilizing more than 66 trillion data points, sophisticated machine learning and AI models, Pattern optimizes and automates all levers of ecommerce growth for global brands, including advertising, content management, logistics and fulfillment, pricing, forecasting and customer service. Hundreds of global brands depend on Pattern's ecommerce acceleration platform every day to drive profitable revenue growth across 60+ global marketplaces-including Amazon, Walmart.com, Target.com, eBay, Tmall, TikTok Shop, JD, and Mercado Libre. To learn more, visit pattern.com or email press@pattern.com.\nPattern has been named one of the fastest growing tech companies headquartered in North America by Deloitte and one of best-led companies by Inc. We place employee experience at the center of our business model and have been recognized as one of Newsweek's Global Most Loved Workplaces®.\nAre you passionate about law, partner success, taking action, and changing the game? If you have a whole lot of hustle and a touch of nerd, come work with Pattern! We want you to use your skills to push one of the fastest-growing companies in the US to the top of the list.\nWe are looking for a driven Summer Legal Intern with a basic understanding of legal principles and terms who is ready for an immersive, real-world experience. Under the supervision of our legal team, the Summer Legal Intern can expect to conduct legal research, draft documents, assist with contract review, and support the legal team with other legal activities. If you are a motivated team player who can maintain efficiency and accuracy when multitasking, we...",
+      "career_level": "internship",
+      "career_level_confidence": 0.87,
+      "employment_type": "internship",
+      "disciplines": {
+        "primary": "machine_learning",
+        "secondary": [
+          "networking",
+          "other",
+          "product"
+        ],
+        "confidence": 0.5
+      },
+      "skills": [],
+      "locations": [
+        {
+          "raw": "Lehi, UT, US",
+          "city": "Lehi",
+          "region": "Utah",
+          "country": "United States",
+          "country_code": "US",
+          "continent": "North America"
+        }
+      ],
+      "workplace_type": "onsite",
+      "remote_scope": "unknown",
+      "remote_allowed_countries": [],
+      "remote_allowed_regions": [],
+      "source_posted_at": "2026-10-16T17:00:38.276000Z",
+      "first_seen_at": "2026-10-17T13:08:33.040143Z",
+      "last_seen_at": "2026-10-17T13:08:33.040143Z",
+      "last_changed_at": null,
+      "closed_at": null,
+      "reopened_at": null,
+      "application_deadline": null,
+      "expected_start_date": null,
+      "expected_end_date": null,
+      "duration_months": null,
+      "academic_term": "summer",
+      "compensation": null,
+      "education": {
+        "student_required": null,
+        "return_to_school_required": null,
+        "degree_levels": [],
+        "graduation_years": [],
+        "majors": [],
+        "academic_years": []
+      },
+      "eligibility": {
+        "work_authorization": null,
+        "explicit_allowed_countries": [],
+        "explicit_excluded_countries": [],
+        "citizenship_requirements": [],
+        "residency_requirements": [],
+        "security_clearance": null,
+        "export_control_restrictions": false,
+        "language_requirements": [],
+        "origin_match": "unknown"
+      },
+      "mobility": {
+        "visa_sponsorship": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "immigration_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "international_candidates": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "moving_expenses": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "airfare": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "travel_reimbursement": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_provided": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "temporary_housing": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "fully_funded_relocation": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        }
+      },
+      "provenance": {
+        "adapter": "lever",
+        "source_id": "422a0a726bd2d797",
+        "source_job_id": "79945988-cd73-422b-9694-a3a3b4be94f5",
+        "fetched_at": "2026-10-17T13:08:33.040143Z",
+        "source_posted_at": "2026-10-16T17:00:38.276000Z",
+        "first_seen_at": "2026-10-17T13:08:33.040143Z",
+        "parser_version": "1.0.0",
+        "classification_version": "1.0.0",
+        "content_hash": "4f1d372c68a689d4efc5e88ac3f05ec8f24def76b1458c0aeed3113b2ecef8a6",
+        "source_health_at_fetch": "healthy",
+        "first_party_verified": false
+      },
+      "lifecycle": "open",
+      "extra": {
+        "team": "Legal / Compliance",
+        "company_name": "Pattern"
+      }
+    },
+    {
+      "job_id": "e0cbe51623e2bd382cc936d81ed01353df8a4911607886f352c61b5ac3eae412",
+      "source_job_id": "13695e3e-92b7-40f7-8805-ea39b9c324e7",
+      "requisition_id": null,
+      "company_id": "e80f2443784eb572",
+      "company_name": "Pattern",
+      "title": "Operations Internship",
+      "job_url": "https://jobs.lever.co/pattern/13695e3e-92b7-40f7-8805-ea39b9c324e7",
+      "apply_url": "https://jobs.lever.co/pattern/13695e3e-92b7-40f7-8805-ea39b9c324e7/apply",
+      "careers_url": null,
+      "source_url": null,
+      "summary": "Are you obsessed with data, partner success, taking action, and changing the game? If you have a whole lot of hustle and a touch of nerd, come work with Pattern! We want you to use your skills to push one of the fastest-growing companies in the US to the top of the list.\nPattern accelerates brands on global ecommerce marketplaces leveraging proprietary technology and AI. Utilizing more than 66 trillion data points, sophisticated machine learning and AI models, Pattern optimizes and automates all levers of ecommerce growth for global brands, including advertising, content management, logistics and fulfillment, pricing, forecasting and customer service. Hundreds of global brands depend on Pattern's ecommerce acceleration platform every day to drive profitable revenue growth across 60+ global marketplaces-including Amazon, Walmart.com, Target.com, eBay, Tmall, TikTok Shop, JD, and Mercado Libre. To learn more, visit pattern.com or email press@pattern.com.\nPattern has been named one of the fastest growing tech companies headquartered in North America by Deloitte and one of best-led companies by Inc. We place employee experience at the center of our business model and have been recognized as one of Newsweek's Global Most Loved Workplaces®.\nWe are looking for a driven Accounting Intern with a basic understanding of financial principles and terms who is ready for an immersive, real-world experience. Under the supervision of our staff, the Accounting Intern can expect to prepare journal entries and financial reports, analyze financial data, utilize ERP software, and assist the accounting staff with other accounting activities. If you are a motivated team player who can maintain efficiency and accuracy when multitasking, we encourage you to apply! This internship offers a year-long hybrid work schedule, running from May 2025 - May 2026 in Lehi, Utah. During the summer months the role is full-time, but will transition to part-time during the academic year.\nFrequently Asked...",
+      "career_level": "internship",
+      "career_level_confidence": 0.87,
+      "employment_type": "internship",
+      "disciplines": {
+        "primary": "it",
+        "secondary": [
+          "machine_learning",
+          "networking",
+          "other"
+        ],
+        "confidence": 0.5
+      },
+      "skills": [
+        "Go",
+        "SQL"
+      ],
+      "locations": [
+        {
+          "raw": "Lehi, UT, US",
+          "city": "Lehi",
+          "region": "Utah",
+          "country": "United States",
+          "country_code": "US",
+          "continent": "North America"
+        }
+      ],
+      "workplace_type": "hybrid",
+      "remote_scope": "worldwide",
+      "remote_allowed_countries": [],
+      "remote_allowed_regions": [],
+      "source_posted_at": "2026-10-16T17:08:04.606000Z",
+      "first_seen_at": "2026-10-17T13:08:33.040143Z",
+      "last_seen_at": "2026-10-17T13:08:33.040143Z",
+      "last_changed_at": null,
+      "closed_at": null,
+      "reopened_at": null,
+      "application_deadline": null,
+      "expected_start_date": null,
+      "expected_end_date": null,
+      "duration_months": null,
+      "academic_term": "summer",
+      "compensation": null,
+      "education": {
+        "student_required": null,
+        "return_to_school_required": null,
+        "degree_levels": [],
+        "graduation_years": [],
+        "majors": [],
+        "academic_years": []
+      },
+      "eligibility": {
+        "work_authorization": null,
+        "explicit_allowed_countries": [],
+        "explicit_excluded_countries": [],
+        "citizenship_requirements": [],
+        "residency_requirements": [],
+        "security_clearance": null,
+        "export_control_restrictions": false,
+        "language_requirements": [],
+        "origin_match": "unknown"
+      },
+      "mobility": {
+        "visa_sponsorship": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "immigration_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "international_candidates": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "moving_expenses": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "airfare": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "travel_reimbursement": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_provided": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "temporary_housing": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "fully_funded_relocation": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        }
+      },
+      "provenance": {
+        "adapter": "lever",
+        "source_id": "422a0a726bd2d797",
+        "source_job_id": "13695e3e-92b7-40f7-8805-ea39b9c324e7",
+        "fetched_at": "2026-10-17T13:08:33.040143Z",
+        "source_posted_at": "2026-10-16T17:08:04.606000Z",
+        "first_seen_at": "2026-10-17T13:08:33.040143Z",
+        "parser_version": "1.0.0",
+        "classification_version": "1.0.0",
+        "content_hash": "69c49373777ee65cd73235573cadf4303f3f33b76ad9e8dca8038933497b0144",
+        "source_health_at_fetch": "healthy",
+        "first_party_verified": false
+      },
+      "lifecycle": "open",
+      "extra": {
+        "team": "Operations / Logistics",
+        "company_name": "Pattern"
+      }
+    },
+    {
+      "job_id": "c8db287c7feb1f7bf3e6779ff038a88abda94960900e06c3feb307bb38d62208",
+      "source_job_id": "90097cfe-4a53-46fa-9d33-46844161c07c",
+      "requisition_id": null,
+      "company_id": "e80f2443784eb572",
+      "company_name": "Pattern",
+      "title": "Finance Internship",
+      "job_url": "https://jobs.lever.co/pattern/90097cfe-4a53-46fa-9d33-46844161c07c",
+      "apply_url": "https://jobs.lever.co/pattern/90097cfe-4a53-46fa-9d33-46844161c07c/apply",
+      "careers_url": null,
+      "source_url": null,
+      "summary": "Are you obsessed with data, partner success, taking action, and changing the game? If you have a whole lot of hustle and a touch of nerd, come work with Pattern! We want you to use your skills to push one of the fastest-growing companies in the US to the top of the list.\nPattern accelerates brands on global ecommerce marketplaces leveraging proprietary technology and AI. Utilizing more than 66 trillion data points, sophisticated machine learning and AI models, Pattern optimizes and automates all levers of ecommerce growth for global brands, including advertising, content management, logistics and fulfillment, pricing, forecasting and customer service. Hundreds of global brands depend on Pattern's ecommerce acceleration platform every day to drive profitable revenue growth across 60+ global marketplaces-including Amazon, Walmart.com, Target.com, eBay, Tmall, TikTok Shop, JD, and Mercado Libre. To learn more, visit pattern.com or email press@pattern.com.\nPattern has been named one of the fastest growing tech companies headquartered in North America by Deloitte and one of best-led companies by Inc. We place employee experience at the center of our business model and have been recognized as one of Newsweek's Global Most Loved Workplaces®.\nWe are looking for a driven Accounting Intern with a basic understanding of financial principles and terms who is ready for an immersive, real-world experience. Under the supervision of our staff, the Accounting Intern can expect to prepare journal entries and financial reports, analyze financial data, utilize ERP software, and assist the accounting staff with other accounting activities. If you are a motivated team player who can maintain efficiency and accuracy when multitasking, we encourage you to apply! This internship offers a year-long hybrid work schedule, running from May 2025 - May 2026 in Lehi, Utah. During the summer months the role is full-time, but will transition to part-time during the academic year.\nFrequently Asked...",
+      "career_level": "internship",
+      "career_level_confidence": 0.87,
+      "employment_type": "internship",
+      "disciplines": {
+        "primary": "cloud",
+        "secondary": [
+          "it",
+          "machine_learning",
+          "networking"
+        ],
+        "confidence": 0.5
+      },
+      "skills": [
+        "Go"
+      ],
+      "locations": [
+        {
+          "raw": "Lehi, UT, US",
+          "city": "Lehi",
+          "region": "Utah",
+          "country": "United States",
+          "country_code": "US",
+          "continent": "North America"
+        }
+      ],
+      "workplace_type": "hybrid",
+      "remote_scope": "worldwide",
+      "remote_allowed_countries": [],
+      "remote_allowed_regions": [],
+      "source_posted_at": "2026-10-16T16:54:53.405000Z",
+      "first_seen_at": "2026-10-17T13:08:33.040143Z",
+      "last_seen_at": "2026-10-17T13:08:33.040143Z",
+      "last_changed_at": null,
+      "closed_at": null,
+      "reopened_at": null,
+      "application_deadline": null,
+      "expected_start_date": null,
+      "expected_end_date": null,
+      "duration_months": null,
+      "academic_term": "summer",
+      "compensation": null,
+      "education": {
+        "student_required": null,
+        "return_to_school_required": null,
+        "degree_levels": [],
+        "graduation_years": [],
+        "majors": [],
+        "academic_years": []
+      },
+      "eligibility": {
+        "work_authorization": null,
+        "explicit_allowed_countries": [],
+        "explicit_excluded_countries": [],
+        "citizenship_requirements": [],
+        "residency_requirements": [],
+        "security_clearance": null,
+        "export_control_restrictions": false,
+        "language_requirements": [],
+        "origin_match": "unknown"
+      },
+      "mobility": {
+        "visa_sponsorship": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "immigration_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "international_candidates": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "moving_expenses": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "airfare": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "travel_reimbursement": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_provided": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "temporary_housing": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "fully_funded_relocation": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        }
+      },
+      "provenance": {
+        "adapter": "lever",
+        "source_id": "422a0a726bd2d797",
+        "source_job_id": "90097cfe-4a53-46fa-9d33-46844161c07c",
+        "fetched_at": "2026-10-17T13:08:33.040143Z",
+        "source_posted_at": "2026-10-16T16:54:53.405000Z",
+        "first_seen_at": "2026-10-17T13:08:33.040143Z",
+        "parser_version": "1.0.0",
+        "classification_version": "1.0.0",
+        "content_hash": "6eeee0b25de92b4e52232a83b37486cdc706d2a81435e078693438cb562ca0b5",
+        "source_health_at_fetch": "healthy",
+        "first_party_verified": false
+      },
+      "lifecycle": "open",
+      "extra": {
+        "team": "Accounting / Finance",
+        "company_name": "Pattern"
+      }
+    },
+    {
+      "job_id": "b8d00322b979a658d9958b71faa9e4364d4e6a46f2be79187a663c8110e28e6f",
+      "source_job_id": "8894673002",
+      "requisition_id": null,
+      "company_id": "6bbb792143dda021",
+      "company_name": "Weiss Asset Management",
+      "title": "Summer 2028 Internship Interest Form",
+      "job_url": "https://job-boards.greenhouse.io/weissassetmanagement/jobs/8894673002",
+      "apply_url": "https://job-boards.greenhouse.io/weissassetmanagement/jobs/8894673002",
+      "careers_url": null,
+      "source_url": null,
+      "summary": ">\n>\n>\nPlease note: applications for the Summer 2028 Internship are not yet open. This form is not an application, and you'll need to apply when applications officially open this winter.\n>\nIn the meantime, share your interest with our team ahead of the formal recruiting process by submitting your resume and a bit about yourself. You'll be among the first to know when applications open, and we'll share more about the program as recruiting gets closer.\n>\n>\n>\nWeiss Asset Management (WAM), a Boston-based investment firm, invites applications for our Summer 2028 Investment Analyst Internships . As a summer analyst at WAM, you will collaborate closely with our investment team, which invests globally in equities, derivatives, and fixed income through fundamental and quantitative strategies.\n>\nWAM offers two recruiting tracks, both of which lead to the same summer program:\n>\nThe fundamental process evaluates research skills and fundamental analysis. Applications are expected to open in December 2026.\n>\nThe quantitative process emphasizes skills like coding, statistics, and game theory. Applications are expected to open in February 2027.\n>\nAs a multi-strategy firm without a traditional pod structure, interns gain exposure to both fundamental and quantitative approaches, regardless of the interview track they choose.\n>\nWhy Intern at Weiss?\n>\nWe hire interns with the expectation that they will contribute to our investment team in the long run, and we invest heavily in their development.\n>\nInterns and junior analysts play a key role in research, strategy development, and all stages of the investment process in both quantitative and fundamental strategies.\n>\nEach intern is paired with dedicated mentors from the investment team, who provide ongoing guidance and feedback.\n>\nWe have the flexibility to tailor projects for each intern to allow him or her to demonstrate current skills and to develop new ones. Our investment team operates as one team rather than in siloes, which...",
+      "career_level": "internship",
+      "career_level_confidence": 0.9199999999999999,
+      "employment_type": "unknown",
+      "disciplines": {
+        "primary": "other",
+        "secondary": [],
+        "confidence": 0.0
+      },
+      "skills": [],
+      "locations": [
+        {
+          "raw": "Boston, Massachusetts, United States",
+          "city": "Boston",
+          "region": "Massachusetts",
+          "country": "United States",
+          "country_code": "US",
+          "continent": "North America"
+        }
+      ],
+      "workplace_type": "onsite",
+      "remote_scope": "unknown",
+      "remote_allowed_countries": [],
+      "remote_allowed_regions": [],
+      "source_posted_at": "2026-10-16T21:01:56Z",
+      "first_seen_at": "2026-10-17T13:08:33.040143Z",
+      "last_seen_at": "2026-10-17T13:08:33.040143Z",
+      "last_changed_at": null,
+      "closed_at": null,
+      "reopened_at": null,
+      "application_deadline": null,
+      "expected_start_date": null,
+      "expected_end_date": null,
+      "duration_months": null,
+      "academic_term": "summer",
+      "compensation": null,
+      "education": {
+        "student_required": null,
+        "return_to_school_required": null,
+        "degree_levels": [],
+        "graduation_years": [],
+        "majors": [],
+        "academic_years": []
+      },
+      "eligibility": {
+        "work_authorization": null,
+        "explicit_allowed_countries": [],
+        "explicit_excluded_countries": [],
+        "citizenship_requirements": [],
+        "residency_requirements": [],
+        "security_clearance": null,
+        "export_control_restrictions": false,
+        "language_requirements": [],
+        "origin_match": "unknown"
+      },
+      "mobility": {
+        "visa_sponsorship": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "immigration_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "international_candidates": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "moving_expenses": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "airfare": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "travel_reimbursement": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_provided": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "temporary_housing": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "fully_funded_relocation": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        }
+      },
+      "provenance": {
+        "adapter": "greenhouse",
+        "source_id": "4e22e84aae31169d",
+        "source_job_id": "8894673002",
+        "fetched_at": "2026-10-17T13:08:33.040143Z",
+        "source_posted_at": "2026-10-16T21:01:56Z",
+        "first_seen_at": "2026-10-17T13:08:33.040143Z",
+        "parser_version": "1.0.0",
+        "classification_version": "1.0.0",
+        "content_hash": "1a3dd528adce6f98a394692a2fc642213235cbc6a7647794518245f097d7daa2",
+        "source_health_at_fetch": "healthy",
+        "first_party_verified": false
+      },
+      "lifecycle": "open",
+      "extra": {
+        "internal_job_id": null,
+        "company_name": "Weiss Asset Management"
+      }
+    },
+    {
+      "job_id": "8d29380b30527edac23f1840f17c68077dae61abed07340c201c4264116ab2a2",
+      "source_job_id": "3d8a2c74-8d0c-40be-9624-afc3678654ee",
+      "requisition_id": null,
+      "company_id": "4036596708512772",
+      "company_name": "Assort Health",
+      "title": "Software Engineering Internship (Jan - Apr 2027)",
+      "job_url": "https://jobs.ashbyhq.com/assorthealth/3d8a2c74-8d0c-40be-9624-afc3678654ee",
+      "apply_url": "https://jobs.ashbyhq.com/assorthealth/3d8a2c74-8d0c-40be-9624-afc3678654ee/application",
+      "careers_url": null,
+      "source_url": null,
+      "summary": "BUILDING HEALTHCARE THAT REMEMBERS\nEvery time you call a doctor's office, the system forgets you the moment you hang up. You wait on hold, explain everything from scratch, get bounced between lines, and hope someone follows up. Everyone has felt this. No one should have to.\nAt Assort Health, we're building one continuous conversation for every patient. An AI agent that knows who you are, remembers how you like to be reached, and carries that context from your first symptom to your full recovery. What began as the first voice AI agent to schedule a specialty appointment has become the largest proprietary specialty dataset in healthcare: 285 million patient interactions, 62,000 care protocols, 1.6 million decision pathways.\nWe went from 15 people in 2025 and will cross 250 by the end of 2026. Revenue is up 20x in 15 months and we've raised $222 million, including a recent $120 million Series C https://www.assorthealth.com/blog/assort-health-raises-120-million-series-c-to-scale-largest-deployment-of-ai-agents-for-the-patient-journey at a $1.2 billion valuation. We've also been named to the Forbes Cloud 100 and the 2026 Enterprise Tech 30 as the only healthcare AI company on the list!\nHealthcare spends $1.1 trillion a year on administration instead of care. If you want to help change that, apply below.\nABOUT THE ROLE\nWe're on the hunt for driven and scrappy product-minded engineering interns to join our team at an exciting stage of our startup's journey. If you're eager to build products, tackle challenging problems, and see your work reach real users, this is an opportunity to make a significant impact. You'll gain hands-on experience in a dynamic startup environment, working with cutting-edge generative AI and voice/transcription models and technologies.\nAs part of our engineering team, you'll work alongside experienced engineers to take ideas from zero to one. You'll own meaningful projects, contribute to product decisions, and learn what it takes to build and...",
+      "career_level": "internship",
+      "career_level_confidence": 0.82,
+      "employment_type": "unknown",
+      "disciplines": {
+        "primary": "software",
+        "secondary": [
+          "cloud",
+          "it",
+          "product"
+        ],
+        "confidence": 0.95
+      },
+      "skills": [
+        "C",
+        "Go",
+        "React",
+        "TypeScript"
+      ],
+      "locations": [
+        {
+          "raw": "San Francisco",
+          "city": "San Francisco",
+          "region": null,
+          "country": null,
+          "country_code": null,
+          "continent": null
+        }
+      ],
+      "workplace_type": "onsite",
+      "remote_scope": "unknown",
+      "remote_allowed_countries": [],
+      "remote_allowed_regions": [],
+      "source_posted_at": "2026-10-16T21:09:45.720000Z",
+      "first_seen_at": "2026-10-17T13:08:33.040143Z",
+      "last_seen_at": "2026-10-17T13:08:33.040143Z",
+      "last_changed_at": null,
+      "closed_at": null,
+      "reopened_at": null,
+      "application_deadline": null,
+      "expected_start_date": null,
+      "expected_end_date": null,
+      "duration_months": null,
+      "academic_term": "unknown",
+      "compensation": null,
+      "education": {
+        "student_required": null,
+        "return_to_school_required": null,
+        "degree_levels": [],
+        "graduation_years": [],
+        "majors": [],
+        "academic_years": []
+      },
+      "eligibility": {
+        "work_authorization": null,
+        "explicit_allowed_countries": [],
+        "explicit_excluded_countries": [],
+        "citizenship_requirements": [],
+        "residency_requirements": [],
+        "security_clearance": null,
+        "export_control_restrictions": false,
+        "language_requirements": [],
+        "origin_match": "unknown"
+      },
+      "mobility": {
+        "visa_sponsorship": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "immigration_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "international_candidates": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "moving_expenses": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "airfare": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "travel_reimbursement": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_provided": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "temporary_housing": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "fully_funded_relocation": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        }
+      },
+      "provenance": {
+        "adapter": "ashby",
+        "source_id": "ee6089a775ec2272",
+        "source_job_id": "3d8a2c74-8d0c-40be-9624-afc3678654ee",
+        "fetched_at": "2026-10-17T13:08:33.040143Z",
+        "source_posted_at": "2026-10-16T21:09:45.720000Z",
+        "first_seen_at": "2026-10-17T13:08:33.040143Z",
+        "parser_version": "1.0.0",
+        "classification_version": "1.0.0",
+        "content_hash": "e63f142afcf5c076a997c0f866e2d9228b2545c85c4707502f1f3ffc6fa6e2a3",
+        "source_health_at_fetch": "healthy",
+        "first_party_verified": false
+      },
+      "lifecycle": "open",
+      "extra": {
+        "team": "Engineering",
+        "company_name": "Assort Health"
+      }
+    },
+    {
+      "job_id": "79de8c13460b2ac6bbba403c157e32ef9c76770045be631116a3f5b80e768569",
+      "source_job_id": "c9e8fbe2-493b-49f9-86ad-7fcf74ee4a85",
+      "requisition_id": null,
+      "company_id": "3ac8794ca9775b85",
+      "company_name": "Systems Planning and Analysis",
+      "title": "Associate Systems Engineer",
+      "job_url": "https://spa.jibeapply.com/jobs/23161?icims=1",
+      "apply_url": "https://spa.jibeapply.com/jobs/23161?icims=1",
+      "careers_url": null,
+      "source_url": null,
+      "summary": "Associate Systems Engineer - Systems Planning and Analysis - Software",
+      "career_level": "new_grad",
+      "career_level_confidence": 0.8,
+      "employment_type": "full_time",
+      "disciplines": {
+        "primary": "systems",
+        "secondary": [
+          "software"
+        ],
+        "confidence": 0.85
+      },
+      "skills": [],
+      "locations": [
+        {
+          "raw": "San Diego, CA",
+          "city": "San Diego",
+          "region": "California",
+          "country": "United States",
+          "country_code": "US",
+          "continent": "North America"
+        }
+      ],
+      "workplace_type": "onsite",
+      "remote_scope": "unknown",
+      "remote_allowed_countries": [],
+      "remote_allowed_regions": [],
+      "source_posted_at": "2026-08-04T22:09:58Z",
+      "first_seen_at": "2026-09-17T21:24:00.551741Z",
+      "last_seen_at": "2026-10-17T13:08:35.674814Z",
+      "last_changed_at": null,
+      "closed_at": null,
+      "reopened_at": "2026-10-17T13:08:35.674814Z",
+      "application_deadline": null,
+      "expected_start_date": null,
+      "expected_end_date": null,
+      "duration_months": null,
+      "academic_term": "unknown",
+      "compensation": null,
+      "education": {
+        "student_required": null,
+        "return_to_school_required": null,
+        "degree_levels": [],
+        "graduation_years": [],
+        "majors": [],
+        "academic_years": []
+      },
+      "eligibility": {
+        "work_authorization": null,
+        "explicit_allowed_countries": [],
+        "explicit_excluded_countries": [],
+        "citizenship_requirements": [],
+        "residency_requirements": [],
+        "security_clearance": null,
+        "export_control_restrictions": null,
+        "language_requirements": [],
+        "origin_match": "unknown"
+      },
+      "mobility": {
+        "visa_sponsorship": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "immigration_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "international_candidates": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "moving_expenses": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "airfare": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "travel_reimbursement": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_provided": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "temporary_housing": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "fully_funded_relocation": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        }
+      },
+      "provenance": {
+        "adapter": "simplify",
+        "source_id": "0cb18013efc6a3da",
+        "source_job_id": "c9e8fbe2-493b-49f9-86ad-7fcf74ee4a85",
+        "fetched_at": "2026-10-17T13:08:35.674814Z",
+        "source_posted_at": "2026-08-04T22:09:58Z",
+        "first_seen_at": "2026-09-17T21:24:00.551741Z",
+        "parser_version": "1.0.0",
+        "classification_version": "1.0.0",
+        "content_hash": "9f6f7aec5b69ae2c4665cd4eeb345c8702a4fc7f408b85dba14ad178ced7ce63",
+        "source_health_at_fetch": "healthy",
+        "first_party_verified": false
+      },
+      "lifecycle": "open",
+      "extra": {
+        "company_name": "Systems Planning and Analysis",
+        "company_domain": "spa.jibeapply.com",
+        "simplify_feed": "new-grad-positions",
+        "simplify_category": "Software",
+        "simplify_terms": [],
+        "simplify_sponsorship": "Other",
+        "simplify_source": "Simplify",
+        "experience_level": "New Grad"
+      }
+    }
+  ]
+}

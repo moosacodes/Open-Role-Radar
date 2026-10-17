@@ -1,0 +1,102 @@
+{
+  "generated_at": "2026-10-17T13:27:56.480013+00:00",
+  "window_hours": 2,
+  "companies": [
+    {
+      "company_id": "6e475caa77837da2",
+      "company_name": "The Focusrite Group",
+      "new_roles": 6,
+      "latest_first_seen_at": "2026-10-17T13:08:35.674814+00:00"
+    },
+    {
+      "company_id": "e80f2443784eb572",
+      "company_name": "Pattern",
+      "new_roles": 4,
+      "latest_first_seen_at": "2026-10-17T13:08:33.040143+00:00"
+    },
+    {
+      "company_id": "617396870e89d10a",
+      "company_name": "Kepler Communications",
+      "new_roles": 2,
+      "latest_first_seen_at": "2026-10-17T13:08:33.040143+00:00"
+    },
+    {
+      "company_id": "ba8711cf08449a80",
+      "company_name": "Galatea Associates",
+      "new_roles": 2,
+      "latest_first_seen_at": "2026-10-17T13:08:35.674814+00:00"
+    },
+    {
+      "company_id": "c6eeec6060a9e127",
+      "company_name": "Luminai",
+      "new_roles": 1,
+      "latest_first_seen_at": "2026-10-17T13:08:33.040143+00:00"
+    },
+    {
+      "company_id": "6bbb792143dda021",
+      "company_name": "Weiss Asset Management",
+      "new_roles": 1,
+      "latest_first_seen_at": "2026-10-17T13:08:33.040143+00:00"
+    },
+    {
+      "company_id": "4036596708512772",
+      "company_name": "Assort Health",
+      "new_roles": 1,
+      "latest_first_seen_at": "2026-10-17T13:08:33.040143+00:00"
+    },
+    {
+      "company_id": "f9fe859149a00beb",
+      "company_name": "Fasanara",
+      "new_roles": 1,
+      "latest_first_seen_at": "2026-10-17T13:08:35.674814+00:00"
+    },
+    {
+      "company_id": "a3874971c1bccaa9",
+      "company_name": "CloudFactory",
+      "new_roles": 1,
+      "latest_first_seen_at": "2026-10-17T13:08:35.674814+00:00"
+    },
+    {
+      "company_id": "f9e74e16fdf8ebb8",
+      "company_name": "Accuray",
+      "new_roles": 1,
+      "latest_first_seen_at": "2026-10-17T13:08:35.674814+00:00"
+    },
+    {
+      "company_id": "704cac94618e65a0",
+      "company_name": "Starling Bank",
+      "new_roles": 1,
+      "latest_first_seen_at": "2026-10-17T13:08:35.674814+00:00"
+    },
+    {
+      "company_id": "d5e25bf5483374f8",
+      "company_name": "Saalex",
+      "new_roles": 1,
+      "latest_first_seen_at": "2026-10-17T13:08:35.674814+00:00"
+    },
+    {
+      "company_id": "45c152d4d91d104f",
+      "company_name": "Avalore",
+      "new_roles": 1,
+      "latest_first_seen_at": "2026-10-17T13:08:35.674814+00:00"
+    },
+    {
+      "company_id": "61ed27625cb0c869",
+      "company_name": "Mustard Systems",
+      "new_roles": 1,
+      "latest_first_seen_at": "2026-10-17T13:08:35.674814+00:00"
+    },
+    {
+      "company_id": "318d64fd66d633d4",
+      "company_name": "AMAX",
+      "new_roles": 1,
+      "latest_first_seen_at": "2026-10-17T13:08:35.674814+00:00"
+    },
+    {
+      "company_id": "26f824c122a5f379",
+      "company_name": "Grayce",
+      "new_roles": 1,
+      "latest_first_seen_at": "2026-10-17T13:08:35.674814+00:00"
+    }
+  ]
+}

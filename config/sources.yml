@@ -2459,3 +2459,10 @@
 - { company: Teller, domain: teller.com, adapter: lever, tenant: teller }
 - { company: Verdigris, domain: verdigris.com, adapter: lever, tenant: verdigris }
 - { company: Sumerge 1, domain: sumerge-1.com, adapter: workable, tenant: sumerge-1 }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Galatea Associates, domain: galatea-associates.com, adapter: lever, tenant: galatea-associates }
+- { company: CVector, domain: cvector.com, adapter: workable, tenant: cvector }
+- { company: G-20 Group, domain: g-20-group.com, adapter: workable, tenant: g-20-advisors-ag }
+- { company: Keycafe, domain: keycafe.com, adapter: workable, tenant: keycafe }
+- { company: Scientific Systems, domain: scientific-systems.com, adapter: workable, tenant: ssci }

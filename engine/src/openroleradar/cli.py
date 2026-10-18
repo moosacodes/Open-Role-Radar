@@ -323,7 +323,7 @@ def discover(
                     )
         except Exception as exc:  # noqa: BLE001 — CC index outages must not fail discover
             console.print(f"[yellow]Common Crawl skipped:[/yellow] {exc}")
-            counts["common_crawl_error"] = str(exc)
+            counts["common_crawl_skipped"] = 1
 
     with CareerSiteInspector(config=config) as inspector:
         for seed in load_seed_sources(root)[:5]:

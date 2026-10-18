@@ -2470,3 +2470,6 @@
 # --- Harvested GitHub ATS boards ---
 - { company: Clutch, domain: clutch.com, adapter: greenhouse, tenant: clutch }
 - { company: Nyisointernships, domain: nyisointernships.com, adapter: greenhouse, tenant: nyisointernships }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: WallStreetQuants, domain: wallstreetquants.com, adapter: workable, tenant: wallstreetquants }

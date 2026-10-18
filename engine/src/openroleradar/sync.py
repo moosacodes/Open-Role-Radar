@@ -653,20 +653,34 @@ class SyncOrchestrator:
         return summary
 
     def build_exports(self, *, slim: bool = False) -> dict[str, Any]:
-        """Generate site data and feeds (and the full static API unless slim)."""
+        """Generate site data and feeds (and the full static API unless slim).
+
+        Slim mode (fast path) skips full reclassify + state rewrite — those are the
+        dominant cost on 10k+ job states (~20m) and are already applied at ingest.
+        """
         from openroleradar.classify.refresh import reclassify_state
 
         state = self.store.load()
-        reclassified = reclassify_state(state, root=self.root)
-        # One linear pass to refresh company active counts after classify.
-        open_counts: dict[str, int] = {}
-        for job in state.jobs.values():
-            if job.lifecycle.value in ("open", "reopened"):
-                open_counts[job.company_id] = open_counts.get(job.company_id, 0) + 1
-        for company in state.companies.values():
-            company.active_job_count = open_counts.get(company.company_id, 0)
-        state.generated_at = datetime.now(UTC)
-        self.store.save(state)
+        reclassified = 0
+        if slim:
+            # Trust classifications from sync; only refresh company counters.
+            open_counts: dict[str, int] = {}
+            for job in state.jobs.values():
+                if job.lifecycle.value in ("open", "reopened"):
+                    open_counts[job.company_id] = open_counts.get(job.company_id, 0) + 1
+            for company in state.companies.values():
+                company.active_job_count = open_counts.get(company.company_id, 0)
+            state.generated_at = datetime.now(UTC)
+        else:
+            reclassified = reclassify_state(state, root=self.root)
+            open_counts = {}
+            for job in state.jobs.values():
+                if job.lifecycle.value in ("open", "reopened"):
+                    open_counts[job.company_id] = open_counts.get(job.company_id, 0) + 1
+            for company in state.companies.values():
+                company.active_job_count = open_counts.get(company.company_id, 0)
+            state.generated_at = datetime.now(UTC)
+            self.store.save(state)
 
         site_root = self.root / "site"
         if not slim:

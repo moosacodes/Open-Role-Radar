@@ -80,7 +80,8 @@ jobs:
     needs: poll
     if: ${{ !cancelled() }}
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    # Slim export should finish in a few minutes; keep headroom for push + release.
+    timeout-minutes: 35
     steps:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
@@ -134,8 +135,9 @@ jobs:
       - name: Build data exports
         working-directory: engine
         env:
-          # Fast path only needs site shards + feeds — skip heavy Static API.
+          # Skip Static API + full reclassify/state rewrite (was ~22m of the 25m budget).
           OPENROLERADAR_SLIM_EXPORT: "1"
+          PYTHONOPTIMIZE: "1"
         run: uv run openroleradar build-data --slim
 
       - name: Publish live-feed branch
@@ -168,14 +170,18 @@ jobs:
           git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git push -f origin live-feed
 
+      # Non-critical: never block the badge after live-feed is already published.
       - name: Publish durable live-state release
         continue-on-error: true
+        timeout-minutes: 8
         working-directory: engine
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: uv run openroleradar publish-state
 
       - name: Save live state cache
+        if: success()
+        continue-on-error: true
         uses: actions/cache/save@d4323d4df104b026a6aa633fdb11d772146be0bf # v4.2.2
         with:
           path: .local/state

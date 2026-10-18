@@ -305,21 +305,25 @@ def discover(
                 )
 
     if common_crawl:
-        with CommonCrawlDiscovery(config=config) as discovery:
-            crawl_candidates, crawl_index = discovery.discover(
-                index=state.discovery.common_crawl_index
-            )
-            counts["common_crawl_candidates"] = len(crawl_candidates)
-            state.discovery.common_crawl_index = crawl_index
-            state.discovery.last_common_crawl_run = datetime.now(UTC)
-            for crawl_candidate in crawl_candidates:
-                _handle_candidate(
-                    url=crawl_candidate.url,
-                    platform=crawl_candidate.platform,
-                    tenant=crawl_candidate.tenant,
-                    confidence=crawl_candidate.confidence,
-                    discovered_via="common_crawl",
+        try:
+            with CommonCrawlDiscovery(config=config) as discovery:
+                crawl_candidates, crawl_index = discovery.discover(
+                    index=state.discovery.common_crawl_index
                 )
+                counts["common_crawl_candidates"] = len(crawl_candidates)
+                state.discovery.common_crawl_index = crawl_index
+                state.discovery.last_common_crawl_run = datetime.now(UTC)
+                for crawl_candidate in crawl_candidates:
+                    _handle_candidate(
+                        url=crawl_candidate.url,
+                        platform=crawl_candidate.platform,
+                        tenant=crawl_candidate.tenant,
+                        confidence=crawl_candidate.confidence,
+                        discovered_via="common_crawl",
+                    )
+        except Exception as exc:  # noqa: BLE001 — CC index outages must not fail discover
+            console.print(f"[yellow]Common Crawl skipped:[/yellow] {exc}")
+            counts["common_crawl_error"] = str(exc)
 
     with CareerSiteInspector(config=config) as inspector:
         for seed in load_seed_sources(root)[:5]:

@@ -64,6 +64,8 @@ class CommonCrawlDiscovery:
         """Return the most recent Common Crawl index name."""
         client = self._get_client()
         response = client.get(COLLECTIONS_API)
+        if response.status_code in {429, 500, 502, 503, 504}:
+            raise ValueError(f"Common Crawl collinfo unavailable ({response.status_code})")
         response.raise_for_status()
         collections = response.json()
         if not isinstance(collections, list) or not collections:
@@ -94,9 +96,13 @@ class CommonCrawlDiscovery:
                 "limit": limit,
             },
         )
-        if response.status_code == 404:
+        # Index.commoncrawl.org flaps with 5xx/429; never fail the whole discover run.
+        if response.status_code in {404, 429, 500, 502, 503, 504}:
             return []
-        response.raise_for_status()
+        try:
+            response.raise_for_status()
+        except httpx.HTTPStatusError:
+            return []
         results: list[dict[str, Any]] = []
         for line in response.text.splitlines():
             if not line.strip():

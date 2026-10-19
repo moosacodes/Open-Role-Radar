@@ -2473,3 +2473,6 @@
 
 # --- Seeded from SimplifyJobs listings ---
 - { company: WallStreetQuants, domain: wallstreetquants.com, adapter: workable, tenant: wallstreetquants }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: HeyGen, domain: heygen.com, adapter: greenhouse, tenant: heygen }

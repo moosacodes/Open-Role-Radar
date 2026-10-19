@@ -2476,3 +2476,11 @@
 
 # --- Seeded from SimplifyJobs listings ---
 - { company: HeyGen, domain: heygen.com, adapter: greenhouse, tenant: heygen }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Graviton, domain: graviton.com, adapter: greenhouse, tenant: gravitonresearchcapital }
+- { company: Porsche, domain: porsche.com, adapter: workable, tenant: porsche-retail-group }
+
+# --- Harvested GitHub ATS boards ---
+- { company: Teikametrics, domain: teikametrics.com, adapter: greenhouse, tenant: teikametrics }
+- { company: Crypto, domain: crypto.com, adapter: lever, tenant: crypto }

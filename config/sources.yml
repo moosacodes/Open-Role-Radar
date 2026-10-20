@@ -2491,3 +2491,6 @@
 - { company: Castle Trust Bank, domain: castle-trust-bank.com, adapter: workable, tenant: castle-trust }
 - { company: Node.Digital, domain: node-digital.com, adapter: workable, tenant: node }
 - { company: Nuovo Photography, domain: nuovo-photography.com, adapter: workable, tenant: nuovophotography }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Parallel Wireless, domain: parallel-wireless.com, adapter: lever, tenant: parallelwireless }

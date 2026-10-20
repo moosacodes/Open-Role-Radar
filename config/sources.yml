@@ -2499,3 +2499,7 @@
 - { company: Redgate, domain: redgate.com, adapter: ashby, tenant: red-gate }
 - { company: Steel, domain: steel.com, adapter: ashby, tenant: steel }
 - { company: Funnel Leasing, domain: funnel-leasing.com, adapter: workable, tenant: funnel-leasing }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Metamorphic, domain: metamorphic.com, adapter: ashby, tenant: metamorphic }
+- { company: CommonAI C.I.C., domain: commonai-c-i-c.com, adapter: workable, tenant: commonai }

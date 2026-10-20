@@ -2484,3 +2484,10 @@
 # --- Harvested GitHub ATS boards ---
 - { company: Teikametrics, domain: teikametrics.com, adapter: greenhouse, tenant: teikametrics }
 - { company: Crypto, domain: crypto.com, adapter: lever, tenant: crypto }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Insomniac Games, domain: insomniac-games.com, adapter: greenhouse, tenant: insomniac }
+- { company: "Bloom & Wild Group", domain: bloom-wild-group.com, adapter: lever, tenant: bloomon }
+- { company: Castle Trust Bank, domain: castle-trust-bank.com, adapter: workable, tenant: castle-trust }
+- { company: Node.Digital, domain: node-digital.com, adapter: workable, tenant: node }
+- { company: Nuovo Photography, domain: nuovo-photography.com, adapter: workable, tenant: nuovophotography }

@@ -2494,3 +2494,8 @@
 
 # --- Seeded from SimplifyJobs listings ---
 - { company: Parallel Wireless, domain: parallel-wireless.com, adapter: lever, tenant: parallelwireless }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Redgate, domain: redgate.com, adapter: ashby, tenant: red-gate }
+- { company: Steel, domain: steel.com, adapter: ashby, tenant: steel }
+- { company: Funnel Leasing, domain: funnel-leasing.com, adapter: workable, tenant: funnel-leasing }

@@ -2503,3 +2503,6 @@
 # --- Seeded from SimplifyJobs listings ---
 - { company: Metamorphic, domain: metamorphic.com, adapter: ashby, tenant: metamorphic }
 - { company: CommonAI C.I.C., domain: commonai-c-i-c.com, adapter: workable, tenant: commonai }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Massachusetts School Building Authority, domain: massachusetts-school-building-authority.com, adapter: lever, tenant: massschoolbuildings }

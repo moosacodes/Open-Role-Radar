@@ -2506,3 +2506,13 @@
 
 # --- Seeded from SimplifyJobs listings ---
 - { company: Massachusetts School Building Authority, domain: massachusetts-school-building-authority.com, adapter: lever, tenant: massschoolbuildings }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Metalenz, domain: metalenz.com, adapter: ashby, tenant: metalenz }
+- { company: OpenArt AI, domain: openart-ai.com, adapter: ashby, tenant: openart }
+- { company: Walrus, domain: walrus.com, adapter: ashby, tenant: walrusfi }
+- { company: Brunswick Group, domain: brunswick-group.com, adapter: greenhouse, tenant: brunswickgroup }
+- { company: Facilities Management Express, domain: facilities-management-express.com, adapter: workable, tenant: fmx }
+
+# --- Harvested GitHub ATS boards ---
+- { company: Blacklane, domain: blacklane.com, adapter: greenhouse, tenant: blacklane }

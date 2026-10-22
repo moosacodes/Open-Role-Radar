@@ -2516,3 +2516,6 @@
 
 # --- Harvested GitHub ATS boards ---
 - { company: Blacklane, domain: blacklane.com, adapter: greenhouse, tenant: blacklane }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: N1 Health, domain: n1-health.com, adapter: lever, tenant: algorex }

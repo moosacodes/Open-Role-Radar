@@ -2534,3 +2534,12 @@
 - { company: Valkyrie Trading, domain: valkyrie-trading.com, adapter: lever, tenant: valkyrietrading }
 - { company: Worldscape Technology, domain: worldscape-technology.com, adapter: lever, tenant: worldscape-technology }
 - { company: Prosync, domain: prosync.com, adapter: workable, tenant: prosync }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Focused, domain: focused.com, adapter: ashby, tenant: focused }
+- { company: Jampack AI, domain: jampack-ai.com, adapter: ashby, tenant: jampack-ai }
+- { company: Capital on Tap, domain: capital-on-tap.com, adapter: greenhouse, tenant: capitalontap }
+- { company: Freestone Capital Management, domain: freestone-capital-management.com, adapter: greenhouse, tenant: freestonecapitalmanagement }
+- { company: MORSE Corp, domain: morse-corp.com, adapter: greenhouse, tenant: morsecorp }
+- { company: Moxxi Digital, domain: moxxi-digital.com, adapter: greenhouse, tenant: moxxidigital }
+- { company: Jupiter Intelligence, domain: jupiter-intelligence.com, adapter: lever, tenant: jupiterintel }

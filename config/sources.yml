@@ -2523,3 +2523,14 @@
 # --- Seeded from SimplifyJobs listings ---
 - { company: Veeda AI, domain: veeda-ai.com, adapter: ashby, tenant: veeda-ai }
 - { company: Nexla, domain: nexla.com, adapter: greenhouse, tenant: nexla }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Parker, domain: parker.com, adapter: ashby, tenant: parker }
+- { company: AMEND Consulting, domain: amend-consulting.com, adapter: greenhouse, tenant: amendconsulting }
+- { company: Infinitum, domain: infinitum.com, adapter: greenhouse, tenant: infinitumelectric }
+- { company: Mytos, domain: mytos.com, adapter: lever, tenant: mytos }
+- { company: Regal, domain: regal.com, adapter: lever, tenant: regal.ai }
+- { company: TeamSnap, domain: teamsnap.com, adapter: lever, tenant: teamsnap }
+- { company: Valkyrie Trading, domain: valkyrie-trading.com, adapter: lever, tenant: valkyrietrading }
+- { company: Worldscape Technology, domain: worldscape-technology.com, adapter: lever, tenant: worldscape-technology }
+- { company: Prosync, domain: prosync.com, adapter: workable, tenant: prosync }

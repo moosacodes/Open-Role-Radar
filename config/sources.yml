@@ -2519,3 +2519,7 @@
 
 # --- Seeded from SimplifyJobs listings ---
 - { company: N1 Health, domain: n1-health.com, adapter: lever, tenant: algorex }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Veeda AI, domain: veeda-ai.com, adapter: ashby, tenant: veeda-ai }
+- { company: Nexla, domain: nexla.com, adapter: greenhouse, tenant: nexla }

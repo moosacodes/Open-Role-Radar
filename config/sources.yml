@@ -2554,3 +2554,46 @@
 
 # --- Seeded from SimplifyJobs listings ---
 - { company: Medra, domain: medra.com, adapter: ashby, tenant: medraai }
+
+# --- Harvested GitHub ATS boards ---
+- { company: Ankorstore, domain: ankorstore.com, adapter: ashby, tenant: ankorstore }
+- { company: Brainly, domain: brainly.com, adapter: ashby, tenant: brainly }
+- { company: Causaly, domain: causaly.com, adapter: ashby, tenant: causaly }
+- { company: Clueso, domain: clueso.com, adapter: ashby, tenant: clueso }
+- { company: Enpal, domain: enpal.com, adapter: ashby, tenant: enpal }
+- { company: Genmo, domain: genmo.com, adapter: ashby, tenant: genmo }
+- { company: Goventi, domain: goventi.com, adapter: ashby, tenant: goventi }
+- { company: Latent, domain: latent.com, adapter: ashby, tenant: latent }
+- { company: Mem0, domain: mem0.com, adapter: ashby, tenant: mem0 }
+- { company: Metaforms, domain: metaforms.com, adapter: ashby, tenant: metaforms }
+- { company: Nethermind, domain: nethermind.com, adapter: ashby, tenant: nethermind }
+- { company: Nomic, domain: nomic.com, adapter: ashby, tenant: nomic }
+- { company: Oplabs, domain: oplabs.com, adapter: ashby, tenant: oplabs }
+- { company: Photoroom, domain: photoroom.com, adapter: ashby, tenant: photoroom }
+- { company: Polygon Labs, domain: polygon-labs.com, adapter: ashby, tenant: polygon-labs }
+- { company: Replo, domain: replo.com, adapter: ashby, tenant: replo }
+- { company: Safe, domain: safe.com, adapter: ashby, tenant: safe }
+- { company: Secfix, domain: secfix.com, adapter: ashby, tenant: secfix }
+- { company: Sesame, domain: sesame.com, adapter: ashby, tenant: sesame }
+- { company: Sfcompute, domain: sfcompute.com, adapter: ashby, tenant: sfcompute }
+- { company: Sigp, domain: sigp.com, adapter: ashby, tenant: sigp }
+- { company: Succinct, domain: succinct.com, adapter: ashby, tenant: succinct }
+- { company: Thndr, domain: thndr.com, adapter: ashby, tenant: thndr }
+- { company: Threataware, domain: threataware.com, adapter: ashby, tenant: threataware }
+- { company: Voldex, domain: voldex.com, adapter: ashby, tenant: voldex }
+- { company: What3Words, domain: what3words.com, adapter: ashby, tenant: what3words }
+- { company: Wrapbook, domain: wrapbook.com, adapter: ashby, tenant: wrapbook }
+- { company: Aisi, domain: aisi.com, adapter: greenhouse, tenant: aisi }
+- { company: Alvys, domain: alvys.com, adapter: greenhouse, tenant: alvys }
+- { company: Goatgroup, domain: goatgroup.com, adapter: greenhouse, tenant: goatgroup }
+- { company: Grover, domain: grover.com, adapter: greenhouse, tenant: grover }
+- { company: Icarus, domain: icarus.com, adapter: greenhouse, tenant: icarus }
+- { company: Isomorphiclabs, domain: isomorphiclabs.com, adapter: greenhouse, tenant: isomorphiclabs }
+- { company: Mediaalpha, domain: mediaalpha.com, adapter: greenhouse, tenant: mediaalpha }
+- { company: Midihealth, domain: midihealth.com, adapter: greenhouse, tenant: midihealth }
+- { company: Nflcareers, domain: nflcareers.com, adapter: greenhouse, tenant: nflcareers }
+- { company: Talonone, domain: talonone.com, adapter: greenhouse, tenant: talonone }
+- { company: Zerocater, domain: zerocater.com, adapter: greenhouse, tenant: zerocater }
+- { company: Booksy 1, domain: booksy-1.com, adapter: workable, tenant: booksy-1 }
+- { company: Mercari, domain: mercari.com, adapter: workable, tenant: mercari }
+- { company: Nawy Real Estate, domain: nawy-real-estate.com, adapter: workable, tenant: nawy-real-estate }

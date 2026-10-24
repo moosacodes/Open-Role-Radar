@@ -1,0 +1,183 @@
+{
+  "generated_at": "2026-10-24T19:51:38.717247+00:00",
+  "feed_mode": "strict",
+  "opened_count": 1,
+  "closed_count": 2,
+  "opened": [
+    "24c6d4917ce058a93eece95d79ebff1d546c17e26502e06f2e287c129710fcb6"
+  ],
+  "closed": [
+    "a7f06d40840182fdfe765ecc5855acb4806d3b9add41f99e3e04f020a97842bf",
+    "e81131cc41f28b21018fe4f21348db57029a37d1c1d1a0abf170ea8d0f3f7f44"
+  ],
+  "opened_truncated": false,
+  "opened_jobs": [
+    {
+      "job_id": "24c6d4917ce058a93eece95d79ebff1d546c17e26502e06f2e287c129710fcb6",
+      "source_job_id": "2de33083-782f-489e-9b91-f40761a36bf4",
+      "requisition_id": null,
+      "company_id": "61cb00d927fa7847",
+      "company_name": "Rhoda AI",
+      "title": "Software Engineer Intern, Inference",
+      "job_url": "https://jobs.ashbyhq.com/rhoda-ai/2de33083-782f-489e-9b91-f40761a36bf4",
+      "apply_url": "https://jobs.ashbyhq.com/rhoda-ai/2de33083-782f-489e-9b91-f40761a36bf4/application",
+      "careers_url": null,
+      "source_url": null,
+      "summary": "At Rhoda AI, we're building the next generation of generalist intelligent robots. We own the full robotics stack from high-performance hardware and robot systems to the infrastructure and state-of-the-art foundation world models that control our robots. Our robots are designed to be generalists capable of operating in complex, real-world environments and handling long-tail edge cases, made possible by our cutting edge research and end-to-end system design. We've raised over $450M and are investing aggressively in model research, infrastructure, hardware development, and manufacturing scale-up to make generalist robotics a reality.\nTHE ROLE\nOur foundation world models have to run fast enough to control robots in the real world, and efficiently enough to support large-scale research. As an Inference Infrastructure Engineer Intern, you'll work with our infra and research engineers to make model inference faster and more efficient across the stack, from data pipelines down to GPU kernels. You'll own a scoped, high-impact project end to end, ship it into our production or research workflow, and present your results to the team.\nWHAT YOU'LL DO\n- Profile and benchmark inference for large video and world models to find bottlenecks in latency, throughput, and memory.\n- Apply and evaluate inference optimization techniques like quantization and low-precision inference, step distillation and sampling acceleration for diffusion-style models, attention and caching optimizations across frames, model compilation, and graph-level optimizations.\n- Make data movement and processing more efficient: video decoding and preprocessing, input pipelines, host-device transfer, caching, and storage/IO paths that feed inference and training.\n- Write and tune GPU kernels (CUDA, Triton, or similar) for performance-critical operators, and integrate them into our inference stack.\n- Build tooling and benchmarks that let the team track performance regressions and improvements reliably.\n- Work with…",
+      "career_level": "internship",
+      "career_level_confidence": 0.82,
+      "employment_type": "internship",
+      "disciplines": {
+        "primary": "software",
+        "secondary": [
+          "infrastructure",
+          "hardware",
+          "it"
+        ],
+        "confidence": 0.9
+      },
+      "skills": [
+        "C",
+        "PyTorch",
+        "Python"
+      ],
+      "locations": [
+        {
+          "raw": "Mountain View",
+          "city": "Mountain View",
+          "region": null,
+          "country": null,
+          "country_code": null,
+          "continent": null
+        }
+      ],
+      "workplace_type": "onsite",
+      "remote_scope": "unknown",
+      "remote_allowed_countries": [],
+      "remote_allowed_regions": [],
+      "source_posted_at": "2026-10-21T01:58:59.982000Z",
+      "first_seen_at": "2026-10-24T19:39:22.653135Z",
+      "last_seen_at": "2026-10-24T19:39:22.653135Z",
+      "last_changed_at": null,
+      "closed_at": null,
+      "reopened_at": null,
+      "application_deadline": null,
+      "expected_start_date": null,
+      "expected_end_date": null,
+      "duration_months": null,
+      "academic_term": "unknown",
+      "compensation": null,
+      "education": {
+        "student_required": null,
+        "return_to_school_required": null,
+        "degree_levels": [],
+        "graduation_years": [],
+        "majors": [],
+        "academic_years": []
+      },
+      "eligibility": {
+        "work_authorization": null,
+        "explicit_allowed_countries": [],
+        "explicit_excluded_countries": [],
+        "citizenship_requirements": [],
+        "residency_requirements": [],
+        "security_clearance": null,
+        "export_control_restrictions": false,
+        "language_requirements": [],
+        "origin_match": "unknown"
+      },
+      "mobility": {
+        "visa_sponsorship": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "immigration_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "international_candidates": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_assistance": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "relocation_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "moving_expenses": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "airfare": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "travel_reimbursement": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_provided": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "housing_stipend": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "temporary_housing": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        },
+        "fully_funded_relocation": {
+          "status": "unknown",
+          "confidence": 0.0,
+          "extraction_rule": null,
+          "evidence_excerpt": null
+        }
+      },
+      "provenance": {
+        "adapter": "ashby",
+        "source_id": "51a98a03d2cec5b9",
+        "source_job_id": "2de33083-782f-489e-9b91-f40761a36bf4",
+        "fetched_at": "2026-10-24T19:39:22.653135Z",
+        "source_posted_at": "2026-10-21T01:58:59.982000Z",
+        "first_seen_at": "2026-10-24T19:39:22.653135Z",
+        "parser_version": "1.0.0",
+        "classification_version": "1.0.0",
+        "content_hash": "c4f4ae84331ec37b4f4b898e14fb5116353bfcc3f889c5e31cfa6dee7c32d0d5",
+        "source_health_at_fetch": "healthy",
+        "first_party_verified": false
+      },
+      "lifecycle": "open",
+      "extra": {
+        "team": "Infrastructure Software",
+        "company_name": "Rhoda AI"
+      }
+    }
+  ]
+}

@@ -2551,3 +2551,6 @@
 - { company: BeyondTrust, domain: beyondtrust.com, adapter: greenhouse, tenant: beyondtrust }
 - { company: Farther, domain: farther.com, adapter: greenhouse, tenant: fartherfinance }
 - { company: Applied Underwriters, domain: applied-underwriters.com, adapter: lever, tenant: auw }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Medra, domain: medra.com, adapter: ashby, tenant: medraai }

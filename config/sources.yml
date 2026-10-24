@@ -2543,3 +2543,11 @@
 - { company: MORSE Corp, domain: morse-corp.com, adapter: greenhouse, tenant: morsecorp }
 - { company: Moxxi Digital, domain: moxxi-digital.com, adapter: greenhouse, tenant: moxxidigital }
 - { company: Jupiter Intelligence, domain: jupiter-intelligence.com, adapter: lever, tenant: jupiterintel }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Fuel Cycle, domain: fuel-cycle.com, adapter: ashby, tenant: fuel-cycle }
+- { company: Linkup, domain: linkup.com, adapter: ashby, tenant: linkup }
+- { company: Sola, domain: sola.com, adapter: ashby, tenant: sola }
+- { company: BeyondTrust, domain: beyondtrust.com, adapter: greenhouse, tenant: beyondtrust }
+- { company: Farther, domain: farther.com, adapter: greenhouse, tenant: fartherfinance }
+- { company: Applied Underwriters, domain: applied-underwriters.com, adapter: lever, tenant: auw }

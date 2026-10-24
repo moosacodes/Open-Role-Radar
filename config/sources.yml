@@ -2597,3 +2597,9 @@
 - { company: Booksy 1, domain: booksy-1.com, adapter: workable, tenant: booksy-1 }
 - { company: Mercari, domain: mercari.com, adapter: workable, tenant: mercari }
 - { company: Nawy Real Estate, domain: nawy-real-estate.com, adapter: workable, tenant: nawy-real-estate }
+
+# --- Harvested GitHub ATS boards ---
+- { company: Binance, domain: binance.com, adapter: greenhouse, tenant: binance }
+- { company: Orenda, domain: orenda.com, adapter: greenhouse, tenant: orenda }
+- { company: Orioninnovation, domain: orioninnovation.com, adapter: greenhouse, tenant: orioninnovation }
+- { company: Dontnod, domain: dontnod.com, adapter: smartrecruiters, tenant: dontnod }

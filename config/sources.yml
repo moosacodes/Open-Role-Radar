@@ -2614,3 +2614,6 @@
 
 # --- Harvested GitHub ATS boards ---
 - { company: Spauldingridge, domain: spauldingridge.com, adapter: greenhouse, tenant: spauldingridge }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Sampura Research, domain: sampura-research.com, adapter: ashby, tenant: sampura }

@@ -2603,3 +2603,14 @@
 - { company: Orenda, domain: orenda.com, adapter: greenhouse, tenant: orenda }
 - { company: Orioninnovation, domain: orioninnovation.com, adapter: greenhouse, tenant: orioninnovation }
 - { company: Dontnod, domain: dontnod.com, adapter: smartrecruiters, tenant: dontnod }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Hiya, domain: hiya.com, adapter: ashby, tenant: hiya }
+- { company: Kled AI, domain: kled-ai.com, adapter: ashby, tenant: kled-ai }
+- { company: Madhive, domain: madhive.com, adapter: ashby, tenant: madhive }
+- { company: Hive Financial Systems, domain: hive-financial-systems.com, adapter: greenhouse, tenant: hivefinancialsystems }
+- { company: PredictX, domain: predictx.com, adapter: lever, tenant: pibenchmark }
+- { company: AltaLink, domain: altalink.com, adapter: workable, tenant: altalink }
+
+# --- Harvested GitHub ATS boards ---
+- { company: Spauldingridge, domain: spauldingridge.com, adapter: greenhouse, tenant: spauldingridge }

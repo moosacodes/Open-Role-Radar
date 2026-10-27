@@ -2617,3 +2617,12 @@
 
 # --- Seeded from SimplifyJobs listings ---
 - { company: Sampura Research, domain: sampura-research.com, adapter: ashby, tenant: sampura }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: CrossCountry Consulting, domain: crosscountry-consulting.com, adapter: lever, tenant: crosscountry-consulting }
+
+# --- Harvested GitHub ATS boards ---
+- { company: Kickstarter, domain: kickstarter.com, adapter: greenhouse, tenant: kickstarter }
+- { company: Optiverus, domain: optiverus.com, adapter: greenhouse, tenant: optiverus }
+- { company: Sonymusiccanada, domain: sonymusiccanada.com, adapter: greenhouse, tenant: sonymusiccanada }
+- { company: Xapo61, domain: xapo61.com, adapter: greenhouse, tenant: xapo61 }

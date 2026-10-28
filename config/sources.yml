@@ -2684,3 +2684,19 @@
 - { company: Within, domain: within.com, adapter: ashby, tenant: within.ai }
 - { company: StarTree, domain: startree.com, adapter: greenhouse, tenant: startree }
 - { company: RosaicLabs, domain: rosaiclabs.com, adapter: lever, tenant: rosaiclabs }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: The Robotics Company, domain: the-robotics-company.com, adapter: ashby, tenant: the-robotics-company }
+- { company: WebFX, domain: webfx.com, adapter: ashby, tenant: webfx }
+- { company: WorldEngine AI, domain: worldengine-ai.com, adapter: ashby, tenant: worldengine }
+- { company: CAMS, domain: cams.com, adapter: lever, tenant: camstex }
+- { company: Leversys, domain: leversys.com, adapter: lever, tenant: leversys }
+- { company: Nio, domain: nio.com, adapter: lever, tenant: nio-usa }
+- { company: Project Healthy Minds, domain: project-healthy-minds.com, adapter: lever, tenant: project-healthy-minds }
+- { company: Intetics, domain: intetics.com, adapter: workable, tenant: intetics-2 }
+
+# --- Harvested GitHub ATS boards ---
+- { company: Ramp, domain: ramp.com, adapter: greenhouse, tenant: ramp }
+- { company: Zocdoc, domain: zocdoc.com, adapter: greenhouse, tenant: zocdoc }
+- { company: Arcadia, domain: arcadia.com, adapter: lever, tenant: arcadia }
+- { company: Neon, domain: neon.com, adapter: lever, tenant: neon }

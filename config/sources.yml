@@ -2656,3 +2656,31 @@
 - { company: Lumaril, domain: lumaril.com, adapter: lever, tenant: lumaril-corporation }
 - { company: NUVACORE, domain: nuvacore.com, adapter: lever, tenant: nuvacore }
 - { company: RainFocus, domain: rainfocus.com, adapter: lever, tenant: rainfocus }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Agave, domain: agave.com, adapter: ashby, tenant: agave }
+- { company: Axiom Math, domain: axiom-math.com, adapter: ashby, tenant: axiommath }
+- { company: Bags, domain: bags.com, adapter: ashby, tenant: bagsfm }
+- { company: Mural, domain: mural.com, adapter: ashby, tenant: careers.mural }
+- { company: Certa, domain: certa.com, adapter: ashby, tenant: certa }
+- { company: dmodel, domain: dmodel.com, adapter: ashby, tenant: dmodel }
+- { company: Shield AI, domain: shield-ai.com, adapter: ashby, tenant: f7d8749a-72d6-407c-bf98-292ea630c73a }
+- { company: Fellow, domain: fellow.com, adapter: ashby, tenant: fellowai }
+- { company: General Magic, domain: general-magic.com, adapter: ashby, tenant: generalmagic }
+- { company: Ixian Robotics, domain: ixian-robotics.com, adapter: ashby, tenant: ixianrobotics }
+- { company: Laminar, domain: laminar.com, adapter: ashby, tenant: laminar-jobs }
+- { company: Nexus Intelligence, domain: nexus-intelligence.com, adapter: ashby, tenant: nexus-intelligence }
+- { company: One Robot, domain: one-robot.com, adapter: ashby, tenant: onerobot }
+- { company: OpenMind, domain: openmind.com, adapter: ashby, tenant: openmind }
+- { company: Pelico, domain: pelico.com, adapter: ashby, tenant: pelico }
+- { company: Pramaana Labs, domain: pramaana-labs.com, adapter: ashby, tenant: pramaana-labs }
+- { company: Pure, domain: pure.com, adapter: ashby, tenant: pureapp }
+- { company: Quadric, domain: quadric.com, adapter: ashby, tenant: quadric }
+- { company: Resonance, domain: resonance.com, adapter: ashby, tenant: resonance }
+- { company: Sela AI, domain: sela-ai.com, adapter: ashby, tenant: sela }
+- { company: Sycamore, domain: sycamore.com, adapter: ashby, tenant: sycamore }
+- { company: Takt, domain: takt.com, adapter: ashby, tenant: takt }
+- { company: Veritus, domain: veritus.com, adapter: ashby, tenant: veritus }
+- { company: Within, domain: within.com, adapter: ashby, tenant: within.ai }
+- { company: StarTree, domain: startree.com, adapter: greenhouse, tenant: startree }
+- { company: RosaicLabs, domain: rosaiclabs.com, adapter: lever, tenant: rosaiclabs }

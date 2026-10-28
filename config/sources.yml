@@ -2626,3 +2626,33 @@
 - { company: Optiverus, domain: optiverus.com, adapter: greenhouse, tenant: optiverus }
 - { company: Sonymusiccanada, domain: sonymusiccanada.com, adapter: greenhouse, tenant: sonymusiccanada }
 - { company: Xapo61, domain: xapo61.com, adapter: greenhouse, tenant: xapo61 }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Alchemi, domain: alchemi.com, adapter: ashby, tenant: alchemi }
+- { company: Amplitude, domain: amplitude.com, adapter: ashby, tenant: amplitude }
+- { company: Bridge Neurotech, domain: bridge-neurotech.com, adapter: ashby, tenant: bridgeneurotech }
+- { company: Build AI, domain: build-ai.com, adapter: ashby, tenant: build-ai }
+- { company: DriveWealth, domain: drivewealth.com, adapter: ashby, tenant: drivewealth }
+- { company: Elveo, domain: elveo.com, adapter: ashby, tenant: elveo }
+- { company: Engramme, domain: engramme.com, adapter: ashby, tenant: engramme }
+- { company: Generate Capital, domain: generate-capital.com, adapter: ashby, tenant: generate }
+- { company: Goaly, domain: goaly.com, adapter: ashby, tenant: goaly }
+- { company: Hyphenate, domain: hyphenate.com, adapter: ashby, tenant: hyphenate }
+- { company: Integrate, domain: integrate.com, adapter: ashby, tenant: integrate }
+- { company: Inworld AI, domain: inworld-ai.com, adapter: ashby, tenant: inworld-ai }
+- { company: Light, domain: light.com, adapter: ashby, tenant: light-inc }
+- { company: MatX, domain: matx.com, adapter: ashby, tenant: matx }
+- { company: Old Mission, domain: old-mission.com, adapter: ashby, tenant: old-mission-capital }
+- { company: Options Technology, domain: options-technology.com, adapter: ashby, tenant: options-it }
+- { company: Powertown, domain: powertown.com, adapter: ashby, tenant: powertown }
+- { company: Relling, domain: relling.com, adapter: ashby, tenant: relling }
+- { company: Resurgent Industries, domain: resurgent-industries.com, adapter: ashby, tenant: resurgent-industries }
+- { company: Scout AI, domain: scout-ai.com, adapter: ashby, tenant: scout-ai }
+- { company: Viggle AI, domain: viggle-ai.com, adapter: ashby, tenant: viggle }
+- { company: Xapien, domain: xapien.com, adapter: ashby, tenant: xapien }
+- { company: Zus Health, domain: zus-health.com, adapter: ashby, tenant: zus-health }
+- { company: Betterment, domain: betterment.com, adapter: greenhouse, tenant: bettermentcampusrecruiting }
+- { company: FUTO, domain: futo.com, adapter: lever, tenant: futo-org }
+- { company: Lumaril, domain: lumaril.com, adapter: lever, tenant: lumaril-corporation }
+- { company: NUVACORE, domain: nuvacore.com, adapter: lever, tenant: nuvacore }
+- { company: RainFocus, domain: rainfocus.com, adapter: lever, tenant: rainfocus }

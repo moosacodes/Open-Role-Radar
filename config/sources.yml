@@ -2700,3 +2700,7 @@
 - { company: Zocdoc, domain: zocdoc.com, adapter: greenhouse, tenant: zocdoc }
 - { company: Arcadia, domain: arcadia.com, adapter: lever, tenant: arcadia }
 - { company: Neon, domain: neon.com, adapter: lever, tenant: neon }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Subtotal, domain: subtotal.com, adapter: ashby, tenant: subtotal }
+- { company: SoundExchange, domain: soundexchange.com, adapter: greenhouse, tenant: sxinternships }

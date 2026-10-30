@@ -2765,3 +2765,6 @@
 - { company: Waggoner Financial, domain: waggoner-financial.com, adapter: workable, tenant: waggoner-financial }
 - { company: Waterworth, domain: waterworth.com, adapter: workable, tenant: waterworth }
 - { company: Weekday AI, domain: weekday-ai.com, adapter: workable, tenant: weekday-1 }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: AtriCure, domain: atricure.com, adapter: greenhouse, tenant: co-op_intern }

@@ -2704,3 +2704,64 @@
 # --- Seeded from SimplifyJobs listings ---
 - { company: Subtotal, domain: subtotal.com, adapter: ashby, tenant: subtotal }
 - { company: SoundExchange, domain: soundexchange.com, adapter: greenhouse, tenant: sxinternships }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Fractile, domain: fractile.com, adapter: ashby, tenant: fractile }
+- { company: Genius AI, domain: genius-ai.com, adapter: ashby, tenant: geniusai }
+- { company: OLIX, domain: olix.com, adapter: ashby, tenant: olix }
+- { company: Western Magnetics, domain: western-magnetics.com, adapter: ashby, tenant: westmag }
+- { company: Akuna Capital, domain: akuna-capital.com, adapter: greenhouse, tenant: akunacapitaloci }
+- { company: Alpha FMC, domain: alpha-fmc.com, adapter: greenhouse, tenant: alphafmcrolesearlycareers }
+- { company: APCON, domain: apcon.com, adapter: greenhouse, tenant: apcon }
+- { company: Astronics, domain: astronics.com, adapter: greenhouse, tenant: astronicscorporation }
+- { company: Atomic Object, domain: atomic-object.com, adapter: greenhouse, tenant: atomicobject }
+- { company: BarkleyOKRP, domain: barkleyokrp.com, adapter: greenhouse, tenant: barkleyokrp }
+- { company: Beauhurst, domain: beauhurst.com, adapter: greenhouse, tenant: beauhurst }
+- { company: BitGo, domain: bitgo.com, adapter: greenhouse, tenant: bitgowinter2027 }
+- { company: Castelion, domain: castelion.com, adapter: greenhouse, tenant: castelioncorporation }
+- { company: Center for Strategic and International Studies, domain: center-for-strategic-and-international-studies.com, adapter: greenhouse, tenant: centerforstrategicandinternationalstudiesinc }
+- { company: Charles River Analytics, domain: charles-river-analytics.com, adapter: greenhouse, tenant: charlesriveranalytics90 }
+- { company: Crystal Dynamics, domain: crystal-dynamics.com, adapter: greenhouse, tenant: crystaldynamics }
+- { company: DivcoWest, domain: divcowest.com, adapter: greenhouse, tenant: divcowest }
+- { company: DRW, domain: drw.com, adapter: greenhouse, tenant: drwfr }
+- { company: Flow Traders, domain: flow-traders.com, adapter: greenhouse, tenant: ftsp27co-ops }
+- { company: Graphcore, domain: graphcore.com, adapter: greenhouse, tenant: graphcore-early-careers }
+- { company: HPS Investment Partners, domain: hps-investment-partners.com, adapter: greenhouse, tenant: hpsinterns }
+- { company: Human Interest, domain: human-interest.com, adapter: greenhouse, tenant: humaninterestswe1 }
+- { company: i360technologies, domain: i360technologies.com, adapter: greenhouse, tenant: i360technologiesinc }
+- { company: Vestmark, domain: vestmark.com, adapter: greenhouse, tenant: internrecruiting }
+- { company: First Due, domain: first-due.com, adapter: greenhouse, tenant: localitymediallcdbafirstdue }
+- { company: Mantari, domain: mantari.com, adapter: greenhouse, tenant: mantari }
+- { company: MissionOne Media, domain: missionone-media.com, adapter: greenhouse, tenant: missiononemedia }
+- { company: Ncino, domain: ncino.com, adapter: greenhouse, tenant: ncinoearlytalent }
+- { company: New York ISO, domain: new-york-iso.com, adapter: greenhouse, tenant: nyisocoops }
+- { company: OneEthos, domain: oneethos.com, adapter: greenhouse, tenant: oneethos }
+- { company: Quantiq, domain: quantiq.com, adapter: greenhouse, tenant: quantiq }
+- { company: "Qube Research & Technologies", domain: qube-research-technologies.com, adapter: greenhouse, tenant: quberesearchandtechnologies }
+- { company: Reach3 Insights, domain: reach3-insights.com, adapter: greenhouse, tenant: reach3insights }
+- { company: Rendezvous Robotics, domain: rendezvous-robotics.com, adapter: greenhouse, tenant: rendezvousrobotics }
+- { company: SCM, domain: scm.com, adapter: greenhouse, tenant: scmaea }
+- { company: SiTime, domain: sitime.com, adapter: greenhouse, tenant: sitimecorporation }
+- { company: SK hynix, domain: sk-hynix.com, adapter: greenhouse, tenant: skhynixmemorysolutionsamericainc }
+- { company: Spaceium, domain: spaceium.com, adapter: greenhouse, tenant: spaceium }
+- { company: Star Catcher, domain: star-catcher.com, adapter: greenhouse, tenant: star-catcher }
+- { company: TextNow, domain: textnow.com, adapter: greenhouse, tenant: textnowinc }
+- { company: TobogganLabs, domain: tobogganlabs.com, adapter: greenhouse, tenant: tobogganlabs }
+- { company: TrellisWare Technologies, domain: trellisware-technologies.com, adapter: greenhouse, tenant: trelliswaretechnologies-newgrads }
+- { company: Loft Orbital, domain: loft-orbital.com, adapter: lever, tenant: loftorbital }
+- { company: Continuum Resource Network, domain: continuum-resource-network.com, adapter: workable, tenant: continuum-resource-network }
+- { company: Drug Hunter, domain: drug-hunter.com, adapter: workable, tenant: drug-hunter }
+- { company: FreshCut Paper, domain: freshcut-paper.com, adapter: workable, tenant: freshcutpaper }
+- { company: Fuku, domain: fuku.com, adapter: workable, tenant: fuku }
+- { company: neurohire.ai, domain: neurohire-ai.com, adapter: workable, tenant: neurohire-dot-a-i }
+- { company: NoGigiddy, domain: nogigiddy.com, adapter: workable, tenant: nogigiddy }
+- { company: Palona AI, domain: palona-ai.com, adapter: workable, tenant: palona }
+- { company: Queueco, domain: queueco.com, adapter: workable, tenant: queueco }
+- { company: Raydar, domain: raydar.com, adapter: workable, tenant: raydar }
+- { company: SmartFlower Solar, domain: smartflower-solar.com, adapter: workable, tenant: smartflower-solar-llc }
+- { company: Synthesis, domain: synthesis.com, adapter: workable, tenant: synthesisim }
+- { company: UtiliSave, domain: utilisave.com, adapter: workable, tenant: utilisave-llc-1 }
+- { company: Volga Partners, domain: volga-partners.com, adapter: workable, tenant: volga-partners }
+- { company: Waggoner Financial, domain: waggoner-financial.com, adapter: workable, tenant: waggoner-financial }
+- { company: Waterworth, domain: waterworth.com, adapter: workable, tenant: waterworth }
+- { company: Weekday AI, domain: weekday-ai.com, adapter: workable, tenant: weekday-1 }

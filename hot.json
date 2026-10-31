@@ -1,0 +1,60 @@
+{
+  "generated_at": "2026-10-31T14:05:28.721548+00:00",
+  "window_hours": 2,
+  "companies": [
+    {
+      "company_id": "fdb5d0c2718e1adb",
+      "company_name": "NVIDIA",
+      "new_roles": 3,
+      "latest_first_seen_at": "2026-10-31T13:52:44.879385+00:00"
+    },
+    {
+      "company_id": "94ff7807924179fd",
+      "company_name": "Northrop Grumman",
+      "new_roles": 3,
+      "latest_first_seen_at": "2026-10-31T13:52:44.879385+00:00"
+    },
+    {
+      "company_id": "54ccfbca6f58cf63",
+      "company_name": "AXA",
+      "new_roles": 2,
+      "latest_first_seen_at": "2026-10-31T13:52:44.879385+00:00"
+    },
+    {
+      "company_id": "901c0c841a9617c3",
+      "company_name": "Netsmart",
+      "new_roles": 2,
+      "latest_first_seen_at": "2026-10-31T13:52:44.879385+00:00"
+    },
+    {
+      "company_id": "5afdbd9547a74101",
+      "company_name": "Dow Jones",
+      "new_roles": 2,
+      "latest_first_seen_at": "2026-10-31T13:52:44.879385+00:00"
+    },
+    {
+      "company_id": "21151874c3da4078",
+      "company_name": "incident.io",
+      "new_roles": 2,
+      "latest_first_seen_at": "2026-10-31T13:52:44.879385+00:00"
+    },
+    {
+      "company_id": "0eb1da3aeaf03720",
+      "company_name": "Bristol Myers Squibb",
+      "new_roles": 1,
+      "latest_first_seen_at": "2026-10-31T13:52:44.879385+00:00"
+    },
+    {
+      "company_id": "0c988acd99f10e53",
+      "company_name": "Veeva Systems",
+      "new_roles": 1,
+      "latest_first_seen_at": "2026-10-31T13:52:44.879385+00:00"
+    },
+    {
+      "company_id": "f09d47fa8e9d546d",
+      "company_name": "Barclays",
+      "new_roles": 1,
+      "latest_first_seen_at": "2026-10-31T13:52:44.879385+00:00"
+    }
+  ]
+}

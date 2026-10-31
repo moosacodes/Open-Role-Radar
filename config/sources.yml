@@ -2788,3 +2788,11 @@
 - { company: Frazer-Nash Consultancy, domain: frazer-nash-consultancy.com, adapter: workable, tenant: frazer-nash-15 }
 - { company: Neutreeno, domain: neutreeno.com, adapter: workable, tenant: neutreeno-1 }
 - { company: Sophinea, domain: sophinea.com, adapter: workable, tenant: sophinea }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Deliveroo, domain: deliveroo.com, adapter: greenhouse, tenant: deliveroo }
+- { company: Morph Labs, domain: morph-labs.com, adapter: greenhouse, tenant: morph }
+- { company: Orbis Operations, domain: orbis-operations.com, adapter: greenhouse, tenant: orbisoperations }
+- { company: Pretium, domain: pretium.com, adapter: greenhouse, tenant: pretiuminternships2027 }
+- { company: TPG, domain: tpg.com, adapter: greenhouse, tenant: tpgcareers }
+- { company: Vmax, domain: vmax.com, adapter: greenhouse, tenant: vmax }

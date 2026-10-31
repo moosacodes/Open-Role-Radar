@@ -2768,3 +2768,23 @@
 
 # --- Seeded from SimplifyJobs listings ---
 - { company: AtriCure, domain: atricure.com, adapter: greenhouse, tenant: co-op_intern }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: The Design Rules Company, domain: the-design-rules-company.com, adapter: ashby, tenant: designrulesco }
+- { company: Discernis, domain: discernis.com, adapter: ashby, tenant: discernis }
+- { company: Isembard, domain: isembard.com, adapter: ashby, tenant: isembard }
+- { company: NextToken, domain: nexttoken.com, adapter: ashby, tenant: nexttoken }
+- { company: AiDash, domain: aidash.com, adapter: greenhouse, tenant: aidashinc }
+- { company: Divergent Technologies, domain: divergent-technologies.com, adapter: greenhouse, tenant: divergent }
+- { company: Farmers Mutual Hail, domain: farmers-mutual-hail.com, adapter: greenhouse, tenant: farmersmutualhailinsurancecompany }
+- { company: Network Bio, domain: network-bio.com, adapter: greenhouse, tenant: networkbio }
+- { company: Nuance Labs, domain: nuance-labs.com, adapter: greenhouse, tenant: nuancelabs }
+- { company: Protagonist, domain: protagonist.com, adapter: greenhouse, tenant: protagonist }
+- { company: SESCO, domain: sesco.com, adapter: greenhouse, tenant: sesco }
+- { company: Star Mountain Capital, domain: star-mountain-capital.com, adapter: greenhouse, tenant: starmountaincapital }
+- { company: SuperApp, domain: superapp.com, adapter: greenhouse, tenant: superapp }
+- { company: Noble Machines, domain: noble-machines.com, adapter: greenhouse, tenant: undercontrolroboticsinc }
+- { company: Firework, domain: firework.com, adapter: lever, tenant: fireworkhq }
+- { company: Frazer-Nash Consultancy, domain: frazer-nash-consultancy.com, adapter: workable, tenant: frazer-nash-15 }
+- { company: Neutreeno, domain: neutreeno.com, adapter: workable, tenant: neutreeno-1 }
+- { company: Sophinea, domain: sophinea.com, adapter: workable, tenant: sophinea }

@@ -2796,3 +2796,15 @@
 - { company: Pretium, domain: pretium.com, adapter: greenhouse, tenant: pretiuminternships2027 }
 - { company: TPG, domain: tpg.com, adapter: greenhouse, tenant: tpgcareers }
 - { company: Vmax, domain: vmax.com, adapter: greenhouse, tenant: vmax }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Open Vision Engineering, domain: open-vision-engineering.com, adapter: ashby, tenant: pocket }
+
+# --- Harvested GitHub ATS boards ---
+- { company: Dash0, domain: dash0.com, adapter: ashby, tenant: dash0 }
+- { company: Goteleport, domain: goteleport.com, adapter: ashby, tenant: goteleport }
+- { company: Infinitefield, domain: infinitefield.com, adapter: ashby, tenant: infinitefield }
+- { company: Kalshi, domain: kalshi.com, adapter: ashby, tenant: kalshi }
+- { company: Ruby Labs, domain: ruby-labs.com, adapter: ashby, tenant: ruby-labs }
+- { company: Stream, domain: stream.com, adapter: ashby, tenant: stream }
+- { company: Wayve, domain: wayve.com, adapter: ashby, tenant: wayve }

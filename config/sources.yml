@@ -2808,3 +2808,6 @@
 - { company: Ruby Labs, domain: ruby-labs.com, adapter: ashby, tenant: ruby-labs }
 - { company: Stream, domain: stream.com, adapter: ashby, tenant: stream }
 - { company: Wayve, domain: wayve.com, adapter: ashby, tenant: wayve }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Kaluza, domain: kaluza.com, adapter: ashby, tenant: kaluza }

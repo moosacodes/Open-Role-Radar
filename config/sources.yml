@@ -2811,3 +2811,8 @@
 
 # --- Seeded from SimplifyJobs listings ---
 - { company: Kaluza, domain: kaluza.com, adapter: ashby, tenant: kaluza }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: ParetoHealth, domain: paretohealth.com, adapter: greenhouse, tenant: paretocaptiveservicesllc }
+- { company: Element Solutions, domain: element-solutions.com, adapter: lever, tenant: elementsolutions }
+- { company: Tecsys, domain: tecsys.com, adapter: workable, tenant: tecsys }

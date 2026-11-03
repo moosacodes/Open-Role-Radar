@@ -2816,3 +2816,9 @@
 - { company: ParetoHealth, domain: paretohealth.com, adapter: greenhouse, tenant: paretocaptiveservicesllc }
 - { company: Element Solutions, domain: element-solutions.com, adapter: lever, tenant: elementsolutions }
 - { company: Tecsys, domain: tecsys.com, adapter: workable, tenant: tecsys }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Aries Global, domain: aries-global.com, adapter: ashby, tenant: ariesglobal }
+- { company: Polished Snow, domain: polished-snow.com, adapter: ashby, tenant: plsn }
+- { company: Zefr, domain: zefr.com, adapter: ashby, tenant: zefr }
+- { company: Rothera, domain: rothera.com, adapter: greenhouse, tenant: rotheramarketsllc }

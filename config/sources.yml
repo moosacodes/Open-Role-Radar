@@ -2843,3 +2843,9 @@
 - { company: Clasp, domain: clasp.com, adapter: ashby, tenant: clasp }
 - { company: Didero, domain: didero.com, adapter: ashby, tenant: didero }
 - { company: Imbue, domain: imbue.com, adapter: greenhouse, tenant: imbueunlisted }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Trajectory, domain: trajectory.com, adapter: ashby, tenant: trajectory }
+- { company: Ballotpedia, domain: ballotpedia.com, adapter: workable, tenant: ballotpedia }
+- { company: OHM Advisors, domain: ohm-advisors.com, adapter: workable, tenant: ohm-advisors }
+- { company: Persimmons.ai, domain: persimmons-ai.com, adapter: workable, tenant: persimmons-ai }

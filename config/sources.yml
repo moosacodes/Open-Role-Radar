@@ -2838,3 +2838,8 @@
 - { company: Longitude Labs, domain: longitude-labs.com, adapter: ashby, tenant: longitudelabs }
 - { company: Lovelytics, domain: lovelytics.com, adapter: greenhouse, tenant: lovelytics }
 - { company: Myriad360, domain: myriad360.com, adapter: greenhouse, tenant: myriad360 }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Clasp, domain: clasp.com, adapter: ashby, tenant: clasp }
+- { company: Didero, domain: didero.com, adapter: ashby, tenant: didero }
+- { company: Imbue, domain: imbue.com, adapter: greenhouse, tenant: imbueunlisted }

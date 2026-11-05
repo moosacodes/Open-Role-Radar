@@ -2833,3 +2833,8 @@
 - { company: Jomboy Media, domain: jomboy-media.com, adapter: greenhouse, tenant: jomboymedia }
 - { company: Nex, domain: nex.com, adapter: greenhouse, tenant: nex }
 - { company: Vatic Investments, domain: vatic-investments.com, adapter: greenhouse, tenant: vaticlabs }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Longitude Labs, domain: longitude-labs.com, adapter: ashby, tenant: longitudelabs }
+- { company: Lovelytics, domain: lovelytics.com, adapter: greenhouse, tenant: lovelytics }
+- { company: Myriad360, domain: myriad360.com, adapter: greenhouse, tenant: myriad360 }

@@ -2853,3 +2853,7 @@
 # --- Seeded from SimplifyJobs listings ---
 - { company: Horizon3.ai, domain: horizon3-ai.com, adapter: ashby, tenant: horizon3ai }
 - { company: "Lumbermen's", domain: lumbermen-s.com, adapter: greenhouse, tenant: lumbermens }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: HoYoverse, domain: hoyoverse.com, adapter: ashby, tenant: hoyoverse }
+- { company: American College of Obstetricians and Gynecologists, domain: american-college-of-obstetricians-and-gynecologists.com, adapter: greenhouse, tenant: acog }

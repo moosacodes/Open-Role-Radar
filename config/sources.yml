@@ -2849,3 +2849,7 @@
 - { company: Ballotpedia, domain: ballotpedia.com, adapter: workable, tenant: ballotpedia }
 - { company: OHM Advisors, domain: ohm-advisors.com, adapter: workable, tenant: ohm-advisors }
 - { company: Persimmons.ai, domain: persimmons-ai.com, adapter: workable, tenant: persimmons-ai }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Horizon3.ai, domain: horizon3-ai.com, adapter: ashby, tenant: horizon3ai }
+- { company: "Lumbermen's", domain: lumbermen-s.com, adapter: greenhouse, tenant: lumbermens }

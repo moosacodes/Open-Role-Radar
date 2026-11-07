@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-11-07T15:42:16.263850+00:00",
+  "window_hours": 2,
+  "companies": [
+    {
+      "company_id": "20810c2c3167d10c",
+      "company_name": "West Monroe",
+      "new_roles": 2,
+      "latest_first_seen_at": "2026-11-07T15:31:19.431155+00:00"
+    },
+    {
+      "company_id": "dfbd7e820ac2a61d",
+      "company_name": "Tesla",
+      "new_roles": 2,
+      "latest_first_seen_at": "2026-11-07T15:31:19.431155+00:00"
+    },
+    {
+      "company_id": "c551d8158c2ba1f3",
+      "company_name": "Anthropic",
+      "new_roles": 2,
+      "latest_first_seen_at": "2026-11-07T15:31:19.431155+00:00"
+    },
+    {
+      "company_id": "1062ba2ed6967ea3",
+      "company_name": "Northwood Space",
+      "new_roles": 2,
+      "latest_first_seen_at": "2026-11-07T15:31:19.431155+00:00"
+    },
+    {
+      "company_id": "beff192f4d3a8dca",
+      "company_name": "DriveWealth",
+      "new_roles": 2,
+      "latest_first_seen_at": "2026-11-07T15:31:19.431155+00:00"
+    },
+    {
+      "company_id": "0f72e02ccaf5d8ed",
+      "company_name": "HP Inc.",
+      "new_roles": 1,
+      "latest_first_seen_at": "2026-11-07T15:31:19.431155+00:00"
+    },
+    {
+      "company_id": "8adac04623e2d3f4",
+      "company_name": "Tufts University",
+      "new_roles": 1,
+      "latest_first_seen_at": "2026-11-07T15:31:19.431155+00:00"
+    }
+  ]
+}

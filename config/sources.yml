@@ -2857,3 +2857,13 @@
 # --- Seeded from SimplifyJobs listings ---
 - { company: HoYoverse, domain: hoyoverse.com, adapter: ashby, tenant: hoyoverse }
 - { company: American College of Obstetricians and Gynecologists, domain: american-college-of-obstetricians-and-gynecologists.com, adapter: greenhouse, tenant: acog }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Machina Cognita Technologies, domain: machina-cognita-technologies.com, adapter: ashby, tenant: machinacognita }
+- { company: Orbital, domain: orbital.com, adapter: ashby, tenant: orbital }
+- { company: Deeplocal, domain: deeplocal.com, adapter: greenhouse, tenant: deeplocal }
+- { company: Engine, domain: engine.com, adapter: greenhouse, tenant: engine }
+- { company: Keyfactor, domain: keyfactor.com, adapter: greenhouse, tenant: keyfactorinc }
+- { company: Subsense, domain: subsense.com, adapter: lever, tenant: subsense }
+- { company: Elevation Autism Center, domain: elevation-autism-center.com, adapter: workable, tenant: elevation-autism-center }
+- { company: Helical, domain: helical.com, adapter: workable, tenant: helical }

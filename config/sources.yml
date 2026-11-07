@@ -2867,3 +2867,7 @@
 - { company: Subsense, domain: subsense.com, adapter: lever, tenant: subsense }
 - { company: Elevation Autism Center, domain: elevation-autism-center.com, adapter: workable, tenant: elevation-autism-center }
 - { company: Helical, domain: helical.com, adapter: workable, tenant: helical }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Category Labs, domain: category-labs.com, adapter: ashby, tenant: category-labs }
+- { company: HP Inc., domain: hp-inc.com, adapter: greenhouse, tenant: hp }

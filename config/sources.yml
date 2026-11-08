@@ -2871,3 +2871,6 @@
 # --- Seeded from SimplifyJobs listings ---
 - { company: Category Labs, domain: category-labs.com, adapter: ashby, tenant: category-labs }
 - { company: HP Inc., domain: hp-inc.com, adapter: greenhouse, tenant: hp }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Artificial Analysis, domain: artificial-analysis.com, adapter: ashby, tenant: artificialanalysis }

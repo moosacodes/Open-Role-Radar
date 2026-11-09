@@ -2874,3 +2874,9 @@
 
 # --- Seeded from SimplifyJobs listings ---
 - { company: Artificial Analysis, domain: artificial-analysis.com, adapter: ashby, tenant: artificialanalysis }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Netholabs, domain: netholabs.com, adapter: ashby, tenant: netholabs }
+
+# --- Harvested GitHub ATS boards ---
+- { company: Tweag, domain: tweag.com, adapter: greenhouse, tenant: tweag }

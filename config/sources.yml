@@ -2880,3 +2880,8 @@
 
 # --- Harvested GitHub ATS boards ---
 - { company: Tweag, domain: tweag.com, adapter: greenhouse, tenant: tweag }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Tonic, domain: tonic.com, adapter: ashby, tenant: tonicai }
+- { company: Kasa Living, domain: kasa-living.com, adapter: greenhouse, tenant: kasa }
+- { company: Multi Media, domain: multi-media.com, adapter: workable, tenant: multimediallc }

@@ -2885,3 +2885,20 @@
 - { company: Tonic, domain: tonic.com, adapter: ashby, tenant: tonicai }
 - { company: Kasa Living, domain: kasa-living.com, adapter: greenhouse, tenant: kasa }
 - { company: Multi Media, domain: multi-media.com, adapter: workable, tenant: multimediallc }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Ande, domain: ande.com, adapter: ashby, tenant: ande }
+- { company: Klaviyo, domain: klaviyo.com, adapter: ashby, tenant: f40d14d9-07f4-403d-802b-37453deccf0a }
+- { company: General Translation, domain: general-translation.com, adapter: ashby, tenant: generaltranslation }
+- { company: Moss, domain: moss.com, adapter: ashby, tenant: mossrobotics }
+- { company: Verne Robotics, domain: verne-robotics.com, adapter: ashby, tenant: verne }
+- { company: XYZ Reality, domain: xyz-reality.com, adapter: ashby, tenant: xyz-reality }
+- { company: Huckberry, domain: huckberry.com, adapter: workable, tenant: huckberry }
+
+# --- Harvested GitHub ATS boards ---
+- { company: Datacom1, domain: datacom1.com, adapter: workable, tenant: datacom1 }
+- { company: Huggingface, domain: huggingface.com, adapter: workable, tenant: huggingface }
+- { company: Jolera, domain: jolera.com, adapter: workable, tenant: jolera }
+- { company: Lafosse, domain: lafosse.com, adapter: workable, tenant: lafosse }
+- { company: Obrela Security Industries Sa, domain: obrela-security-industries-sa.com, adapter: workable, tenant: obrela-security-industries-sa }
+- { company: Zifo, domain: zifo.com, adapter: workable, tenant: zifo }

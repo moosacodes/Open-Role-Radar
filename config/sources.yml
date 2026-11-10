@@ -2902,3 +2902,6 @@
 - { company: Lafosse, domain: lafosse.com, adapter: workable, tenant: lafosse }
 - { company: Obrela Security Industries Sa, domain: obrela-security-industries-sa.com, adapter: workable, tenant: obrela-security-industries-sa }
 - { company: Zifo, domain: zifo.com, adapter: workable, tenant: zifo }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: GSA Capital, domain: gsa-capital.com, adapter: greenhouse, tenant: gsacapital }

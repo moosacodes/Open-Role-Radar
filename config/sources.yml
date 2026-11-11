@@ -2908,3 +2908,10 @@
 
 # --- Seeded from SimplifyJobs listings ---
 - { company: Biointellisense, domain: biointellisense.com, adapter: lever, tenant: biointellisense }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Formulary Financial, domain: formulary-financial.com, adapter: ashby, tenant: formulary }
+- { company: Shield AI, domain: shield-ai.com, adapter: ashby, tenant: shield }
+- { company: STRATOS Technologies, domain: stratos-technologies.com, adapter: ashby, tenant: stratos }
+- { company: euNetworks, domain: eunetworks.com, adapter: greenhouse, tenant: eunetworks }
+- { company: Bask Health, domain: bask-health.com, adapter: workable, tenant: bask-health-1 }

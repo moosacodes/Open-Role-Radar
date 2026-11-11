@@ -2905,3 +2905,6 @@
 
 # --- Seeded from SimplifyJobs listings ---
 - { company: GSA Capital, domain: gsa-capital.com, adapter: greenhouse, tenant: gsacapital }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Biointellisense, domain: biointellisense.com, adapter: lever, tenant: biointellisense }

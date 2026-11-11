@@ -2915,3 +2915,6 @@
 - { company: STRATOS Technologies, domain: stratos-technologies.com, adapter: ashby, tenant: stratos }
 - { company: euNetworks, domain: eunetworks.com, adapter: greenhouse, tenant: eunetworks }
 - { company: Bask Health, domain: bask-health.com, adapter: workable, tenant: bask-health-1 }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Legal 500, domain: legal-500.com, adapter: ashby, tenant: legal-500 }

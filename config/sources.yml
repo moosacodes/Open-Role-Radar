@@ -2918,3 +2918,40 @@
 
 # --- Seeded from SimplifyJobs listings ---
 - { company: Legal 500, domain: legal-500.com, adapter: ashby, tenant: legal-500 }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Liquid AI, domain: liquid-ai.com, adapter: ashby, tenant: liquid-ai }
+- { company: Parabola, domain: parabola.com, adapter: ashby, tenant: parabola-io }
+- { company: San Francisco Data, domain: san-francisco-data.com, adapter: ashby, tenant: sfdata }
+- { company: Avante, domain: avante.com, adapter: greenhouse, tenant: avante }
+- { company: The Beauty Tech Group Trading, domain: the-beauty-tech-group-trading.com, adapter: workable, tenant: thebeautytechgroup }
+
+# --- Harvested GitHub ATS boards ---
+- { company: Abhibus, domain: abhibus.com, adapter: smartrecruiters, tenant: abhibus }
+- { company: Adaptnxttechnologysolutions, domain: adaptnxttechnologysolutions.com, adapter: smartrecruiters, tenant: adaptnxttechnologysolutions }
+- { company: Allegro, domain: allegro.com, adapter: smartrecruiters, tenant: allegro }
+- { company: Amazaticsolutions, domain: amazaticsolutions.com, adapter: smartrecruiters, tenant: amazaticsolutions }
+- { company: Betsol, domain: betsol.com, adapter: smartrecruiters, tenant: betsol }
+- { company: Boschgroup, domain: boschgroup.com, adapter: smartrecruiters, tenant: boschgroup }
+- { company: Carbynetech, domain: carbynetech.com, adapter: smartrecruiters, tenant: carbynetech }
+- { company: Coface, domain: coface.com, adapter: smartrecruiters, tenant: coface }
+- { company: Crb, domain: crb.com, adapter: smartrecruiters, tenant: crb }
+- { company: Deliveryhero, domain: deliveryhero.com, adapter: smartrecruiters, tenant: deliveryhero }
+- { company: Endava, domain: endava.com, adapter: smartrecruiters, tenant: endava }
+- { company: Eurofins, domain: eurofins.com, adapter: smartrecruiters, tenant: eurofins }
+- { company: Gameloft, domain: gameloft.com, adapter: smartrecruiters, tenant: gameloft }
+- { company: Hmgroup, domain: hmgroup.com, adapter: smartrecruiters, tenant: hmgroup }
+- { company: Hoyoverse, domain: hoyoverse.com, adapter: smartrecruiters, tenant: hoyoverse }
+- { company: Iliad Free, domain: iliad-free.com, adapter: smartrecruiters, tenant: iliad-free }
+- { company: Kredx, domain: kredx.com, adapter: smartrecruiters, tenant: kredx }
+- { company: Metgroup, domain: metgroup.com, adapter: smartrecruiters, tenant: metgroup }
+- { company: Nagarro1, domain: nagarro1.com, adapter: smartrecruiters, tenant: nagarro1 }
+- { company: Ramboll3, domain: ramboll3.com, adapter: smartrecruiters, tenant: ramboll3 }
+- { company: Refyne, domain: refyne.com, adapter: smartrecruiters, tenant: refyne }
+- { company: Rgbsi, domain: rgbsi.com, adapter: smartrecruiters, tenant: rgbsi }
+- { company: Robertbosch, domain: robertbosch.com, adapter: smartrecruiters, tenant: robertbosch }
+- { company: Servicenow, domain: servicenow.com, adapter: smartrecruiters, tenant: servicenow }
+- { company: Sgs, domain: sgs.com, adapter: smartrecruiters, tenant: sgs }
+- { company: Smartrecruiters, domain: smartrecruiters.com, adapter: smartrecruiters, tenant: smartrecruiters }
+- { company: Steelcaseinc, domain: steelcaseinc.com, adapter: smartrecruiters, tenant: steelcaseinc }
+- { company: Talan, domain: talan.com, adapter: smartrecruiters, tenant: talan }

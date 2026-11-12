@@ -2960,3 +2960,6 @@
 - { company: Conveo.ai, domain: conveo-ai.com, adapter: ashby, tenant: conveo }
 - { company: CARIAD, domain: cariad.com, adapter: greenhouse, tenant: cariadinc }
 - { company: Nasdaq, domain: nasdaq.com, adapter: greenhouse, tenant: nasdaq }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Dillards, domain: dillards.com, adapter: greenhouse, tenant: dillards }

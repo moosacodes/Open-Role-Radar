@@ -2955,3 +2955,8 @@
 - { company: Smartrecruiters, domain: smartrecruiters.com, adapter: smartrecruiters, tenant: smartrecruiters }
 - { company: Steelcaseinc, domain: steelcaseinc.com, adapter: smartrecruiters, tenant: steelcaseinc }
 - { company: Talan, domain: talan.com, adapter: smartrecruiters, tenant: talan }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Conveo.ai, domain: conveo-ai.com, adapter: ashby, tenant: conveo }
+- { company: CARIAD, domain: cariad.com, adapter: greenhouse, tenant: cariadinc }
+- { company: Nasdaq, domain: nasdaq.com, adapter: greenhouse, tenant: nasdaq }

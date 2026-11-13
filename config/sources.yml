@@ -2963,3 +2963,11 @@
 
 # --- Seeded from SimplifyJobs listings ---
 - { company: Dillards, domain: dillards.com, adapter: greenhouse, tenant: dillards }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Atalanta, domain: atalanta.com, adapter: ashby, tenant: atalanta }
+- { company: Pragmatike, domain: pragmatike.com, adapter: ashby, tenant: pragmatike }
+- { company: ZettaSquared, domain: zettasquared.com, adapter: ashby, tenant: zetta2 }
+- { company: Beta Technologies, domain: beta-technologies.com, adapter: greenhouse, tenant: betatechnologiesinc }
+- { company: Veris Insights, domain: veris-insights.com, adapter: lever, tenant: verisinsights }
+- { company: Senseye, domain: senseye.com, adapter: workable, tenant: senseye }

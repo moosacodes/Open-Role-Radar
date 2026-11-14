@@ -2976,3 +2976,10 @@
 - { company: Thoughtworks, domain: thoughtworks.com, adapter: ashby, tenant: c898d712-c4ab-4157-954a-5df226a781e2 }
 - { company: Minitab, domain: minitab.com, adapter: greenhouse, tenant: minitab }
 - { company: Reasonable AI, domain: reasonable-ai.com, adapter: workable, tenant: reasonable }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Nexus Cognitive Technologies, domain: nexus-cognitive-technologies.com, adapter: ashby, tenant: nexus-cognitive }
+- { company: Reliable Robotics, domain: reliable-robotics.com, adapter: ashby, tenant: reliable-robotics }
+- { company: Empire State Realty Trust, domain: empire-state-realty-trust.com, adapter: lever, tenant: esrtreit }
+- { company: BMLL Technologies, domain: bmll-technologies.com, adapter: workable, tenant: bmlltech }
+- { company: Fidus Systems, domain: fidus-systems.com, adapter: workable, tenant: fidus }

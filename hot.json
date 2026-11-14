@@ -1,0 +1,96 @@
+{
+  "generated_at": "2026-11-14T19:40:10.420939+00:00",
+  "window_hours": 2,
+  "companies": [
+    {
+      "company_id": "887e8ee02efac73f",
+      "company_name": "Camping World",
+      "new_roles": 6,
+      "latest_first_seen_at": "2026-11-14T19:25:45.091466+00:00"
+    },
+    {
+      "company_id": "29bdeab7263f4e2c",
+      "company_name": "Martin Marietta",
+      "new_roles": 4,
+      "latest_first_seen_at": "2026-11-14T19:25:45.091466+00:00"
+    },
+    {
+      "company_id": "fdb5d0c2718e1adb",
+      "company_name": "NVIDIA",
+      "new_roles": 2,
+      "latest_first_seen_at": "2026-11-14T18:02:08.533007+00:00"
+    },
+    {
+      "company_id": "c5215a8b074900d3",
+      "company_name": "Ciena",
+      "new_roles": 2,
+      "latest_first_seen_at": "2026-11-14T19:25:45.091466+00:00"
+    },
+    {
+      "company_id": "3ad1c9ea42c83949",
+      "company_name": "Daimler Truck",
+      "new_roles": 2,
+      "latest_first_seen_at": "2026-11-14T19:25:45.091466+00:00"
+    },
+    {
+      "company_id": "4288dc397477b258",
+      "company_name": "SAS",
+      "new_roles": 2,
+      "latest_first_seen_at": "2026-11-14T19:25:45.091466+00:00"
+    },
+    {
+      "company_id": "8d267ad162f2c380",
+      "company_name": "CDPHP",
+      "new_roles": 2,
+      "latest_first_seen_at": "2026-11-14T19:25:45.091466+00:00"
+    },
+    {
+      "company_id": "4e23eb07a9187a22",
+      "company_name": "Watts Water",
+      "new_roles": 2,
+      "latest_first_seen_at": "2026-11-14T19:25:45.091466+00:00"
+    },
+    {
+      "company_id": "514b3d262edd462f",
+      "company_name": "GE Aerospace",
+      "new_roles": 1,
+      "latest_first_seen_at": "2026-11-14T18:02:08.533007+00:00"
+    },
+    {
+      "company_id": "4a69b22ab91201d9",
+      "company_name": "Cisco",
+      "new_roles": 1,
+      "latest_first_seen_at": "2026-11-14T18:02:08.533007+00:00"
+    },
+    {
+      "company_id": "a4742bb3fb440e3b",
+      "company_name": "Workday",
+      "new_roles": 1,
+      "latest_first_seen_at": "2026-11-14T18:02:08.533007+00:00"
+    },
+    {
+      "company_id": "cb701a2221ea87a0",
+      "company_name": "ICF International",
+      "new_roles": 1,
+      "latest_first_seen_at": "2026-11-14T19:25:45.091466+00:00"
+    },
+    {
+      "company_id": "7d69fa99f1f6a72f",
+      "company_name": "Fort Bend County",
+      "new_roles": 1,
+      "latest_first_seen_at": "2026-11-14T19:25:45.091466+00:00"
+    },
+    {
+      "company_id": "e40947b25930fa38",
+      "company_name": "Memorial Hermann",
+      "new_roles": 1,
+      "latest_first_seen_at": "2026-11-14T19:25:45.091466+00:00"
+    },
+    {
+      "company_id": "561654ac786fff88",
+      "company_name": "KSB",
+      "new_roles": 1,
+      "latest_first_seen_at": "2026-11-14T19:25:45.091466+00:00"
+    }
+  ]
+}

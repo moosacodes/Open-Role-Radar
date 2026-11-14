@@ -2983,3 +2983,7 @@
 - { company: Empire State Realty Trust, domain: empire-state-realty-trust.com, adapter: lever, tenant: esrtreit }
 - { company: BMLL Technologies, domain: bmll-technologies.com, adapter: workable, tenant: bmlltech }
 - { company: Fidus Systems, domain: fidus-systems.com, adapter: workable, tenant: fidus }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Integrated Biosciences, domain: integrated-biosciences.com, adapter: greenhouse, tenant: integratedbiosciencesinc }
+- { company: McMaster-Carr, domain: mcmaster-carr.com, adapter: greenhouse, tenant: mcmaster-carr-systems }

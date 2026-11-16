@@ -2987,3 +2987,6 @@
 # --- Seeded from SimplifyJobs listings ---
 - { company: Integrated Biosciences, domain: integrated-biosciences.com, adapter: greenhouse, tenant: integratedbiosciencesinc }
 - { company: McMaster-Carr, domain: mcmaster-carr.com, adapter: greenhouse, tenant: mcmaster-carr-systems }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Instil Software Ltd, domain: instil-software-ltd.com, adapter: ashby, tenant: instil }

@@ -2998,3 +2998,7 @@
 - { company: HexArmor, domain: hexarmor.com, adapter: greenhouse, tenant: hexarmor }
 - { company: Duetti, domain: duetti.com, adapter: lever, tenant: duetti }
 - { company: Z1 Tech, domain: z1-tech.com, adapter: lever, tenant: z1tech }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Remanence, domain: remanence.com, adapter: ashby, tenant: remanence }
+- { company: Fantom, domain: fantom.com, adapter: lever, tenant: fantom-corporation }

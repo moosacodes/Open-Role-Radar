@@ -2990,3 +2990,11 @@
 
 # --- Seeded from SimplifyJobs listings ---
 - { company: Instil Software Ltd, domain: instil-software-ltd.com, adapter: ashby, tenant: instil }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Absolics, domain: absolics.com, adapter: greenhouse, tenant: absolicsinc }
+- { company: DLR Group, domain: dlr-group.com, adapter: greenhouse, tenant: dlrgroup }
+- { company: Soros Fund Management, domain: soros-fund-management.com, adapter: greenhouse, tenant: familyoffice }
+- { company: HexArmor, domain: hexarmor.com, adapter: greenhouse, tenant: hexarmor }
+- { company: Duetti, domain: duetti.com, adapter: lever, tenant: duetti }
+- { company: Z1 Tech, domain: z1-tech.com, adapter: lever, tenant: z1tech }

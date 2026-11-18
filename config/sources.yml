@@ -3002,3 +3002,10 @@
 # --- Seeded from SimplifyJobs listings ---
 - { company: Remanence, domain: remanence.com, adapter: ashby, tenant: remanence }
 - { company: Fantom, domain: fantom.com, adapter: lever, tenant: fantom-corporation }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Basis Research Institute, domain: basis-research-institute.com, adapter: ashby, tenant: basis-research }
+- { company: Warp Sciences, domain: warp-sciences.com, adapter: ashby, tenant: warp-sciences }
+- { company: Attain Partners, domain: attain-partners.com, adapter: greenhouse, tenant: attainpartners }
+- { company: BIS Safety Software, domain: bis-safety-software.com, adapter: lever, tenant: bis }
+- { company: Falcomm, domain: falcomm.com, adapter: workable, tenant: falcomm }

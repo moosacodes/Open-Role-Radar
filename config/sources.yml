@@ -3009,3 +3009,8 @@
 - { company: Attain Partners, domain: attain-partners.com, adapter: greenhouse, tenant: attainpartners }
 - { company: BIS Safety Software, domain: bis-safety-software.com, adapter: lever, tenant: bis }
 - { company: Falcomm, domain: falcomm.com, adapter: workable, tenant: falcomm }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Ecliptic Enterprises, domain: ecliptic-enterprises.com, adapter: workable, tenant: ecliptic-enterprises-corporation }
+- { company: EQL Tech, domain: eql-tech.com, adapter: workable, tenant: eqltech }
+- { company: Executive Title Agency, domain: executive-title-agency.com, adapter: workable, tenant: executive-title-agency }

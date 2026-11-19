@@ -3017,3 +3017,6 @@
 
 # --- Seeded from SimplifyJobs listings ---
 - { company: MakerMaker, domain: makermaker.com, adapter: ashby, tenant: makermaker.ai }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Scout Space, domain: scout-space.com, adapter: greenhouse, tenant: scoutspace }

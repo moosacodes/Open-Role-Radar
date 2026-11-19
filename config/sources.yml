@@ -3014,3 +3014,6 @@
 - { company: Ecliptic Enterprises, domain: ecliptic-enterprises.com, adapter: workable, tenant: ecliptic-enterprises-corporation }
 - { company: EQL Tech, domain: eql-tech.com, adapter: workable, tenant: eqltech }
 - { company: Executive Title Agency, domain: executive-title-agency.com, adapter: workable, tenant: executive-title-agency }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: MakerMaker, domain: makermaker.com, adapter: ashby, tenant: makermaker.ai }

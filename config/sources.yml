@@ -3029,3 +3029,6 @@
 - { company: Litmus, domain: litmus.com, adapter: ashby, tenant: litmushiring }
 - { company: Trener Robotics, domain: trener-robotics.com, adapter: ashby, tenant: trener-robotics }
 - { company: Legatics, domain: legatics.com, adapter: workable, tenant: legatics }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: AON3D, domain: aon3d.com, adapter: greenhouse, tenant: aon3d }

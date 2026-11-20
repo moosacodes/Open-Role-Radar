@@ -3020,3 +3020,7 @@
 
 # --- Seeded from SimplifyJobs listings ---
 - { company: Scout Space, domain: scout-space.com, adapter: greenhouse, tenant: scoutspace }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Aeva, domain: aeva.com, adapter: lever, tenant: aeva }
+- { company: Cascade Engineering Services, domain: cascade-engineering-services.com, adapter: workable, tenant: cascade-engineering-services-1 }

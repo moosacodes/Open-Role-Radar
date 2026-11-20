@@ -3024,3 +3024,8 @@
 # --- Seeded from SimplifyJobs listings ---
 - { company: Aeva, domain: aeva.com, adapter: lever, tenant: aeva }
 - { company: Cascade Engineering Services, domain: cascade-engineering-services.com, adapter: workable, tenant: cascade-engineering-services-1 }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Litmus, domain: litmus.com, adapter: ashby, tenant: litmushiring }
+- { company: Trener Robotics, domain: trener-robotics.com, adapter: ashby, tenant: trener-robotics }
+- { company: Legatics, domain: legatics.com, adapter: workable, tenant: legatics }

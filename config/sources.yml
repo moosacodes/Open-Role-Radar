@@ -3032,3 +3032,14 @@
 
 # --- Seeded from SimplifyJobs listings ---
 - { company: AON3D, domain: aon3d.com, adapter: greenhouse, tenant: aon3d }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Keplar, domain: keplar.com, adapter: ashby, tenant: keplar }
+- { company: Multiply, domain: multiply.com, adapter: ashby, tenant: multiplyai }
+- { company: Biohub, domain: biohub.com, adapter: greenhouse, tenant: biohub }
+- { company: Boomi, domain: boomi.com, adapter: greenhouse, tenant: boomilp }
+- { company: Method, domain: method.com, adapter: greenhouse, tenant: method }
+- { company: Vertex Service Partners, domain: vertex-service-partners.com, adapter: greenhouse, tenant: vertexservicepartners }
+- { company: EP Wealth Advisors, domain: ep-wealth-advisors.com, adapter: lever, tenant: epwealth }
+- { company: "Mom's Meals", domain: mom-s-meals.com, adapter: lever, tenant: momsmeals }
+- { company: Diversified Services Network, domain: diversified-services-network.com, adapter: workable, tenant: dsn }

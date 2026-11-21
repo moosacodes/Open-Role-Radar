@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-11-21T17:36:46.055454+00:00",
+  "window_hours": 2,
+  "companies": [
+    {
+      "company_id": "172b33ed16ba8a0f",
+      "company_name": "RainFocus",
+      "new_roles": 1,
+      "latest_first_seen_at": "2026-11-21T17:22:17.983031+00:00"
+    }
+  ]
+}

@@ -3050,3 +3050,7 @@
 # --- Harvested GitHub ATS boards ---
 - { company: Branch, domain: branch.com, adapter: greenhouse, tenant: branch }
 - { company: Circleci, domain: circleci.com, adapter: greenhouse, tenant: circleci }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: First Resonance, domain: first-resonance.com, adapter: ashby, tenant: first-resonance }
+- { company: Artefact, domain: artefact.com, adapter: greenhouse, tenant: artefactnoram }

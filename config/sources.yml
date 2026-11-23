@@ -3043,3 +3043,10 @@
 - { company: EP Wealth Advisors, domain: ep-wealth-advisors.com, adapter: lever, tenant: epwealth }
 - { company: "Mom's Meals", domain: mom-s-meals.com, adapter: lever, tenant: momsmeals }
 - { company: Diversified Services Network, domain: diversified-services-network.com, adapter: workable, tenant: dsn }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Aegiq, domain: aegiq.com, adapter: workable, tenant: aegiq }
+
+# --- Harvested GitHub ATS boards ---
+- { company: Branch, domain: branch.com, adapter: greenhouse, tenant: branch }
+- { company: Circleci, domain: circleci.com, adapter: greenhouse, tenant: circleci }

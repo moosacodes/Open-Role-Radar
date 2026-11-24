@@ -3054,3 +3054,10 @@
 # --- Seeded from SimplifyJobs listings ---
 - { company: First Resonance, domain: first-resonance.com, adapter: ashby, tenant: first-resonance }
 - { company: Artefact, domain: artefact.com, adapter: greenhouse, tenant: artefactnoram }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Runna, domain: runna.com, adapter: ashby, tenant: runna }
+- { company: Strava, domain: strava.com, adapter: ashby, tenant: strava }
+- { company: Capital Technology Group, domain: capital-technology-group.com, adapter: greenhouse, tenant: capitaltg }
+- { company: Vailexa, domain: vailexa.com, adapter: greenhouse, tenant: vailexa }
+- { company: Blueprint AI (Mental Health), domain: blueprint-ai-mental-health.com, adapter: workable, tenant: blueprint-health }

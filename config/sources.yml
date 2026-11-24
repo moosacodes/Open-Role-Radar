@@ -3061,3 +3061,13 @@
 - { company: Capital Technology Group, domain: capital-technology-group.com, adapter: greenhouse, tenant: capitaltg }
 - { company: Vailexa, domain: vailexa.com, adapter: greenhouse, tenant: vailexa }
 - { company: Blueprint AI (Mental Health), domain: blueprint-ai-mental-health.com, adapter: workable, tenant: blueprint-health }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: DMC Engineering, domain: dmc-engineering.com, adapter: greenhouse, tenant: dmcengineering_campus }
+- { company: CarGurus, domain: cargurus.com, adapter: greenhouse, tenant: ecjobb }
+- { company: Energy Solutions, domain: energy-solutions.com, adapter: greenhouse, tenant: energysolutionsinternships }
+- { company: Fervo Energy, domain: fervo-energy.com, adapter: greenhouse, tenant: fervoenergy }
+- { company: AQR Capital Management, domain: aqr-capital-management.com, adapter: greenhouse, tenant: joblinks }
+- { company: ISO New England, domain: iso-new-england.com, adapter: greenhouse, tenant: studentinternships }
+- { company: Esri, domain: esri.com, adapter: greenhouse, tenant: studentprogram }
+- { company: Serko, domain: serko.com, adapter: workable, tenant: serko-ltd }

@@ -3071,3 +3071,7 @@
 - { company: ISO New England, domain: iso-new-england.com, adapter: greenhouse, tenant: studentinternships }
 - { company: Esri, domain: esri.com, adapter: greenhouse, tenant: studentprogram }
 - { company: Serko, domain: serko.com, adapter: workable, tenant: serko-ltd }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: ServiceRocket, domain: servicerocket.com, adapter: lever, tenant: servicerocket }
+- { company: Syntronic, domain: syntronic.com, adapter: lever, tenant: syntronic }

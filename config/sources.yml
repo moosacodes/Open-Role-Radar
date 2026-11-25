@@ -3075,3 +3075,9 @@
 # --- Seeded from SimplifyJobs listings ---
 - { company: ServiceRocket, domain: servicerocket.com, adapter: lever, tenant: servicerocket }
 - { company: Syntronic, domain: syntronic.com, adapter: lever, tenant: syntronic }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Davidson Kempner, domain: davidson-kempner.com, adapter: greenhouse, tenant: "5364856uhdfnvbkldfnbhrpkdfgbdvtyhro" }
+- { company: PatientPoint, domain: patientpoint.com, adapter: greenhouse, tenant: patientpointinviteonly }
+- { company: Reach Labs, domain: reach-labs.com, adapter: lever, tenant: reachpower }
+- { company: Prolucid Technologies, domain: prolucid-technologies.com, adapter: workable, tenant: prolucid-technologies }

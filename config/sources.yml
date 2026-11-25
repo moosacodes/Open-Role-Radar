@@ -3081,3 +3081,6 @@
 - { company: PatientPoint, domain: patientpoint.com, adapter: greenhouse, tenant: patientpointinviteonly }
 - { company: Reach Labs, domain: reach-labs.com, adapter: lever, tenant: reachpower }
 - { company: Prolucid Technologies, domain: prolucid-technologies.com, adapter: workable, tenant: prolucid-technologies }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Appodeal, domain: appodeal.com, adapter: greenhouse, tenant: appodeal }

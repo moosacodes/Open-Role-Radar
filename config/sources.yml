@@ -3084,3 +3084,11 @@
 
 # --- Seeded from SimplifyJobs listings ---
 - { company: Appodeal, domain: appodeal.com, adapter: greenhouse, tenant: appodeal }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Ayo Semiconductor, domain: ayo-semiconductor.com, adapter: ashby, tenant: ayosemi }
+- { company: CodeRabbit, domain: coderabbit.com, adapter: ashby, tenant: coderabbit }
+- { company: Plug Technologies, domain: plug-technologies.com, adapter: ashby, tenant: plugmotors }
+- { company: Xona Space Systems, domain: xona-space-systems.com, adapter: ashby, tenant: xona-space }
+- { company: Digital Control, domain: digital-control.com, adapter: workable, tenant: digital-control }
+- { company: Nexvel, domain: nexvel.com, adapter: workable, tenant: nexvelsolutions }

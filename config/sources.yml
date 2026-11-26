@@ -3092,3 +3092,8 @@
 - { company: Xona Space Systems, domain: xona-space-systems.com, adapter: ashby, tenant: xona-space }
 - { company: Digital Control, domain: digital-control.com, adapter: workable, tenant: digital-control }
 - { company: Nexvel, domain: nexvel.com, adapter: workable, tenant: nexvelsolutions }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: DEPT, domain: dept.com, adapter: greenhouse, tenant: dept }
+- { company: Recidiviz, domain: recidiviz.com, adapter: greenhouse, tenant: recidiviz }
+- { company: Swoon Editions, domain: swoon-editions.com, adapter: workable, tenant: swoon-editions }

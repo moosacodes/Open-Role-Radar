@@ -3097,3 +3097,8 @@
 - { company: DEPT, domain: dept.com, adapter: greenhouse, tenant: dept }
 - { company: Recidiviz, domain: recidiviz.com, adapter: greenhouse, tenant: recidiviz }
 - { company: Swoon Editions, domain: swoon-editions.com, adapter: workable, tenant: swoon-editions }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Zeit AI (YC S24), domain: zeit-ai-yc-s24.com, adapter: ashby, tenant: zeit-ai }
+- { company: Artefact, domain: artefact.com, adapter: greenhouse, tenant: artefact }
+- { company: ICONIQ Capital, domain: iconiq-capital.com, adapter: greenhouse, tenant: iconiqhandshake }

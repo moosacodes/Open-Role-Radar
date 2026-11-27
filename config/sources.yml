@@ -3102,3 +3102,6 @@
 - { company: Zeit AI (YC S24), domain: zeit-ai-yc-s24.com, adapter: ashby, tenant: zeit-ai }
 - { company: Artefact, domain: artefact.com, adapter: greenhouse, tenant: artefact }
 - { company: ICONIQ Capital, domain: iconiq-capital.com, adapter: greenhouse, tenant: iconiqhandshake }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Phoenix Software, domain: phoenix-software.com, adapter: workable, tenant: phoenix-software }

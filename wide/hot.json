@@ -1,0 +1,246 @@
+{
+  "generated_at": "2026-11-28T05:14:00.647682+00:00",
+  "window_hours": 2,
+  "companies": [
+    {
+      "company_id": "c0b7bc4aed30ec76",
+      "company_name": "State Street",
+      "new_roles": 36,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "1d18b839f89e1fb8",
+      "company_name": "KLA",
+      "new_roles": 30,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "4ab2b953f13131a8",
+      "company_name": "ASML",
+      "new_roles": 28,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "31377195c94d52ab",
+      "company_name": "Analog Devices",
+      "new_roles": 23,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "afd28c40676a553d",
+      "company_name": "GlobalFoundries",
+      "new_roles": 18,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "790ef347b85044cf",
+      "company_name": "Trinzic",
+      "new_roles": 17,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "fdb5d0c2718e1adb",
+      "company_name": "NVIDIA",
+      "new_roles": 16,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "68e84d7751238ed0",
+      "company_name": "RTX",
+      "new_roles": 15,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "ef6434fc590994dc",
+      "company_name": "Cadence Design Systems",
+      "new_roles": 14,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "2495338c9846cf29",
+      "company_name": "Motorola Solutions",
+      "new_roles": 14,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "94ff7807924179fd",
+      "company_name": "Northrop Grumman",
+      "new_roles": 13,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "a8ac20188d1daf93",
+      "company_name": "Hewlett Packard Enterprise",
+      "new_roles": 12,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "4e44580c55ab0f97",
+      "company_name": "T-Mobile",
+      "new_roles": 12,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "0f1b98a3d0472be0",
+      "company_name": "Anglian Water",
+      "new_roles": 12,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "401cc4bfd5c4535d",
+      "company_name": "The Aerospace Corporation",
+      "new_roles": 11,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "b124096e68a7029b",
+      "company_name": "Marvell",
+      "new_roles": 11,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "398102dcc6c5cc46",
+      "company_name": "Bank of Montreal",
+      "new_roles": 9,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "f1f0bc89adce7406",
+      "company_name": "Intel",
+      "new_roles": 9,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "bfbd12533a7c8802",
+      "company_name": "Micron Technology",
+      "new_roles": 8,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "e77b991e09b3cd58",
+      "company_name": "Samsung",
+      "new_roles": 8,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "86ec8a7e986b07f3",
+      "company_name": "Genentech",
+      "new_roles": 7,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "aa261deab3b1ce84",
+      "company_name": "Booz Allen",
+      "new_roles": 7,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "4231c901c90a3b5f",
+      "company_name": "Applied Materials",
+      "new_roles": 7,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "a3858410f69a69eb",
+      "company_name": "Leidos",
+      "new_roles": 6,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "b61555dff0e39a08",
+      "company_name": "Philips",
+      "new_roles": 6,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "59ee17004e726f95",
+      "company_name": "SOTI",
+      "new_roles": 6,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "18159e937829181f",
+      "company_name": "Intercept",
+      "new_roles": 6,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "144dd9f5386ab2d2",
+      "company_name": "Great American Insurance Company",
+      "new_roles": 6,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "43a3d77b870a61cc",
+      "company_name": "Amentum",
+      "new_roles": 6,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "4f4c47ad473a787d",
+      "company_name": "University of Texas at Austin",
+      "new_roles": 6,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "887e8ee02efac73f",
+      "company_name": "Camping World",
+      "new_roles": 6,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "b224cd76df99f345",
+      "company_name": "Elevance Health",
+      "new_roles": 6,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "52c7953dd93a911d",
+      "company_name": "Rockwell Automation",
+      "new_roles": 6,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "434948c15b8ebc35",
+      "company_name": "Jabil",
+      "new_roles": 5,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "dbf4c33ad07dffc4",
+      "company_name": "M&T Bank",
+      "new_roles": 5,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "7cf0e29597f3a75d",
+      "company_name": "AVEVA",
+      "new_roles": 5,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "d4aa282e2e922a8b",
+      "company_name": "Generac",
+      "new_roles": 5,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "b0b6c875b982df44",
+      "company_name": "Servco",
+      "new_roles": 4,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "87f6267aae134b44",
+      "company_name": "Baker Hughes",
+      "new_roles": 4,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    },
+    {
+      "company_id": "a4cf1a5265fd529c",
+      "company_name": "Michaels Stores",
+      "new_roles": 4,
+      "latest_first_seen_at": "2026-11-28T04:59:32.254047+00:00"
+    }
+  ]
+}

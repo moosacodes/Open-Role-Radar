@@ -3105,3 +3105,7 @@
 
 # --- Seeded from SimplifyJobs listings ---
 - { company: Phoenix Software, domain: phoenix-software.com, adapter: workable, tenant: phoenix-software }
+
+# --- Seeded from SimplifyJobs listings ---
+- { company: Speechmatics, domain: speechmatics.com, adapter: ashby, tenant: speechmatics }
+- { company: HireHawk, domain: hirehawk.com, adapter: workable, tenant: hirehawk }
